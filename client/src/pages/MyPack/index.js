@@ -1,0 +1,1 @@
+export {default} from './MyPack.js';
