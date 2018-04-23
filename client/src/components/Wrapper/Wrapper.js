@@ -1,7 +1,8 @@
 import React from "react";
+import "./Wrapper.css";
 
-const Wrapper = ({ fluid, children }) => (
-    <div className={`container${fluid ? "-fluid" : ""}`}>
+const Wrapper = ({children }) => (
+    <div className="container">
         {children}
     </div>
 );
