@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "./components/Nav"
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
@@ -12,7 +13,7 @@ import "./App.css";
 const App = () => (
   <Router>
     <div>
-      {/* <Nav /> */}
+      <Nav /> 
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -21,8 +22,6 @@ const App = () => (
         <Route exact path="/findpack" component={FindPack} />
         <Route exact path="/mypack" component={MyPack} />
         
-
-
       </Switch>
     </div>
 
