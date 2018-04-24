@@ -13,6 +13,10 @@ export default {
         return axios.put('/api/user', data)
     },
 
+    getUserData: function (id) {
+        return axios.get('api/user/'+id)
+    },
+
     createDog: function (dogdata) {
         return axios.post('/api/dog', dogdata)
     },

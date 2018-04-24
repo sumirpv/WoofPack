@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Carousel } from 'react-materialize';
 import Modal from "../../components/SignupModal";
 import Login from "../../components/Login"
+// import Row from "../../Grid/row.js"
 
 class Home extends Component {
     state = {
@@ -57,7 +58,13 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1> WoofPack </h1>
+                <div className= "container">
+                </div>
+           
+                    <h1> WoofPack </h1>
+                
+               
+                
                 {/* <Carousel
                     fixedItem={<button className='btn'>MORE</button>}
                     options={{ fullWidth: true }}
