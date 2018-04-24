@@ -32,15 +32,16 @@ const profileSchema = new Schema({
   address: { type: String, required: true },
   aboutMe: { type: String, required: true },
   picture: { type: String, required: true },
-  dogName: { type: String, required: true },
-  dogBreed: { type: String, required: true },
-  dogAge: { type: String, required: true },
-  dogTemperament: { type: Number, required: true },
-  aboutDog: { type: String, required: true },
-  dogSize: { type: String, required: true },
-  dogPicture: { type: String, required: true },
   rating: { type: String, required: true },
   dogCoin: { type: String, required: true },
+  dog : {
+    type: Schema.Types.ObjectId,
+    ref: "Dog"
+  }
+  message: {
+    type: Schema.Types.ObjectId,
+    ref: "Message"
+  }
 });
 
 const Profile = mongoose.model("Profile", profileSchema);
