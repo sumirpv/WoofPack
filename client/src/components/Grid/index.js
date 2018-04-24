@@ -1,2 +1,2 @@
-export * from "./Col";
-export * from "./Row";
+export * from "./col";
+export * from "./row";

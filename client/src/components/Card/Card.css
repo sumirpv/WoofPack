@@ -1,3 +1,50 @@
+/* .col-md-2 {
+    height: 300px;
+    width: 100%;
+} */
+
+#user-card {
+    float: left;
+    width: 45%;
+    height: 275px;
+}
+
+#dog-card {
+    float: right;
+    width: 45%;
+    height: 275px;
+}
+.card-image.waves-effect.waves-block.waves-light {
+    margin: auto;
+    /* text-align: center; */
+    padding-left: 38px;
+    padding-top: 20px;
+}
+
+.card-panel.teal {
+    padding: 20px;
+    padding-bottom: 1px;
+} 
+
+/* #user-pic {
+    background: url("http://goodquotesword.com/images/94566/8pn_funny_profile_pictur.jpg");
+    width: 100%;
+} */
+#user-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.card-image.waves-effect.waves-block.waves-light {
+    margin: auto;
+}
+
+#dog-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
 .click-item {
     background-size: cover;
     background-position: center;
