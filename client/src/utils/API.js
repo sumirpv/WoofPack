@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     createUser:function(userdata){
-        return axios.post("/api/user", userdata)
+        return axios.post("/api/newUser", userdata)
     },
 
     deleteUser: function (id) {

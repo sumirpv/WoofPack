@@ -26,7 +26,7 @@ constructor (props) {
         //API call to post a new user in the database
         API.createUser({
             name: this.state.name,
-            username: this.state.username,
+            userName: this.state.username,
             email: this.state.email,
             password: this.state.password,
             token: token

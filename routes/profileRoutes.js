@@ -7,10 +7,10 @@ module.exports =function(app){
     app.post("/api/newUser", function( req, res){
         console.log("hit the d floor");
         console.log(req.body);
-        db.profile.create(req.body).then(function(data){
+        db.Profile.create(req.body).then(function(data){
             res.json(data);
         }).catch(function(err){
-            res.jason(err);
+            res.json(err);
         })
     })
 

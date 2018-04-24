@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes/profileRoutes.js");
+//const routes = require("./routes/profileRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.use(routes);
+//app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -23,12 +23,14 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/woofpack",
 );
 
+require("./routes/profileRoutes.js")(app);
+
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-require("./routes/profileRoutes.js")(app);
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
