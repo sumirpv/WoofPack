@@ -24,24 +24,24 @@ const profileSchema = new Schema({
   lastName: { type: String, 
     required: "Last Name is Required"
     },
-  emailId: {
-    type: String,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  },
-  phoneNo: { type: Number, required: true},
-  address: { type: String, required: true },
-  aboutMe: { type: String, required: true },
-  picture: { type: String, required: true },
-  rating: { type: String, required: true },
-  dogCoin: { type: String, required: true },
-  dog : {
-    type: Schema.Types.ObjectId,
-    ref: "Dog"
-  }
-  message: {
-    type: Schema.Types.ObjectId,
-    ref: "Message"
-  }
+  // emailId: {
+  //   type: String,
+  //  // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  // },
+  // phoneNo: { type: Number, required: true},
+  // address: { type: String, required: true },
+  // aboutMe: { type: String, required: true },
+  // picture: { type: String, required: true },
+  // rating: { type: String, required: true },
+  // dogCoin: { type: String, required: true },
+  // dog : {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Dog"
+  // },
+  // message: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Message"
+  // }
 });
 
 const Profile = mongoose.model("Profile", profileSchema);

@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-//const routes = require("./routes");
+const routes = require("./routes/profileRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-//app.use(routes);
+app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -28,6 +28,7 @@ mongoose.connect(
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+require("./routes/profileRoutes.js")(app);
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
