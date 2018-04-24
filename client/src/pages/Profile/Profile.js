@@ -6,7 +6,6 @@ const Profile = () => {
     return (
         <div>
             <MyProfile />
-          
         </div>
     )
 }
