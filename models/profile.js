@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-  userName: { type: String,
-     unique :true,
+  username: { type: String,
+   //  unique :true,
      trim: true,
      required: "Username is Required" 
     },
@@ -18,48 +18,33 @@ const profileSchema = new Schema({
       "Password should be longer."
     ]
     },
-  name: { type: String,
+  firstname: { type: String,
      required: "First Name is Required" 
     },
-  // lastName: { type: String, 
-  //   required: "Last Name is Required"
-  //   }
-  // emailId: {
-  //   type: String,
-  //   match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  // },
-  // phoneNo: { type: Number, required: true},
-  // address: { type: String, required: true },
-  // aboutMe: { type: String, required: true },
-  // picture: { type: String, required: true },
-  // rating: { type: String, required: true },
-  // dogCoin: { type: String, required: true },
-  // dog : {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Dog"
-  // },
-  // message: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Message"
-  // }
-  // emailId: {
-  //   type: String,
-  //  // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  // },
-  // phoneNo: { type: Number, required: true},
-  // address: { type: String, required: true },
-  // aboutMe: { type: String, required: true },
-  // picture: { type: String, required: true },
-  // rating: { type: String, required: true },
-  // dogCoin: { type: String, required: true },
-  // dog : {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Dog"
-  // },
-  // message: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Message"
-  // }
+  lastname: { type: String, 
+    required: "Last Name is Required"
+    },
+  email: {
+    type: String,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  },
+  phone: { type: Number, required: true},
+  address: { type: String, required: true },
+  about: { type: String, required: true },
+  picture: { type: String },
+  rating: { type: String},
+  token: {type: String},
+  dogCoin: { type: String },
+  dog : {
+    type: Schema.Types.ObjectId,
+    ref: "Dog"
+  },
+  message: {
+    type: Schema.Types.ObjectId,
+    ref: "Message"
+  }
+
+
 });
 
 const Profile = mongoose.model("Profile", profileSchema);
