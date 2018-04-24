@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import "./SignupModal.css";
+import API from '../../utils/API.js'
 
 class Modal extends Component {
 constructor (props) {
     super (props)
 }
-
     state = {
         name: "",
         username: "",
         email: "",
         password: ""
     }
-
 
     handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -25,10 +24,13 @@ constructor (props) {
         console.log('new user ');
         var token = "t " + Math.random();
         //API call to post a new user in the database
-
-        //After post successful, make req.session.user from the data back from the db and redirect to profile page
-
-        
+        API.createUser({
+            name: this.state.name,
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password,
+            token: token
+        })
     }
 
     render() {

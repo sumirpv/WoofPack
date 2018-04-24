@@ -37,7 +37,7 @@ const profileSchema = new Schema({
   dog : {
     type: Schema.Types.ObjectId,
     ref: "Dog"
-  }
+  },
   message: {
     type: Schema.Types.ObjectId,
     ref: "Message"

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    createUser:function(data){
+    createUser:function(userdata){
         return axios.post("/api/user", userdata)
     },
 
@@ -13,15 +13,13 @@ export default {
         return axios.put('/api/user', data)
     },
 
-    createDog: function (data) {
+    createDog: function (dogdata) {
         return axios.post('/api/dog', dogdata)
     },
     deleteDog: function (id) {
         return axios.delete('/api/dog/'+id)
     },
-    updateDog: function (data) {
+    updateDog: function (dogdata) {
         return axios.put('api/dog', dogdata)
     }
-
-
 }
