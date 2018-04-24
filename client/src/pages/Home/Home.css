@@ -1,0 +1,10 @@
+.header {
+    background-image: url("https://cdn.pixabay.com/photo/2015/07/31/11/43/dog-869030__340.jpg");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
