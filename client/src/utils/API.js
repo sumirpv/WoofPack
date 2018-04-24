@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     createUser:function(userdata){
-        return axios.post("/api/user", userdata)
+        return axios.post("/api/newUser", userdata)
     },
 
     deleteUser: function (id) {
@@ -11,6 +11,10 @@ export default {
 
     updateUser: function (data) {
         return axios.put('/api/user', data)
+    },
+
+    getUserData: function (id) {
+        return axios.get('api/user/'+id)
     },
 
     createDog: function (dogdata) {

@@ -7,7 +7,10 @@ constructor (props) {
     super (props)
 }
     state = {
-        name: "",
+        firstname: "",
+        lastname: "",
+        address: "",
+        about: "",
         username: "",
         email: "",
         password: ""
@@ -25,7 +28,11 @@ constructor (props) {
         var token = "t " + Math.random();
         //API call to post a new user in the database
         API.createUser({
-            name: this.state.name,
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            address: this.state.address,
+            phone: this.state.phone,
+            about: this.state.about,
             username: this.state.username,
             email: this.state.email,
             password: this.state.password,
@@ -48,7 +55,23 @@ constructor (props) {
                                     <div className="row">
                                         <div className="input-field col s6">
                                             <div className="form-group">
-                                                <input value={this.state.name} name={"name"} onChange={this.handleInputChange} placeholder="Your Name" id="first-name" type="text" className="validate">
+                                                <input value={this.state.firstname} name={"firstname"} onChange={this.handleInputChange} placeholder="First Name" id="first-name" type="text" className="validate">
+                                                </input>
+                                            </div>
+                                            <div className="form-group">
+                                                <input value={this.state.lastname} name={"lastname"} onChange={this.handleInputChange} placeholder="Last Name" id="last-name" type="text" className="validate">
+                                                </input>
+                                            </div>
+                                            <div className="form-group">
+                                                <input value={this.state.address} name={"address"} onChange={this.handleInputChange} placeholder="Address" id="address" type="text" className="validate">
+                                                </input>
+                                            </div>
+                                            <div className="form-group">
+                                                <input value={this.state.phone} name={"phone"} onChange={this.handleInputChange} placeholder="Phone" id="phone" type="text" className="validate">
+                                                </input>
+                                            </div>
+                                            <div className="form-group">
+                                                <input value={this.state.about} name={"about"} onChange={this.handleInputChange} placeholder="about" id="about" type="text" className="validate">
                                                 </input>
                                             </div>
                                             <div className="form-group">

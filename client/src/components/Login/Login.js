@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 
 class Login extends Component {
@@ -21,15 +22,9 @@ constructor (props) {
         })
     }
 
-    newUser = () => {
-        console.log('new user ');
-        var token = "t " + Math.random();
-        //API call to post a new user in the database
-
-        //After post successful, make req.session.user from the data back from the db and redirect to profile page
-
-        
-    }
+handleLogin = () => {
+    console.log('login submit clicked');
+}
 
     render() {
 
@@ -61,7 +56,7 @@ constructor (props) {
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.newUser}>Submit</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.handleLogin}>Login</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick = {this.props.closeModal}>Close</button>
                         </div>
                     </div>
