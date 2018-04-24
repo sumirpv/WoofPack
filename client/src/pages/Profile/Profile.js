@@ -1,9 +1,13 @@
 import React from 'react';
+import MyProfile from "../../components/MyProfile";
 
 const Profile = () => {
 
     return (
-    <h1> Profile yo </h1>
+        <div>
+            <MyProfile />
+          
+        </div>
     )
 }
 
