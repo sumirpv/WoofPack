@@ -1,5 +1,5 @@
 module.exports = {
-    Profile: require("./Profile"),
-    Dog: require("./Dog"),
-    Message: require("./Message")
+    Profile: require("./profile"),
+    Dog: require("./dog"),
+    Message: require("./message")
   };
