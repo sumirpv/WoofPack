@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
-
-
 class PersonalData extends Component {
+   
+    constructor(props){
+        super(props); 
+    }
+    
     state = {
         firstName:"",
         lastName: "",
@@ -12,14 +15,19 @@ class PersonalData extends Component {
 
     };
 
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
           [name]: value
         });
       };
+    
+    handleClick =() => {
+       this.props.userData(); 
+    }
 
-
+    
 
     render() {      
         return (
@@ -55,6 +63,7 @@ class PersonalData extends Component {
                                     <label for="aboutMe">About Me</label>
                                 </div>
                             </div>
+                            <a onClick={this.handleClick}class="waves-effect waves-light btn">Save</a>
                         </form>
                     </div>
                 </div>
