@@ -45,6 +45,7 @@ module.exports = function (app) {
             password: req.body.password,
             picture: req.file.path})
             .then(function (data) {
+                console.log(data._id)
                 req.session.user = data._id;
                 res.json(data);
             }).catch(function (err) {
@@ -64,6 +65,8 @@ module.exports = function (app) {
         }
         
     })
+
+    //app.get("")
 
 }
 
