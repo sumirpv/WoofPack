@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "./SignupModal.css";
 import API from '../../utils/API.js'
 
+function Redirect(where) {
+        window.location = where;
+}
+
 class Modal extends Component {
 constructor (props) {
     super (props)
@@ -22,6 +26,7 @@ constructor (props) {
             [name]: value
         })
     }
+   
 
     newUser = () => {
         console.log('new user ');
@@ -37,9 +42,11 @@ constructor (props) {
             email: this.state.email,
             password: this.state.password,
             token: token
+        }).then(res =>{
+            Redirect('/profile'); 
         })
     }
-
+     
     render() {
 
         return (
