@@ -2,9 +2,13 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 //const routes = require("./routes/profileRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,6 +26,11 @@ mongoose.Promise = global.Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/woofpack",
 );
+
+app.use(cookieParser());
+app.use(session({secret: "343430939043jfef", resave:false, saveUninitialized:true}));
+
+
 
 require("./routes/profileRoutes.js")(app);
 
