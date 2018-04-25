@@ -1,13 +1,57 @@
 import React from "react";
 import io from 'socket.io-client';
-
-class ChatModal extends React.Component{
+var socket = io.connect('http://localhost:3001/');
+var message;
+var btn;
+var output;
+var feedback;
+class ChatModal extends React.Component {
     state = {
-        draftChat: ""
+        draftChat: "",
+        oldChat:"",
+        userName1:"sumi",
+        userName2:"Bianca"
     }
 
 
-    render(){
+    handleInputChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSendChat = () => {
+        //Query DOM
+        message = document.getElementById('message');
+        btn = document.getElementById('send');
+        output = document.getElementById('output');
+        feedback = document.getElementById('feedback');
+        console.log("clicked", btn)
+
+
+        socket.emit('chat', {
+            message: this.state.draftChat
+        });
+            this.setState({
+                draftChat: ""
+            });
+
+
+        socket.on('chat', function(data){
+            output.innerHTML +=`<p> ${data.message} </p>`;
+        });
+
+        message.addEventListener('keypress', function(){
+            socket.emit('typing',"sumi");
+        })
+        socket.on('typing', function(data){
+            feedback.innerHTML=`<p><em> ${this.data}</em></p>`;
+        })
+
+    }
+
+    render() {
         return (
             <div class="modal" tabIndex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -17,21 +61,17 @@ class ChatModal extends React.Component{
                         </div>
                         <div class="modal-body">
                             <div className="row">
-                                <form className="col s12" onSubmit={this.onSubmit}>
+                                <div className="col s12" >
                                     <div className="row">
                                         <div className="input-field col s6">
-                         
-                   
-  
-                                            <div className="form-group">
-                                                <input value={this.state.draftChat} name={"draftChat"} onChange={this.handleInputChange} placeholder="Enter chat here" id="draftChat" type="text" className="validate">
-                                                </input>
+                                            <div id="article-chat">
+                                                <div id="chat-window">
+                                                    <div id="output">wer </div>
+                                                    <div id="feedback"> </div>
+                                                </div>
+                                                <input id="message" name ="draftChat" type="text" placeholder="Message" value ={this.state.draftChat} onChange={this.handleInputChange} />
+                                                <button id="send" onClick={this.handleSendChat}> Send </button>
                                             </div>
-          
-         
-  
-    
-     
                                         </div>
                                     </div>
 
@@ -39,7 +79,7 @@ class ChatModal extends React.Component{
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
 
-                                </form>
+                                </div>
 
                             </div>
                         </div>

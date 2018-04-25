@@ -8,9 +8,12 @@ class Card extends Component {
     constructor(props) {
         super(props)
     }
+
     state = {
         chatOpen: false
     }
+
+
     clickChatModal = () => {
 
         this.setState({
