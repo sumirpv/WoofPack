@@ -1,9 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 import { Row, Col } from "../Grid"; 
 import Button from "../Button";
+import ChatModal from "../ChatModal"
 import "./Card.css";
 
-const Card = props => (
+class Card extends Component {
+    constructor(props) {
+        super(props)
+    }
+    state = {
+        chatOpen: false
+    }
+    clickChatModal = () => {
+
+        this.setState({
+            chatOpen: true
+        })
+    };
+
+   openChatModal = () => {
+        if (this.state.chatOpen === true) {
+            return <ChatModal
+                header={"Chat"}
+                closeModal={this.closeModal}
+            />
+        }
+    }
+
+    closeModal = () => {
+        console.log('close modal')
+        this.setState({
+            chatOpen: false
+        })
+    }
+
+    render(){
+        return(
     <Row>
         <Col size="md-6">
             <div class="card-panel">
@@ -63,20 +95,25 @@ const Card = props => (
                                 <br/>
                             </div>
                         </div>
+                        <button onClick={this.clickChatModal} > Send a Chat </button>
                         <Button/>
                     </Col>
                 </Row>
             </div>
         </Col>
+        {this.openChatModal()}
     </Row>    
     // <div 
     //     The below info was borrowed from another App until we know all the info that we are putting into the card.
     //     role="img"
     //     aria-label="click item"
-    //     onClick={() => props.handleClick(props.id)}
-    //     style={{ backgroundImage: `url("${props.image}")` }}
-    //     className={`click-item${props.shake ? " shake" : ""}`}
+    //     onClick={() => this.props.handleClick(this.props.id)}
+    //     style={{ backgroundImage: `url("${this.props.image}")` }}
+    //     className={`click-item${this.props.shake ? " shake" : ""}`}
     // />
-);
+            )
+
+            }
+            };
 
 export default Card;
