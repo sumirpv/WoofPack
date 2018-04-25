@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from "../../components/Card";
 
 class FindPack extends Component {
+    
     render() {
         return (
             <div>

@@ -13,8 +13,8 @@ export default {
         return axios.put('/api/user', data)
     },
 
-    getUserData: function (id) {
-        return axios.get('api/user/'+id)
+    getUserData: function () {
+        return axios.get('/api/user')
     },
 
     createDog: function (dogdata) {
