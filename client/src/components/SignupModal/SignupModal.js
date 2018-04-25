@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "./SignupModal.css";
 import API from '../../utils/API.js'
 
+function Redirect(where) {
+        window.location = where;
+}
+
 class Modal extends Component {
     constructor() {
         super()
@@ -32,6 +36,7 @@ class Modal extends Component {
                 })
         }
     }
+   
 
     onSubmit = (event) => {
         console.log('form submitted');
@@ -53,10 +58,9 @@ class Modal extends Component {
         var token = "t " + Math.random();
         formData.append('token', token);
 
-        
-
         API.createUser(formData).then((result) => {
-            console.log(result)
+            console.log(result)  
+            Redirect('/profile'); 
         });
     };
 

@@ -33,13 +33,6 @@ module.exports = function (app) {
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
         console.log(req.body);
 
-
-
-
-
-
-
-
         db.Profile.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -50,15 +43,27 @@ module.exports = function (app) {
             username: req.body.username, 
             email: req.body.email,
             password: req.body.password,
-            picture: req.file.path
-        })
+            picture: req.file.path})
             .then(function (data) {
+                req.session.user = data._id;
                 res.json(data);
             }).catch(function (err) {
                 res.json(err);
             })
     })
 
-
+    app.get("/api/session", function(req, res){
+        console.log(req.session.user)
+        if (req.session.user){
+            console.log("true")
+            res.send(true); 
+        }
+        if (!req.session.user){
+            console.log("false")
+            res.send(false) 
+        }
+        
+    })
 
 }
+

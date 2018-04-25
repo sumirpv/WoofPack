@@ -1,11 +1,11 @@
 import React from 'react';
 import MyProfile from "../../components/MyProfile";
 
-const Profile = () => {
+const Profile = (props) => {
 
     return (
         <div>
-            <MyProfile />
+            <MyProfile  />
         </div>
     )
 }
