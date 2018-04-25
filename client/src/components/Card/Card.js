@@ -18,7 +18,7 @@ const Card = props => (
                                 <p><a alt="unknown" href="/">Link to User Profile?</a></p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">User Info<i class="material-icons right">x</i></span>
+                                <span class="card-title grey-text text-darken-4">User Info<i class="small material-icons right">cancel</i></span>
                                 <br/>
                                 <span>Johnny Glasses</span>
                                 <br/>
@@ -45,7 +45,7 @@ const Card = props => (
                                 <p><a alt="unknown" href="/">Link to user profile?</a></p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Dog Info<i class="material-icons right">x</i></span>
+                                <span class="card-title grey-text text-darken-4">Dog Info<i class="small material-icons right">cancel</i></span>
                                 <br/>
                                 <span>Tyrannosaurus-Rex</span>
                                 <br/>

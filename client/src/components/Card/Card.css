@@ -14,6 +14,7 @@
     width: 45%;
     height: 275px;
 }
+
 .card-image.waves-effect.waves-block.waves-light {
     margin: auto;
     /* text-align: center; */
@@ -26,15 +27,17 @@
     padding-bottom: 1px;
 } 
 
-/* #user-pic {
-    background: url("http://goodquotesword.com/images/94566/8pn_funny_profile_pictur.jpg");
-    width: 100%;
-} */
+
+
 #user-img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
+    /* border: 1px solid gray;
+    box-shadow: 2px 2px 8px #888888; */
+    left: 25px;
 }
+
 .card-image.waves-effect.waves-block.waves-light {
     margin: auto;
 }
@@ -43,6 +46,8 @@
     height: 150px;
     width: 150px;
     border-radius: 50%;
+    /* border: 1px solid gray; */
+    left: 25px;
 }
 
 .click-item {
