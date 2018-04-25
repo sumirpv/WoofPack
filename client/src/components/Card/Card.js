@@ -6,7 +6,7 @@ import "./Card.css";
 const Card = props => (
     <Row>
         <Col size="md-6">
-            <div class="card-panel teal">
+            <div class="card-panel">
                 <Row>
                     <Col size="md-2">
                         <div class="card" id="user-card">
@@ -20,15 +20,15 @@ const Card = props => (
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">User Info<i class="small material-icons right">cancel</i></span>
                                 <br/>
-                                <span>Johnny Glasses</span>
+                                {/* <span><b>Name: </b>Johnny Glasses</span>
+                                <br/> */}
+                                <span><b>Username: </b>jJohnson123</span>
                                 <br/>
-                                <span>Username: jJohnson123</span>
+                                <span><b>Email: </b>jjGlasses@fakeemail.com</span>
                                 <br/>
-                                <span>Email: jjGlasses@fakeemail.com</span>
+                                <span><b>Address: </b>1234 5th St., Los Angeles, CA, 90012</span>
                                 <br/>
-                                <span>Address: 1234 5th St., Los Angeles, CA, 90012</span>
-                                <br/>
-                                <span>Rating: 4 stars (out of 20, lol)</span>
+                                <span><b>Rating: </b>4 stars</span>
                             </div>
                         </div>
                 {/* <span class="white-text">I am a very simple card. I am good at containing small bits of information.
@@ -47,19 +47,19 @@ const Card = props => (
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Dog Info<i class="small material-icons right">cancel</i></span>
                                 <br/>
-                                <span>Tyrannosaurus-Rex</span>
+                                <span><b>Tyrannosaurus-Rex</b></span>
                                 <br/>
-                                <span>Breed: Cute Dog</span>
+                                <span><b>Breed: </b>Cute Dog</span>
                                 <br/>
-                                <span>Age: 6 months (puppy)</span>
+                                <span><b>Age: </b>6 months (puppy)</span>
                                 <br/>
-                                <span>Size: 10 lbs.</span>
+                                <span><b>Size: </b>10 lbs.</span>
                                 <br/>
-                                <span>Temperment: Sweet</span>
+                                <span><b>Temperment: </b>Sweet</span>
                                 <br/>
-                                <span>More Deets (About Me): Loves treats and dog parks</span>
+                                <span><b>More Deets (About Me): </b>Loves treats and dog parks</span>
                                 <br/>
-                                <span>Rating: 5 stars</span>
+                                <span><b>Rating: </b>5 stars</span>
                                 <br/>
                             </div>
                         </div>
