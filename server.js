@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 //const routes = require("./routes/profileRoutes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const socket = require('socket.io');
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,6 +34,18 @@ require("./routes/profileRoutes.js")(app);
 // });
 
 
-app.listen(PORT, function() {
+var server = app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
+});
+
+//Socket set up on server
+const io = socket(server);
+
+io.on('connection', function (socket) {
+  console.log('made socket connection', socket.id)
+
+  socket.on('chat', function (data) {
+    io.sockets.emit('chat', data)
+    console.log(data);
+  });
 });
