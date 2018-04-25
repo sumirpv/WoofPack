@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "../Grid"; 
+import Button from "../Button";
 import "./Card.css";
 
 const Card = props => (
@@ -62,6 +63,7 @@ const Card = props => (
                                 <br/>
                             </div>
                         </div>
+                        <Button/>
                     </Col>
                 </Row>
             </div>
