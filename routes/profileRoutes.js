@@ -8,6 +8,7 @@ module.exports =function(app){
         console.log("hit the d floor");
         console.log(req.body);
         db.Profile.create(req.body).then(function(data){
+            console.log("data is ", data);
             res.json(data);
         }).catch(function(err){
             res.json(err);
