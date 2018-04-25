@@ -29,7 +29,7 @@ var multerConf = {
 }
 
 module.exports = function (app) {
-
+// create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
         console.log(req.body);
 
@@ -52,21 +52,53 @@ module.exports = function (app) {
                 res.json(err);
             })
     })
-
+// check if session 
     app.get("/api/session", function(req, res){
-        console.log(req.session.user)
+        //console.log(req.session.user)
         if (req.session.user){
-            console.log("true")
+            //console.log("true")
             res.send(true); 
         }
         if (!req.session.user){
-            console.log("false")
+            //console.log("false")
             res.send(false) 
         }
         
     })
+// check login
+    app.post("/api/login", function (req, res) {
+    console.log(req.body)
+    db.Profile.find({username: req.body.username}).then(function (data) {
+        console.log(data);
+                        if (data.length === 0){
+                            console.log("yay");
+                            res.send(false)
+                        }
+                        else if (data[0].password === req.body.password && data[0].username === req.body.username) {
+                            req.session.user = data;
+                            res.send(true)
+                        }
+                        else {
+                            res.send(false)
+                        }
+                        })
+});
+// app.get("/api/login", function (req, res) {
+//     console.log(req.session.user)
+//     db.Owner.find({_id: ObjectId(req.session.user)}).then(function (data) {
+//         if (data) {
+//             console.log("loged in");
+//             req.session.user = data.dataValues;
+//             //res.redirect("/profile");
+//             res.json(data.dataValues);
 
-    //app.get("")
+//         } else {
+//             res.send("you suck")
+//         }
 
+//     }).catch(function (err) {
+//         res.json(err);
+//     });
+// });
 }
 

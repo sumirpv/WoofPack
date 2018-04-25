@@ -50,7 +50,6 @@ class Modal extends Component {
         formData.append('address', address);
         formData.append('phone', phone);
         formData.append('about', about);
-        formData.append('username', username);
         formData.append('email', email);
         formData.append('password', password);
         formData.append('username', username);

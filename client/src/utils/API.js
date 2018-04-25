@@ -28,5 +28,8 @@ export default {
     },
     checkIfsession: function (){
         return axios.get("/api/session");
+    },
+    userLogin: function(user){
+        return axios.post("/api/login", user); 
     }
 }

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import API from "../../utils/API.js"
 
-
+function Redirect(where){
+    window.location = where
+}
 
 class Login extends Component {
 constructor (props) {
@@ -8,9 +11,7 @@ constructor (props) {
 }
 
     state = {
-        name: "",
         username: "",
-        email: "",
         password: ""
     }
 
@@ -23,7 +24,25 @@ constructor (props) {
     }
 
 handleLogin = () => {
-    console.log('login submit clicked');
+    var user = {
+        username: this.state.username,
+        password: this.state.password
+    }
+    if (user.username === "" || user.password === ""){
+        alert("enter all fields")
+    }
+    else {
+         API.userLogin(user).then((result) =>{
+            if (result.data === true){
+                Redirect('/profile'); 
+            }
+            if (result.data === false) {
+                alert("wrong creds"); 
+            }
+            console.log(result.data)
+        })
+    }
+  
 }
 
     render() {
