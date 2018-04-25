@@ -14,7 +14,6 @@ import "./App.css";
 
 class App extends Component {
    state = {
-        loaded: false,
         session: false
 
     };
@@ -24,26 +23,14 @@ class App extends Component {
   }
 
   isLoggedIn = () => {
-    console.log("it hit")
     API.checkIfsession().then(res =>{
-      console.log("this is response" + res.data)
-      if (res.data === false){
-        //return false
-      }
       if (res.data === true){
       this.setState({session: true})
-      console.log("this is state" + this.state.session); 
       }
-      this.setState({loaded: true})
-    }
-    
-    )
+    })
   }
 
   render() {
-    if (this.state.loaded === false){
-      return null; 
-    }
     return (
       <Router>
         <div>
@@ -51,12 +38,9 @@ class App extends Component {
           <Wrapper >
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={SignUp} />
               <Route exact path="/profile" render={() => (this.state.session === true ? <Profile/> : <Home/>)} />
-              <Route exact path="/findpack" component={FindPack} />
-              <Route exact path="/mypack" component={MyPack} />
-
+              <Route exact path="/findpack" render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/>
+              <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack /> : <Home/>)}/>
             </Switch>
           </Wrapper>
         </div>
