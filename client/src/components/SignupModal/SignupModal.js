@@ -71,7 +71,7 @@ class Modal extends Component {
                         </div>
                         <div class="modal-body">
                             <div className="row">
-                                <form className="col s12" onSubmit={this.onSubmit} encType='multipart/form-data'>
+                                <form className="col s12" onSubmit={this.onSubmit}>
                                     <div className="row">
                                         <div className="input-field col s6">
                                             <div className="form-group">

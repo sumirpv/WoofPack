@@ -1,13 +1,13 @@
-var path = require ("path");
+var path = require("path");
 var db = require("../models")
-var multer  = require('multer');
+var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 //var router = express.Router();
 
 var multerConf = {
     storage: multer.diskStorage({
         destination: function (req, file, next) {
-            next(null, './public/uploads')
+            next(null, './uploads')
         },
         filename: function (req, file, next) {
             console.log(file);
@@ -28,23 +28,35 @@ var multerConf = {
     }
 }
 
-module.exports =function(app){
-    
-    app.post("/api/newUser", multer(multerConf).single('avatar'), function( req, res){
+module.exports = function (app) {
+
+    app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
         console.log(req.body);
- 
-        
 
 
 
 
 
 
-        db.Profile.create(req.body).then(function(data){
-            res.json(data);
-        }).catch(function(err){
-            res.json(err);
+
+
+        db.Profile.create({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            address: req.body.address,
+            phone: req.body.phone,
+            about: req.body.about, 
+            username: req.body.about, 
+            username: req.body.username, 
+            email: req.body.email,
+            password: req.body.password,
+            picture: req.file.path
         })
+            .then(function (data) {
+                res.json(data);
+            }).catch(function (err) {
+                res.json(err);
+            })
     })
 
 

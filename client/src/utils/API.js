@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default {
-    createUser:function(userdata){
-        return axios.post("/api/newUser", userdata)
+    createUser:function(formData){
+        return axios.post("/api/newUser", formData)
     },
 
     deleteUser: function (id) {
