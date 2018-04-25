@@ -3,42 +3,62 @@ import "./SignupModal.css";
 import API from '../../utils/API.js'
 
 class Modal extends Component {
-constructor (props) {
-    super (props)
-}
+    constructor() {
+        super()
+    }
     state = {
         firstname: "",
         lastname: "",
         address: "",
-        about: "",
+        selected: "",
         username: "",
         email: "",
-        password: ""
+        password: "",
+        avatar: ""
     }
 
     handleInputChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        })
+        switch (event.target.name) {
+            case 'avatar':
+                this.setState({
+                    avatar: event.target.files[0]
+                })
+                console.log(event.target.files[0])
+                break;
+            default:
+                const { name, value } = event.target;
+                this.setState({
+                    [name]: value
+                })
+        }
     }
 
-    newUser = () => {
-        console.log('new user ');
+    onSubmit = (event) => {
+        console.log('form submitted');
+        event.preventDefault();
+
+        const { firstname, lastname, address, phone, about, username, email, password, avatar } = this.state;
+        let formData = new FormData();
+
+        formData.append('firstname', firstname);
+        formData.append('lastname', lastname);
+        formData.append('address', address);
+        formData.append('phone', phone);
+        formData.append('about', about);
+        formData.append('username', username);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('username', username);
+        formData.append('avatar', avatar);
         var token = "t " + Math.random();
-        //API call to post a new user in the database
-        API.createUser({
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            address: this.state.address,
-            phone: this.state.phone,
-            about: this.state.about,
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
-            token: token
-        })
-    }
+        formData.append('token', token);
+
+        
+
+        API.createUser(formData).then((result) => {
+            console.log(result)
+        });
+    };
 
     render() {
 
@@ -51,7 +71,7 @@ constructor (props) {
                         </div>
                         <div class="modal-body">
                             <div className="row">
-                                <form className="col s12" method='POST' action='/api/human' encType='multipart/form-data'>
+                                <form className="col s12" onSubmit={this.onSubmit} encType='multipart/form-data'>
                                     <div className="row">
                                         <div className="input-field col s6">
                                             <div className="form-group">
@@ -86,15 +106,23 @@ constructor (props) {
                                                 <input value={this.state.password} name={"password"} onChange={this.handleInputChange} placeholder="Password" id="password" type="password" className="validate">
                                                 </input>
                                             </div>
+                                            <div className="form-group">
+                                                <input value={this.state.image} name={"avatar"} onChange={this.handleInputChange} id="avatar" type="file">
+                                                </input>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
+                                    </div>
+
                                 </form>
+
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.newUser}>Submit</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick = {this.props.closeModal}>Close</button>
-                        </div>
+
                     </div>
                 </div>
             </div>

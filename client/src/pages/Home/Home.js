@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Carousel } from 'react-materialize';
+// import { Carousel } from 'react-materialize';
 import Modal from "../../components/SignupModal";
 import Login from "../../components/Login"
 import "./Home.css";
@@ -60,13 +60,11 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <div className="header">
-
+                {/* <div className="header"> */}
                     <h1> WoofPack </h1>
                     <button onClick={this.clickSignupModal} > Sign up </button>
                     <button onClick={this.clickLoginModal} > Login </button>
-
-                </div>
+                {/* </div> */}
 
 
 
