@@ -7,13 +7,20 @@
     float: left;
     width: 45%;
     height: 275px;
+    /* background-color:transparent; */
+    /* opacity: 0.85; */
+    background-color: rgba(245, 245, 245, .50);
 }
 
 #dog-card {
     float: right;
     width: 45%;
     height: 275px;
+    /* background-color:transparent; */
+    /* opacity: 0.70; */
+    background-color: rgba(245, 245, 245, .50);
 }
+
 .card-image.waves-effect.waves-block.waves-light {
     margin: auto;
     /* text-align: center; */
@@ -21,31 +28,39 @@
     padding-top: 20px;
 }
 
-.card-panel.teal {
+.card-panel {
     padding: 20px;
     padding-bottom: 1px;
+    /* background-image: url("darkdog.jpg");
+    background-repeat: no-repeat; */
+    /* background-position: 50px; */
+    background-size: 100%;
+    /* background-position: -30px 145px; */
 } 
 
-/* #user-pic {
-    background: url("http://goodquotesword.com/images/94566/8pn_funny_profile_pictur.jpg");
-    width: 100%;
+/* .grey-text.text-darken-4 {
+    color: white !important;
 } */
+
 #user-img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-}
-.card-image.waves-effect.waves-block.waves-light {
-    margin: auto;
+    border: 1px solid gray;
+    box-shadow: 3px 0px 10px 0px black;
+    left: 25px;
 }
 
 #dog-img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
+    border: 1px solid gray;
+    box-shadow: 3px 0px 10px 0px black;
+    left: 25px;
 }
 
-.click-item {
+/* .click-item {
     background-size: cover;
     background-position: center;
     height: 170px;
@@ -55,15 +70,15 @@
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     cursor: pointer;
-}
+} */
   
-.click-item:hover {
+.waves-effect.waves-light.btn:hover {
     transform: scale(1.05);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: 0.1s;
 }
 
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
     .click-item {
       margin: 10px;
     }
@@ -73,4 +88,4 @@
     .click-item {
       margin: 10px;
     }
-}
+} */
