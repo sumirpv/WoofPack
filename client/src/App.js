@@ -7,13 +7,17 @@ import Profile from "./pages/Profile";
 import FindPack from "./pages/FindPack";
 import MyPack from "./pages/MyPack";
 import Wrapper from "./components/Wrapper"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+
 
 import "./App.css";
 
 const App = () => (
   <Router>
     <div>
+    {/* <Sidebar /> */}
       <Nav /> 
       <Wrapper >
         <Switch>
@@ -23,7 +27,7 @@ const App = () => (
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/findpack" component={FindPack} />
           <Route exact path="/mypack" component={MyPack} />
-          
+
         </Switch>
       </Wrapper>
     </div>

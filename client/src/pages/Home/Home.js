@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Modal from "../../components/SignupModal";
 import Login from "../../components/Login"
 import "./Home.css";
+import SideNav from "react-materialize"
 
 // import Row from "../../Grid/row.js"
 
