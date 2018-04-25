@@ -2,6 +2,7 @@ import axios from "axios";
 
 export default {
     createUser:function(formData){
+        console.log("form data", formData)
         return axios.post("/api/newUser", formData)
     },
 

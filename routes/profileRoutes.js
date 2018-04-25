@@ -31,7 +31,7 @@ var multerConf = {
 module.exports = function (app) {
 // create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
-        console.log(req.body);
+        console.log("body", req.body);
 
         db.Profile.create({
             firstname: req.body.firstname,
@@ -49,6 +49,7 @@ module.exports = function (app) {
                 req.session.user = data._id;
                 res.json(data);
             }).catch(function (err) {
+                console.log(err)
                 res.json(err);
             })
     })
