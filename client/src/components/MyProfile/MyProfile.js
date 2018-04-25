@@ -21,6 +21,7 @@ class MyProfile extends Component {
     createDog (){
         console.log("cliiick")
     }
+    
 
     render(){
         return(

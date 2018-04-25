@@ -3,13 +3,28 @@ const Schema = mongoose.Schema;
 
 const dogSchema = new Schema({
 
-  dogName: { type: String, required: true },
-  dogBreed: { type: String, required: true },
-  dogAge: { type: String, required: true },
-  dogTemperament: { type: Number, required: true },
-  aboutDog: { type: String, required: true },
-  dogSize: { type: String, required: true },
-  dogPicture: { type: String, required: true }
+  dogName: {
+     type: String, 
+    //  required: true 
+    },
+  breed: { type: String,
+    //  required: true 
+    },
+  age: { type: String,
+    //  required: true 
+    },
+  temperament: { type: Number, 
+    // required: true 
+  },
+  aboutDog: { type: String,
+    //  required: true 
+    },
+  size: { type: String, 
+    // required: true 
+  },
+  file: { type: String, 
+    // required: true 
+  }
 });
 
 const Dog = mongoose.model("Dog", dogSchema);
