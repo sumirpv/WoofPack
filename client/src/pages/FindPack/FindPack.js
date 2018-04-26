@@ -20,13 +20,10 @@ class FindPack extends Component {
  };
 
     render() {
-
-        var currentuser=this.state.user.slice(0,-1)
-        
         return (
             <div>
                 <h1> Find Pack Members</h1>
-                {currentuser.map(user =>(
+                {this.state.user.map(user =>(
                     <Card 
                     key = {user._id}
                     _id = {user._id}
@@ -44,7 +41,6 @@ class FindPack extends Component {
                     dog = {user.dog}
                    // dogName ={user.dog.dogName}
                     />
-                
                 ))}
                 
             </div>
