@@ -8,7 +8,8 @@ import AddDogModal from "../AddDogModal";
 class MyProfile extends Component {
     state = {
         user: "",
-        addDogOpen: false
+        addDogOpen: false,
+        dogs: []
     };
 
     componentDidMount() {
@@ -17,20 +18,13 @@ class MyProfile extends Component {
     
     loadUser = () => {
         API.getUserData().then((result) =>{
-            this.setState({user: result.data}) 
-            console.log(this.state.user); 
+            console.log("this is the result.data", result.data); 
+            this.setState({user: result.data, dogs: result.data.dog}) 
+            console.log("this is the state.user.dogs ",this.state.dogs); 
         })
            
     };
     
-    createUserData (){
-        console.log("cliiick")
-    };
-
-    createDog (){
-        console.log("cliiick")
-    };
-
     // addDog () {
     //     console.log("cliiick");
     // }
@@ -64,7 +58,7 @@ class MyProfile extends Component {
         });
     };
 
-    render(){
+    render= () => {
         return(
             <div>
                 <RatingCoins />
@@ -77,14 +71,22 @@ class MyProfile extends Component {
                     lastname={this.state.user.lastname}
                     phone={this.state.user.phone}
                     picture={this.state.user.picture}/>
-                {/* <DogData createDog={this.createDog}/> */}
-                {/* <AddDogBtn dogData={this.addDog} /> */}
                 <div>
                     <button className="waves-effect waves-light btn" onClick={this.clickAddDogModal} ><i class="material-icons left">add_circle</i> Add your Dog </button>
                 </div>
-                <div>
-                    {/* {this.initAddDogModal()} */}
-                </div>
+                {this.state.dogs.map(dog => {
+                    return(
+                        <DogData name={dog.dogName}
+                        about={dog.aboutDog}
+                        age={dog.age}
+                        breed={dog.breed}
+                        picture={dog.picture}
+                        temperment={dog.temperment}
+                        size={dog.size}/>
+                    )
+                })}
+              
+
             </div>
         )
     }
