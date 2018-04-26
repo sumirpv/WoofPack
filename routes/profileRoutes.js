@@ -50,7 +50,8 @@ module.exports = function (app) {
                     id: data._id, 
                     firstname: data.firstname,
                     email: data.email, 
-                    picture: data.picture
+                    picture: data.picture,
+                    username: data.username
                 };
                 //console.log("this is req.session.user on login", req.session.user)
                 res.json(data);
@@ -85,7 +86,8 @@ module.exports = function (app) {
                     id: data[0]._id,
                     firstname: data[0].firstname,
                     email: data[0].email, 
-                    picture: data[0].picture
+                    picture: data[0].picture,
+                    username: data[0].username
                 }
                 console.log("when login this is session", req.session.user)
                 res.send(true)

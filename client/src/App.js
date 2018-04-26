@@ -17,7 +17,8 @@ class App extends Component {
         session: false,
         firstname: "", 
         email: "", 
-        picture: ""
+        picture: "",
+        username: ""
 
     };
 
@@ -32,7 +33,8 @@ class App extends Component {
       this.setState({session: true, 
         firstname: res.data.firstname, 
         email: res.data.email, 
-        picture: res.data.picture})
+        picture: res.data.picture,
+      username: res.data.username})
       }
     })
   }

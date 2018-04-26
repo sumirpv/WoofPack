@@ -16,12 +16,22 @@ class ChatModal extends React.Component {
     state = {
         draftChat: "",
         oldChat: [],
-        userName1: "User1",
-        userName2: "Johnny Glasses",
+        userName1: "",
+        userName2: this.props.userName2,
         otherUsertyping: ""
     }
 
     componentDidMount() {
+            API.checkIfsession().then(res =>{
+              console.log("this is res.data when check session" , res.data); 
+              if (res.data.auth === true){
+              this.setState({session: true, 
+                userName1: res.data.username, 
+              })
+              }
+            })
+          
+
         console.log('chat component mounted');
 
         //Listen for incoming messages from server
