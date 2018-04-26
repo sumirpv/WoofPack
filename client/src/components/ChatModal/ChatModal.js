@@ -9,30 +9,41 @@ var btn;
 var output;
 var feedback;
 var username;
-var room='abc123'
+var room = 'abc123'
 
 
 class ChatModal extends React.Component {
     state = {
         draftChat: "",
-        oldChat: "",
+        oldChat: [],
         userName1: "User1",
         userName2: "Johnny Glasses"
     }
 
     componentDidMount() {
-        console.log('chat component mounted')
-        socket.on('connect', function () {
-            socket.emit('room', room)
+        console.log('chat component mounted');
+
+        //Listen for incoming messages from server
+        socket.on('chat', (data) => {
+            //push messages received from server into array on state 
+            this.setState({
+                oldChat: [...this.state.oldChat, `${data.username} : ${data.message}`]
+            });
         });
+
+        //When chat loads, join a chat room. 
+        socket.emit('room', room);
+
+        //Whenever there is typing, send this info to the server. 
+        socket.emit("typing", { username: this.state.userName1 });
     };
 
-    handleInputChange = (event) => { 
+    handleInputChange = (event) => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
         });
-        socket.emit("typing", { username: this.state.userName1 });
+        
     }
 
     handleSendChat = () => {
@@ -48,7 +59,7 @@ class ChatModal extends React.Component {
         socket.on("typing", function (data) {
             feedback.innerHTML = `<p> <em>${data.username} </em> is typing`
         });
-       
+
         this.addChatDB(this.state.userName1, this.state.userName2, message.value)
 
         //send chat to server
@@ -57,10 +68,6 @@ class ChatModal extends React.Component {
             username: this.state.userName1
         });
 
-        //receive chat from server and show on output
-        socket.on('chat', function (data) {
-            output.innerHTML += `<p> ${data.username}:  ${data.message} </p>`;
-        });
 
     };
 
@@ -87,7 +94,14 @@ class ChatModal extends React.Component {
                                         <div className="input-field col s6">
                                             <div id="article-chat">
                                                 <div id="chat-window">
-                                                    <div id="output"> <h6>Messages </h6> </div>
+                                                <h6>Messages </h6>
+                                                    {this.state.oldChat.map(chat => {
+                                                        return (
+                                                        <div class="output"> {chat}
+                                                        </div>
+                                                        )
+                                                    })}
+                                
                                                     <div id="feedback"> </div>
                                                 </div>
 
