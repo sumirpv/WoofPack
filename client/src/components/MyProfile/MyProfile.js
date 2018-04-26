@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import RatingCoins from "./Rating-Coins";
 import PersonalData from "./PersonalData";
 import DogData from "./DogData";
-import AddDogBtn from "./AddDogBtn";
 import API from '../../utils/API.js'
 import AddDogModal from "../AddDogModal";
 

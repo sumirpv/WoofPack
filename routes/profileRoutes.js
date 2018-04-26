@@ -57,7 +57,7 @@ module.exports = function (app) {
     // add dog to DB
     app.post("/api/dog", multer(multerConf).single("avatar"), function(req, res) {
         console.log("app.post('api/dog')", req.body);
-
+        
         db.Dog.create({
             dogName : req.body.dogName,
             breed : req.body.breed,
