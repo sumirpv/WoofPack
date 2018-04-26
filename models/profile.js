@@ -35,10 +35,10 @@ const profileSchema = new Schema({
   rating: { type: String},
   token: {type: String},
   dogCoin: { type: String },
-  dog : {
+  dog : [{
     type: Schema.Types.ObjectId,
     ref: "Dog"
-  },
+  }],
   message: {
     type: Schema.Types.ObjectId,
     ref: "Message"
