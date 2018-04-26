@@ -44,7 +44,7 @@ module.exports = function (app) {
             username: req.body.username, 
             email: req.body.email,
             password: req.body.password,
-            picture: req.file.path})
+            picture: req.file.path.replace('client/public/',"")})
             .then(function (data) {
 
                 console.log(data._id)
