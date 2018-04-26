@@ -41,7 +41,7 @@ export default {
         return axios.post('/api/message', username1, usernam2, body);
     },
 
-    addPack: function (userid, newid) {
-        return axios.put('/api/addpack/'+userid);
+    addPack: function (username2) {
+        return axios.put('/api/addpack/', username2);
     }
 }
