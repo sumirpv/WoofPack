@@ -62,8 +62,9 @@ class AddDogModal extends Component {
     };
 
     render() {
+
         return (
-            <div class="modal" tabIndex="-1" role="dialog">
+            <div class="modal" tabIndex="-1" role="dialog" id="dog-modal">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -118,7 +119,6 @@ class AddDogModal extends Component {
                     </div>
                 </div>
             </div>
-
         )
     };
 

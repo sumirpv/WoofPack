@@ -1,4 +1,4 @@
-.modal {
+#dog-modal {
     display: block;
-    /* opacity: 1.0; */
+    opacity: 1;
 }

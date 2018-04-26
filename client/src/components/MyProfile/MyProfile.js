@@ -69,22 +69,22 @@ class MyProfile extends Component {
         return(
             <div>
                 <RatingCoins />
-                {/* {this.initAddDogModal()} */}
-                {/* <PersonalData userData={this.createUserData} 
+                {this.initAddDogModal()}
+                <PersonalData userData={this.createUserData} 
                     about={this.state.user.about}
                     address={this.state.user.address}
                     email={this.state.user.email}
                     firstname={this.state.user.firstname}
                     lastname={this.state.user.lastname}
                     phone={this.state.user.phone}
-                    picture={this.state.user.picture}/> */}
+                    picture={this.state.user.picture}/>
                 {/* <DogData createDog={this.createDog}/> */}
                 {/* <AddDogBtn dogData={this.addDog} /> */}
                 <div>
-                    <button onClick={this.clickAddDogModal} > Add to Pack </button>
+                    <button className="waves-effect waves-light btn" onClick={this.clickAddDogModal} ><i class="material-icons left">add_circle</i> Add to Pack </button>
                 </div>
                 <div>
-                    {this.initAddDogModal()}
+                    {/* {this.initAddDogModal()} */}
                 </div>
             </div>
         )
