@@ -32,16 +32,16 @@ handleLogin = () => {
         alert("enter all fields")
     }
     else {
-         API.userLogin(user).then((result) =>{
-            if (result.data === true){
-                Redirect('/profile'); 
-            }
-            if (result.data === false) {
-                alert("wrong creds"); 
-            }
-            console.log(result.data)
-        })
-    }
+        API.userLogin(user).then((result) =>{
+           if (result.data === true){
+               Redirect('/profile'); 
+           }
+           if (result.data === false) {
+               alert("wrong creds"); 
+           }
+           console.log(result.data)
+       })
+   }
   
 }
 

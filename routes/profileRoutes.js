@@ -2,6 +2,7 @@ var path = require("path");
 var db = require("../models")
 var multer = require('multer');
 const uuidv4 = require('uuid/v4');
+var ObjectId = require('mongodb').ObjectId; 
 //var router = express.Router();
 
 var multerConf = {
@@ -67,35 +68,34 @@ module.exports = function (app) {
     })
 // check login
     app.post("/api/login", function (req, res) {
-    console.log(req.body)
-    db.Profile.find({username: req.body.username}).then(function (data) {
-        console.log(data);
-                        if (data.length === 0){
-                            console.log("yay");
-                            res.send(false)
-                        }
-                        else if (data[0].password === req.body.password && data[0].username === req.body.username) {
-                            req.session.user = data;
-                            res.send(true)
-                        }
-                        else {
-                            res.send(false)
-                        }
-                        })
-});
-// app.get("/api/login", function (req, res) {
-//     console.log(req.session.user)
-//     db.Owner.find({_id: ObjectId(req.session.user)}).then(function (data) {
-//         if (data) {
-//             console.log("loged in");
-//             req.session.user = data.dataValues;
-//             //res.redirect("/profile");
-//             res.json(data.dataValues);
+        db.Profile.find({username: req.body.username}).then(function (data) {
+            console.log(data);
+            if (data.length === 0){
+                console.log("yay");
+                res.send(false)
+            }
+            else if (data[0].password === req.body.password && data[0].username === req.body.username) {
+                req.session.user = data[0]._id;
+                res.send(true)
+            }
+            else {
+                res.send(false)
+            }
+        })
+    });
+// get user data.
+    app.get("/api/user",function (req, res){
+        console.log("this is hit")
+        console.log(req.session.user);
+        var id = req.session.user
+        var o_id = new ObjectId(id);
+        db.Profile.findOne({_id: o_id}).then(function(result){
+            console.log(result); 
+            res.send(result);
+        })
+    })
 
-//         } else {
-//             res.send("you suck")
-//         }
-
+<<<<<<< HEAD
 //     }).catch(function (err) {
 //         res.json(err);
 //     });
@@ -113,5 +113,6 @@ module.exports = function (app) {
             res.json(err);
         })
     })
+=======
+>>>>>>> c3211b16811514e8ac5d61491f81fa3745035561
 }
-

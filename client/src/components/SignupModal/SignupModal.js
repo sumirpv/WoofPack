@@ -59,7 +59,7 @@ class Modal extends Component {
 
         API.createUser(formData).then((result) => {
             console.log(result)  
-            Redirect('/profile'); 
+             Redirect('/profile'); 
         });
     };
 
