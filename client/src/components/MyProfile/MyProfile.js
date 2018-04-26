@@ -80,7 +80,7 @@ class MyProfile extends Component {
                 {/* <DogData createDog={this.createDog}/> */}
                 {/* <AddDogBtn dogData={this.addDog} /> */}
                 <div>
-                    <button className="waves-effect waves-light btn" onClick={this.clickAddDogModal} ><i class="material-icons left">add_circle</i> Add to Pack </button>
+                    <button className="waves-effect waves-light btn" onClick={this.clickAddDogModal} ><i class="material-icons left">add_circle</i> Add your Dog </button>
                 </div>
                 <div>
                     {/* {this.initAddDogModal()} */}

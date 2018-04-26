@@ -57,7 +57,7 @@ module.exports = function (app) {
     // add dog to DB
     app.post("/api/dog", multer(multerConf).single("avatar"), function(req, res) {
         console.log("app.post('api/dog')", req.body);
-        
+        console.log("req.sess...", req.session.user);
         db.Dog.create({
             dogName : req.body.dogName,
             breed : req.body.breed,
@@ -67,8 +67,9 @@ module.exports = function (app) {
             aboutDog : req.body.aboutDog,
             picture : req.file.path
         }).then(function(data) {
-            console.log(data._id);
-            // req.session.user = data._id;
+            return db.Profile.findOneAndUpdate({ 
+                id : req.session.user
+                });
             res.json(data);
         }).catch(function(err) {
             res.json(err);
