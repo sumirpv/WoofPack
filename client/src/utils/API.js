@@ -39,5 +39,9 @@ export default {
 
     addChat: function(username1, usernam2, body) {
         return axios.post('/api/message', username1, usernam2, body);
+    },
+
+    addPack: function (userid, newid) {
+        return axios.put('/api/addpack/'+userid);
     }
 }

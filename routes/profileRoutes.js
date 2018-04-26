@@ -2,7 +2,7 @@ var path = require("path");
 var db = require("../models")
 var multer = require('multer');
 const uuidv4 = require('uuid/v4');
-var ObjectId = require('mongodb').ObjectId; 
+var ObjectId = require('mongodb').ObjectId;
 //var router = express.Router();
 
 var multerConf = {
@@ -30,7 +30,7 @@ var multerConf = {
 }
 
 module.exports = function (app) {
-// create new user
+    // create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
         //console.log(req.body);
         db.Profile.create({
@@ -38,18 +38,19 @@ module.exports = function (app) {
             lastname: req.body.lastname,
             address: req.body.address,
             phone: req.body.phone,
-            about: req.body.about, 
-            username: req.body.about, 
-            username: req.body.username, 
+            about: req.body.about,
+            username: req.body.about,
+            username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            picture: req.file.path.replace('client/public/',"")})
+            picture: req.file.path.replace('client/public/', "")
+        })
             .then(function (data) {
                 req.session.user = {
-                    auth: true, 
-                    id: data._id, 
+                    auth: true,
+                    id: data._id,
                     firstname: data.firstname,
-                    email: data.email, 
+                    email: data.email,
                     picture: data.picture,
                     username: data.username
                 };
@@ -76,27 +77,27 @@ module.exports = function (app) {
             return db.Profile.findOneAndUpdate({ 
                 _id : req.session.user.id }, { $push : { dog : data._id }}, { new : true });
             res.json(data);
-        }).catch(function(err) {
+        }).catch(function (err) {
             res.json(err);
         });
     });
 
-// check if session 
-    app.get("/api/session", function(req, res){
+    // check if session 
+    app.get("/api/session", function (req, res) {
         //console.log("this is check session",req.session.user)
-        if (req.session.user){
+        if (req.session.user) {
             //console.log("true")
-            res.send(req.session.user); 
+            res.send(req.session.user);
         }
-        if (!req.session.user){
+        if (!req.session.user) {
             //console.log("false")
-            res.send(false) 
+            res.send(false)
         }
-        
+
     })
-// check login
+    // check login
     app.post("/api/login", function (req, res) {
-        db.Profile.find({username: req.body.username}).then(function (data) {
+        db.Profile.find({ username: req.body.username }).then(function (data) {
             //console.log(data);
             if (data.length === 0){
                 //console.log("yay");
@@ -107,7 +108,7 @@ module.exports = function (app) {
                     auth: true,
                     id: data[0]._id,
                     firstname: data[0].firstname,
-                    email: data[0].email, 
+                    email: data[0].email,
                     picture: data[0].picture,
                     username: data[0].username
                 }
@@ -131,13 +132,23 @@ module.exports = function (app) {
         })
     })
 
-//getting all user data for the pack
-    app.get("/api/alluser", function (req, res){
+    //getting all user data for the pack
+    app.get("/api/alluser", function (req, res) {
         console.log("alluserdata", req.body);
-        db.Profile.find({}).then(function(data){
+        db.Profile.find({}).then(function (data) {
             console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
+    });
+
+
+    //Add Pack Member
+    app.put("/api/addpack/:userid", function (req, res){
+        console.log('this is body for adding a pack member', req.body);
+
+        db.Profile.findOneAndUpdate({
+            id: req.params.userid
+        })
     })
 
 }

@@ -3,6 +3,7 @@ import { Row, Col } from "../Grid";
 import Button from "../Button";
 import ChatModal from "../ChatModal"
 import "./Card.css";
+import API from "../../utils/API.js";
 
 class Card extends Component {
     constructor(props) {
@@ -10,9 +11,26 @@ class Card extends Component {
     }
 
     state = {
-        chatOpen: false
+        chatOpen: false,
+        userName1: "",
+        userName2: ""
     }
 
+    componentDidMount () {
+        API.checkIfsession().then(res =>{
+            console.log("this is res.data when check session" , res.data); 
+            if (res.data.auth === true){
+            this.setState({session: true, 
+              userName1: res.data.username, 
+            })
+            }
+          });
+
+          this.setState({
+              userName2: this.props.username
+          })
+        
+    }
 
     clickChatModal = () => {
 
@@ -36,7 +54,14 @@ class Card extends Component {
         this.setState({
             chatOpen: false
         })
-    }
+    };
+
+    addPack = () => {
+        console.log('add pack clicked');
+        API.addPack( this.state.userName1, this.state.userName2 )
+    };
+
+
 
     render(){
         return(
@@ -105,7 +130,8 @@ class Card extends Component {
                             </div>
                         </div>
                         <button onClick={this.clickChatModal} > Send a Chat </button>
-                        <Button/>
+                        <Button onClick={this.addPack}/>
+                        
                     </Col>
                 </Row>
             </div>
