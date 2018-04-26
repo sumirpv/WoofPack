@@ -17,7 +17,8 @@ class ChatModal extends React.Component {
         draftChat: "",
         oldChat: [],
         userName1: "User1",
-        userName2: "Johnny Glasses"
+        userName2: "Johnny Glasses",
+        otherUsertyping: ""
     }
 
     componentDidMount() {
@@ -36,6 +37,15 @@ class ChatModal extends React.Component {
 
         //Whenever there is typing, send this info to the server. 
         socket.emit("typing", { username: this.state.userName1 });
+
+        //When typing feedback comes from server, display this to user
+        socket.on("typing",  (data) => {
+            //add this info to state typing
+            this.setState({
+                otherUsertyping: `${data.username} is typing`
+            })
+            // feedback.innerHTML = `<p> <em>${data.username} </em> is typing`
+        });
     };
 
     handleInputChange = (event) => {
@@ -56,9 +66,7 @@ class ChatModal extends React.Component {
         feedback.innerHTML = ' ';
         room = 'abc123';
 
-        socket.on("typing", function (data) {
-            feedback.innerHTML = `<p> <em>${data.username} </em> is typing`
-        });
+
 
         this.addChatDB(this.state.userName1, this.state.userName2, message.value)
 
