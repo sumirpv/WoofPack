@@ -142,13 +142,16 @@ module.exports = function (app) {
     });
 
 
-    //Add Pack Member
-    app.put("/api/addpack/:userid", function (req, res){
-        console.log('this is body for adding a pack member', req.body);
-
-        db.Profile.findOneAndUpdate({
-            id: req.params.userid
-        })
+    //Add Pack Member   
+    app.put("/api/addpack/", function (req, res){
+        console.log('this is body for adding a pack member', req.body.username);
+        db.Profile.findOneAndUpdate({ 
+            _id : req.session.user.id}, { $push : { myPack : req.body.username }}, { new : true })
+            .then(data => {
+                res.json(data);
+            })
+            
     })
 
-}
+    
+};

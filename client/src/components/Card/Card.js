@@ -58,7 +58,11 @@ class Card extends Component {
 
     addPack = () => {
         console.log('add pack clicked');
-        API.addPack( this.state.userName1, this.state.userName2 )
+        var usernameObj = {username: this.state.userName2};
+        
+        API.addPack(  usernameObj ).then(res => {
+            console.log('added pack member');
+        })
     };
 
 
