@@ -9,7 +9,7 @@ var btn;
 var output;
 var feedback;
 var username;
-var room = 'abc123'
+var room = Math.random();
 
 
 class ChatModal extends React.Component {
@@ -31,8 +31,6 @@ class ChatModal extends React.Component {
               }
             })
           
-
-        console.log('chat component mounted');
 
         //Listen for incoming messages from server
         socket.on('chat', (data) => {
