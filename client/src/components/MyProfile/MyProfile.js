@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import RatingCoins from "./Rating-Coins";
 import PersonalData from "./PersonalData";
 import DogData from "./DogData";
+import AddDogBtn from "./AddDogBtn";
 import API from '../../utils/API.js'
+import AddDogModal from "../AddDogModal";
 
 class MyProfile extends Component {
-state = {
-    user: ""
-}
+    state = {
+        user: "",
+        addDogOpen: false
+    };
+
     componentDidMount() {
         this.loadUser();
-      }
+    };
     
     loadUser = () => {
         API.getUserData().then((result) =>{
@@ -18,19 +22,53 @@ state = {
             console.log(this.state.user); 
         })
            
-      };
+    };
     
     createUserData (){
         console.log("cliiick")
-    }
+    };
+
     createDog (){
         console.log("cliiick")
-    }
+    };
+
+    // addDog () {
+    //     console.log("cliiick");
+    // }
+
+    clickAddDogModal = () => {
+        console.log(this.state.addDogOpen);
+        console.log("add dog btn clicked");
+        this.setState({
+            addDogOpen: true
+        });
+        // console.log(this.state.addDogOpen);
+    };
     
+    initAddDogModal = () => {
+        // console.log("clicked");
+        // bring up the modal here
+        console.log("initAdd func was hit");
+        console.log(this.state.addDogOpen);
+        if (this.state.addDogOpen === true) {
+            return <AddDogModal
+                header={"Add Dog to Your Pack"}
+                closeModal = { this.closeModal}
+            />
+        };
+    };
+
+    closeModal = () => {
+        console.log("close modal");
+        this.setState({
+            addDogOpen : false
+        });
+    };
 
     render(){
         return(
             <div>
+                {/* {this.initAddDogModal()} */}
                 <RatingCoins />
                 <PersonalData userData={this.createUserData} 
                     about={this.state.user.about}
@@ -40,7 +78,13 @@ state = {
                     lastname={this.state.user.lastname}
                     phone={this.state.user.phone}
                     picture={this.state.user.picture}/>
-                <DogData createDog={this.createDog}/>
+                {/* <DogData createDog={this.createDog}/> */}
+                {/* <AddDogBtn dogData={this.addDog} /> */}
+                <div>
+                    <button onClick={this.clickAddDogModal} > Add to Pack </button>
+                </div>
+
+                {this.initAddDogModal()}
             </div>
         )
     }
