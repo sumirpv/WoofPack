@@ -24,6 +24,7 @@ class Card extends Component {
    openChatModal = () => {
         if (this.state.chatOpen === true) {
             return <ChatModal
+                username2={this.props.username}
                 header={"Chat"}
                 closeModal={this.closeModal}
             />
