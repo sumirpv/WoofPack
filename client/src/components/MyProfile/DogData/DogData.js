@@ -29,11 +29,21 @@ const DogData = (props) => {
                                 {props.age}
                             </span><br/>
                             <span className="black-text">
-                                <strong> Size:   </strong>
-                                {props.size}
+                                <strong> Temperment:   </strong>
+                                {props.temperment}
                             </span><br/>
-
                         </div>
+                    </div>
+                    <div className="row valign-wrapper">
+                    <div className="col s2">
+                    </div>
+                    <div className="col s10">
+                    <span className="black-text">
+                                <strong> About Me:   </strong>
+                                {props.about}
+                            </span><br/>
+                    </div>
+
                     </div>
                 </div>
             </div>
