@@ -17,4 +17,5 @@ h6 {
 
 .modal {
     position: absolute;
+    z-index: 1;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import API from "../../utils/API.js"
+import API from "../../utils/API.js";
+import "./Login.css";
 
 function Redirect(where){
     window.location = where

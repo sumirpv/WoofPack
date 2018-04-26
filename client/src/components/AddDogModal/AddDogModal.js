@@ -56,7 +56,6 @@ class AddDogModal extends Component {
         formData.append("token", token);
 
         API.createDog(formData).then((result) => {
-            console.log(result);
             Redirect("/profile");
         });
     };
