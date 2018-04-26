@@ -14,7 +14,10 @@ import "./App.css";
 
 class App extends Component {
    state = {
-        session: false
+        session: false,
+        firstname: "", 
+        email: "", 
+        picture: ""
 
     };
 
@@ -24,8 +27,12 @@ class App extends Component {
 
   isLoggedIn = () => {
     API.checkIfsession().then(res =>{
-      if (res.data === true){
-      this.setState({session: true})
+      console.log("this is res.data when check session" , res.data); 
+      if (res.data.auth === true){
+      this.setState({session: true, 
+        firstname: res.data.firstname, 
+        email: res.data.email, 
+        picture: res.data.picture})
       }
     })
   }
@@ -34,7 +41,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          <Nav firstname={this.state.firstname}
+          email={this.state.email}
+          picture= {this.state.picture}/>
           <Wrapper >
             <Switch>
               <Route exact path="/" component={Home} />

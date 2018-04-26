@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "./Nav.css";
 
-const Nav = () => {
+const Nav = (props) => {
     return (
         <div>
             <ul id="slide-out" className="sidenav sidenav-fixed">
@@ -11,9 +11,9 @@ const Nav = () => {
                         <div className="background">
                             <img src="https://pics.me.me/woof-woof-give-me-seed-lol-7523100.png" alt="hello" />
                         </div>
-                        <a href="#!user"><img className="circle" src="#" alt="PFP" /></a>
-                        <a href="#!name"><span className="white-text name">John Doe</span></a>
-                        <a href="#!email"><span className="white-text email">jdandturk@gmail.com</span></a>
+                        <a href="#!user"><img className="circle" src={props.picture} alt="PFP" /></a>
+                        <a href="#!name"><span className="white-text name">{props.firstname}</span></a>
+                        <a href="#!email"><span className="white-text email">{props.email}</span></a>
                     </div>
                 </li>
                 <li>

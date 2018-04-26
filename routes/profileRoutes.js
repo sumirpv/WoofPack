@@ -32,8 +32,7 @@ var multerConf = {
 module.exports = function (app) {
 // create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
-        console.log(req.body);
-
+        //console.log(req.body);
         db.Profile.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -46,8 +45,14 @@ module.exports = function (app) {
             password: req.body.password,
             picture: req.file.path})
             .then(function (data) {
-                console.log(data._id)
-                req.session.user = data._id;
+                req.session.user = {
+                    auth: true, 
+                    id: data._id, 
+                    firstname: data.firstname,
+                    email: data.email, 
+                    picture: data.picture
+                };
+                //console.log("this is req.session.user on login", req.session.user)
                 res.json(data);
             }).catch(function (err) {
                 res.json(err);
@@ -55,10 +60,10 @@ module.exports = function (app) {
     })
 // check if session 
     app.get("/api/session", function(req, res){
-        //console.log(req.session.user)
+        //console.log("this is check session",req.session.user)
         if (req.session.user){
             //console.log("true")
-            res.send(true); 
+            res.send(req.session.user); 
         }
         if (!req.session.user){
             //console.log("false")
@@ -69,13 +74,20 @@ module.exports = function (app) {
 // check login
     app.post("/api/login", function (req, res) {
         db.Profile.find({username: req.body.username}).then(function (data) {
-            console.log(data);
+            //console.log(data);
             if (data.length === 0){
                 console.log("yay");
                 res.send(false)
             }
             else if (data[0].password === req.body.password && data[0].username === req.body.username) {
-                req.session.user = data[0]._id;
+                req.session.user = {
+                    auth: true,
+                    id: data[0]._id,
+                    firstname: data[0].firstname,
+                    email: data[0].email, 
+                    picture: data[0].picture
+                }
+                console.log("when login this is session", req.session.user)
                 res.send(true)
             }
             else {
@@ -87,10 +99,10 @@ module.exports = function (app) {
     app.get("/api/user",function (req, res){
         console.log("this is hit")
         console.log(req.session.user);
-        var id = req.session.user
+        var id = req.session.user.id
         var o_id = new ObjectId(id);
         db.Profile.findOne({_id: o_id}).then(function(result){
-            console.log(result); 
+            //console.log(result); 
             res.send(result);
         })
     })
