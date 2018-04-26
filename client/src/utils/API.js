@@ -31,5 +31,9 @@ export default {
     },
     userLogin: function(user){
         return axios.post("/api/login", user); 
+    },
+
+    addChat: function(username1, usernam2, body) {
+        return axios.post('/api/message', username1, usernam2, body);
     }
 }

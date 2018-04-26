@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 const messageSchema = new Schema({
 
     userName1: { type: String,
-        unique :true,
+        
         trim: true,
         required: "Username is Required" 
        },
        userName2: { type: String,
-        unique :true,
+       
         trim: true,
-        required: "Username is Required" 
+        // required: "Username is Required" 
        },
     body: String
 

@@ -100,5 +100,18 @@ module.exports = function (app) {
 //         res.json(err);
 //     });
 // });
+
+    app.post('/api/message', function (req, res){
+        console.log(req.body);
+
+        db.Message.create(req.body).then(data => {
+            console.log(`message was added to db successfully`);
+            res.json(data);
+        })
+        .catch(err => {
+            console.log(err);
+            res.json(err);
+        })
+    })
 }
 

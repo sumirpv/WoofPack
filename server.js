@@ -45,18 +45,34 @@ require("./routes/profileRoutes.js")(app);
 
 var server = app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
+  
 });
 
 //Socket set up on server
 const io = socket(server);
-
 io.on('connection', function (socket) {
-  console.log('made socket connection', socket.id)
+  console.log('made socket connection', socket.id);
 
+  socket.on("room", function(room){
+    console.log("room", room);
+    // io.sockets.emit("chat", data)
+    socket.join(room);
+
+    socket.on("message", function(data) {
+      //console.log(data);
+      io.sockets.in(room).emit('message', {message: data.message,username:data.username});
+      addChat(data.message, data.username);
+    });
+    socket.on("typing",function(data){
+      socket.broadcast.in(room).emit("typing",{username:data.username})
+    });
+  });
+  
   socket.on('chat', function (data) {
     io.sockets.emit('chat', data)
     console.log(data);
   });
+
   socket.on('typing', function(data){
     socket.broadcast.emit('typing',data);
 })
