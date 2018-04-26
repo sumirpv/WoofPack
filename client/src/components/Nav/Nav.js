@@ -32,7 +32,7 @@ const Nav = () => {
                     </Link>
                 </li>
             </ul>
-            <a data-target="slide-out" className="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
         </div>
     )
 }

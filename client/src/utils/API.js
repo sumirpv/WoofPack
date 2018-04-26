@@ -13,6 +13,10 @@ export default {
         return axios.put('/api/user', data)
     },
 
+    getAllUser:function(){
+        return axios.get('/api/alluser')
+    },
+
     getUserData: function () {
         return axios.get('/api/user')
     },

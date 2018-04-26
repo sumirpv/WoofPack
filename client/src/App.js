@@ -39,7 +39,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/profile" render={() => (this.state.session === true ? <Profile/> : <Home/>)} />
-              <Route exact path="/findpack" render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/>
+              <Route exact path="/findpack" 
+                render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/> 
               <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack /> : <Home/>)}/>
             </Switch>
           </Wrapper>
