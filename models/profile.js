@@ -39,10 +39,13 @@ const profileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Dog"
   }],
-  message: {
+  message: [{
     type: Schema.Types.ObjectId,
     ref: "Message"
-  }
+  }], 
+  myPack: [{
+    type: String
+  }]
 
 
 });
