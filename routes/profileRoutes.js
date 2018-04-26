@@ -68,30 +68,30 @@ module.exports = function (app) {
     })
 // check login
     app.post("/api/login", function (req, res) {
-    db.Profile.find({username: req.body.username}).then(function (data) {
-                        if (data.length === 0){
-                            console.log("yay");
-                            res.send(false)
-                        }
-                        else if (data[0].password === req.body.password && data[0].username === req.body.username) {
-                            req.session.user = data;
-                            res.send(true)
-                        }
-                        else {
-                            res.send(false)
-                        }
-                        })
-});
+        db.Profile.find({username: req.body.username}).then(function (data) {
+            console.log(data);
+            if (data.length === 0){
+                console.log("yay");
+                res.send(false)
+            }
+            else if (data[0].password === req.body.password && data[0].username === req.body.username) {
+                req.session.user = data[0]._id;
+                res.send(true)
+            }
+            else {
+                res.send(false)
+            }
+        })
+    });
 // get user data.
     app.get("/api/user",function (req, res){
         console.log("this is hit")
         console.log(req.session.user);
-        var id = req.session.user[0]._id
+        var id = req.session.user
         var o_id = new ObjectId(id);
-        db.Profile.findOne({_id: o_id}).then(function(data){
-            console.log(data); 
-            JSON.stringify(data)
-            res.send(data); 
+        db.Profile.findOne({_id: o_id}).then(function(result){
+            console.log(result); 
+            res.send(result);
         })
     })
 

@@ -14,12 +14,9 @@ state = {
     
     loadUser = () => {
         API.getUserData().then((result) =>{
-            console.log("this is the res.data " + result); 
-            this.setState({user: result})
-             
+            this.setState({user: result.data}) 
+            console.log(this.state.user); 
         })
-           
-         console.log("this is state" + this.state.user);
            
       };
     
@@ -35,7 +32,14 @@ state = {
         return(
             <div>
                 <RatingCoins />
-                <PersonalData userData={this.createUserData}/>
+                <PersonalData userData={this.createUserData} 
+                    about={this.state.user.about}
+                    address={this.state.user.address}
+                    email={this.state.user.email}
+                    firstname={this.state.user.firstname}
+                    lastname={this.state.user.lastname}
+                    phone={this.state.user.phone}
+                    picture={this.state.user.picture}/>
                 <DogData createDog={this.createDog}/>
             </div>
         )
