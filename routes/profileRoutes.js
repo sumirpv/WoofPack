@@ -69,10 +69,10 @@ module.exports = function (app) {
             temperment : req.body.temperment,
             size : req.body.size,
             aboutDog : req.body.aboutDog,
-            picture : req.file.path
+            picture : req.file.path.replace('client/public/',"")
         }).then(function(data) {
-            console.log("dog id" + data._id);
-            console.log("prof id" + req.session.user.id);
+            //console.log("dog id" + data._id);
+            //console.log("prof id" + req.session.user.id);
             return db.Profile.findOneAndUpdate({ 
                 _id : req.session.user.id }, { $push : { dog : data._id }}, { new : true });
             res.json(data);
@@ -99,7 +99,7 @@ module.exports = function (app) {
         db.Profile.find({username: req.body.username}).then(function (data) {
             //console.log(data);
             if (data.length === 0){
-                console.log("yay");
+                //console.log("yay");
                 res.send(false)
             }
             else if (data[0].password === req.body.password && data[0].username === req.body.username) {
@@ -111,7 +111,7 @@ module.exports = function (app) {
                     picture: data[0].picture,
                     username: data[0].username
                 }
-                console.log("when login this is session", req.session.user)
+                //console.log("when login this is session", req.session.user)
                 res.send(true)
             }
             else {
@@ -121,11 +121,11 @@ module.exports = function (app) {
     });
 // get user data.
     app.get("/api/user",function (req, res){
-        console.log("this is hit")
-        console.log(req.session.user);
+       // console.log("this is hit")
+        //console.log(req.session.user);
         var id = req.session.user.id
         var o_id = new ObjectId(id);
-        db.Profile.findOne({_id: o_id}).then(function(result){
+        db.Profile.findOne({_id: o_id}).populate("dog").then(function(result){
             //console.log(result); 
             res.send(result);
         })

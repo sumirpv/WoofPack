@@ -40,7 +40,7 @@ handleLogin = () => {
            if (result.data === false) {
                alert("wrong creds"); 
            }
-           console.log(result.data)
+           //console.log(result.data)
        })
    }
   
