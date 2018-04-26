@@ -21,8 +21,8 @@ export default {
         return axios.get('/api/user')
     },
 
-    createDog: function (dogdata) {
-        return axios.post('/api/dog', dogdata)
+    createDog: function (formData) {
+        return axios.post('/api/dog', formData)
     },
     deleteDog: function (id) {
         return axios.delete('/api/dog/'+id)

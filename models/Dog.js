@@ -13,7 +13,7 @@ const dogSchema = new Schema({
   age: { type: String,
     //  required: true 
     },
-  temperament: { type: Number, 
+  temperment: { type: String, 
     // required: true 
   },
   aboutDog: { type: String,
@@ -22,7 +22,7 @@ const dogSchema = new Schema({
   size: { type: String, 
     // required: true 
   },
-  file: { type: String, 
+  picture: { type: String, 
     // required: true 
   }
 });
