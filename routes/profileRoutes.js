@@ -95,24 +95,4 @@ module.exports = function (app) {
         })
     })
 
-<<<<<<< HEAD
-//     }).catch(function (err) {
-//         res.json(err);
-//     });
-// });
-
-    app.post('/api/message', function (req, res){
-        console.log(req.body);
-
-        db.Message.create(req.body).then(data => {
-            console.log(`message was added to db successfully`);
-            res.json(data);
-        })
-        .catch(err => {
-            console.log(err);
-            res.json(err);
-        })
-    })
-=======
->>>>>>> c3211b16811514e8ac5d61491f81fa3745035561
 }
