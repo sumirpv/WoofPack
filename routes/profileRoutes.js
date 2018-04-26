@@ -8,7 +8,7 @@ var ObjectId = require('mongodb').ObjectId;
 var multerConf = {
     storage: multer.diskStorage({
         destination: function (req, file, next) {
-            next(null, './uploads')
+            next(null, './client/public/uploads')
         },
         filename: function (req, file, next) {
             console.log(file);
@@ -32,7 +32,7 @@ var multerConf = {
 module.exports = function (app) {
 // create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
-        console.log(req.body);
+        console.log("the path is ",req.file.path);
 
         db.Profile.create({
             firstname: req.body.firstname,
@@ -46,6 +46,7 @@ module.exports = function (app) {
             password: req.body.password,
             picture: req.file.path})
             .then(function (data) {
+
                 console.log(data._id)
                 req.session.user = data._id;
                 res.json(data);
@@ -93,6 +94,15 @@ module.exports = function (app) {
             console.log(result); 
             res.send(result);
         })
+    })
+
+//getting all user data for the pack
+    app.get("/api/alluser", function (req, res){
+        console.log("alluserdata", req.body);
+        db.Profile.find({}).then(function(data){
+            console.log(data);
+            res.send(data);
+        }).catch(err => res.status(422).json(err));
     })
 
 }
