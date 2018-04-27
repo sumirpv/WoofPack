@@ -4,6 +4,8 @@ import Button from "../Button";
 import ChatModal from "../ChatModal"
 import "./Card.css";
 import API from "../../utils/API.js";
+import Ratings from "./Ratings/Ratings.js"
+
 
 class Card extends Component {
     constructor(props) {
@@ -99,7 +101,6 @@ class Card extends Component {
                                 <br/>
                                 <span><b>Address: </b>{this.props.address}</span>
                                 <br/>
-                                <span><b>Rating: </b>{this.props.rating}</span>
                                 <br/>
                                 <span><b>Dog Coin: </b>{this.props.dogCoin}</span>
                             </div>
@@ -137,6 +138,8 @@ class Card extends Component {
                             </div>
                         </div>
                         <button onClick={this.clickChatModal} > Send a Chat </button>
+                        <Ratings id={this.props._id}/>
+
                         <Button onClick={this.addPack}/>
                         
                     </Col>
