@@ -8,13 +8,15 @@ import API from "../../utils/API.js";
 class Card extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            chatOpen: false,
+            userName1: "",
+            userName2: ""
+        }
     }
 
-    state = {
-        chatOpen: false,
-        userName1: "",
-        userName2: ""
-    }
+
 
     componentDidMount () {
         API.checkIfsession().then(res =>{
@@ -27,7 +29,7 @@ class Card extends Component {
           });
 
           this.setState({
-              userName2: this.props.username
+              userName2: this.props._id
           })
         
     }
@@ -68,6 +70,7 @@ class Card extends Component {
 
 
     render(){
+        console.log(this.props);
         return(
     <Row>
         <Col size="md-6">
