@@ -57,8 +57,6 @@ class App extends Component {
               <Route exact path="/findpack" 
                 render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/> 
               <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack username={this.state.username} /> : <Home/>)}/>
-              {/* <Route exact path="/api/logout" component={Logout}/> */}
-              {/* <Route exact path="/logout" component={Logout} /> */}
               <Route component={NoMatch} />
             </Switch>
           </Wrapper>

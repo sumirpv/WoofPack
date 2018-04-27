@@ -176,7 +176,6 @@ module.exports = function (app) {
 
     // Logout route that ends user session and redirects back to home pg
     app.get("/api/logout", function (req, res) {
-        console.log("reached backend")
         req.session.destroy(function(err) {
             if (err) {
                 console.log(err)
@@ -185,6 +184,5 @@ module.exports = function (app) {
             };
         });
     })
-
     
 };

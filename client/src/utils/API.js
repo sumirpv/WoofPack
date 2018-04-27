@@ -54,8 +54,7 @@ export default {
     },
 
     logout: function () {
-        console.log("logout triggered")
-        return axios.get('/api/logout')
+        return axios.get('/api/logout');
     }
 
 }

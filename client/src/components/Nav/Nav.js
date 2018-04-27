@@ -13,14 +13,9 @@ constructor (props) {
 }
 
     clickLogout = () => { 
-        console.log("logout clicked");
-        // Redirect("/api/logout");
         API.logout()
         .then(res => {
-            // console.log("res.data" + res.data);
             Redirect('/');
-            // this.props.history.push("/");
-            
         });
 
     }
@@ -57,11 +52,6 @@ constructor (props) {
                     <li>
                         <button onClick={this.clickLogout} > Logout </button>
                     </li>
-                    {/* <li>
-                        <Link to="/api/logout">
-                            Logout 
-                        </Link>
-                    </li> */}
                 </ul>
                 <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
             </div>
