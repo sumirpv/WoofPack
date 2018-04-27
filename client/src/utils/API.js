@@ -51,5 +51,8 @@ export default {
 
     getPackInfo: function (username) {
         return axios.post('/api/mypack/info', username)
+    },
+    sendCoins: function (twoWhoAndAmount){
+        return axios.post("/api/sendcoin", twoWhoAndAmount )
     }
 }

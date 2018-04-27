@@ -34,7 +34,7 @@ const profileSchema = new Schema({
   picture: { type: String },
   rating: { type: String},
   token: {type: String},
-  dogCoin: { type: String },
+  dogCoin: { type: Number},
   dog : [{
     type: Schema.Types.ObjectId,
     ref: "Dog"

@@ -137,7 +137,7 @@ class Card extends Component {
                         </div>
                         <button onClick={this.clickChatModal} > Send a Chat </button>
                         <Button onClick={this.addPack}/>
-                       <SendCoin />
+                       <SendCoin id={this.props._id}/>
                     </Col>
                 </Roww>
             </div>

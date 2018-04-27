@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, Row } from "react-materialize"
 import $ from "jquery"
+import API from '../../../utils/API.js'
 
 
 class SendCoin extends Component {
@@ -8,7 +9,8 @@ class SendCoin extends Component {
         super(props); 
     }
     state ={
-        coinValue: 0
+        coinValue: 0,
+        reciver: this.props.id
     }
 
     handleInputChange = event => {
@@ -20,7 +22,11 @@ class SendCoin extends Component {
     };
 
     sendData = event => {
+        API.sendCoins(this.state).then(result => {
+
+        })
         console.log(this.state.coinValue); 
+        console.log(this.state.reciver)
     }
 
 
