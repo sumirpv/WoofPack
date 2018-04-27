@@ -1,10 +1,10 @@
 import React from "react";
-import { Row, Col } from "../../components/Grid";
+import { Roww, Col } from "../../components/Grid";
 import Wrapper from "../../components/Wrapper";
 
 const NoMatch = () => (
     <Wrapper>
-        <Row>
+        <Roww>
             <Col size="md-12">
                 <h1>404 Page Not Found</h1>
                 <h1>
@@ -13,7 +13,7 @@ const NoMatch = () => (
                     </span>
                 </h1>
             </Col>
-        </Row>
+        </Roww>
     </Wrapper>
 );
 
