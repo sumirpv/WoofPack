@@ -2,9 +2,12 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
-  <footer className="footer">
-    <div className="bottom">
-      Clicky Game! <img alt="react" src="assets/images/react.svg" />
+  <footer>
+    <div class="footer-copyright" id="footer">
+      <div>
+        © 2014 Copyright Text
+        {/* <a class="grey-text text-lighten-4 right" href="#!">More Links</a> */}
+      </div>
     </div>
   </footer>
 );

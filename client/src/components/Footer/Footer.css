@@ -1,25 +1,14 @@
-.footer {
+#footer {
   background: 
-  #6956AF;
-  height: 100px;
-  position: relative;
-  color: white;
-  overflow: auto;
-}
-
-.footer > .bottom {
-  position: absolute;
-  bottom: 0;
+  #ee6e73;
+  height: 64px;
+  position: static;
   left: 0;
-  right: 0;
-  background:#5138A1;
-  padding: 8px;
-  font-weight: 600;
-}
-
-.footer > .bottom > img {
-  width: 20px;
-  position: relative;
-  top: 3px;
-  left: 2px;
+  bottom: 0;
+  color: white;
+  /* overflow: auto; */
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 4.5;
 }

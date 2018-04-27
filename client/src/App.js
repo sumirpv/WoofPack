@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Nav from "./components/Nav"
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Home from "./pages/Home";
@@ -10,7 +11,7 @@ import MyPack from "./pages/MyPack";
 import NoMatch from "./pages/NoMatch";
 import Wrapper from "./components/Wrapper";
 import NavHeader from "./components/NavHeader";
-import { BrowserRouter as Router, Route, Switch,  Redirect  } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import API from './utils/API.js'
 import "./App.css";
 
@@ -60,6 +61,7 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </Wrapper>
+          <Footer />
         </div>
       </Router>
     )

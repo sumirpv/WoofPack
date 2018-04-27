@@ -7,7 +7,7 @@ const NavHeader = props => (
         <nav>
             <div className="nav-wrapper">
                 <Link className="brand-logo center" to="/">
-                    Woof Pack
+                    Woof Pack<i className="material-icons">pets</i> 
                 </Link>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
