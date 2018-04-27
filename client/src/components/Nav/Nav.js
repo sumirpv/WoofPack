@@ -23,12 +23,17 @@ const Nav = (props) => {
                 </li>
                 <li>
                     <Link to="/findpack">
-                        Find Pack
+                        Grow Pack
                     </Link>
                 </li>
                 <li>
                     <Link to="/mypack">
-                            My Pack
+                        My Pack
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/logout">
+                        Logout 
                     </Link>
                 </li>
             </ul>

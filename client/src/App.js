@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav"
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import FindPack from "./pages/FindPack";
 import MyPack from "./pages/MyPack";
+import NoMatch from "./pages/NoMatch";
 import Wrapper from "./components/Wrapper";
 import NavHeader from "./components/NavHeader";
 import { BrowserRouter as Router, Route, Switch,  Redirect  } from "react-router-dom"
@@ -54,7 +56,8 @@ class App extends Component {
               <Route exact path="/findpack" 
                 render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/> 
               <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack username={this.state.username} /> : <Home/>)}/>
-              {/* <Route exact path="/logout" component={Logout} /> */}
+              <Route exact path="/logout" component={Logout} />
+              <Route component={NoMatch} />
             </Switch>
           </Wrapper>
         </div>
