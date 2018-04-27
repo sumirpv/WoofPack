@@ -2,9 +2,15 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
-  <footer className="footer">
-    <div className="bottom">
-      Clicky Game! <img alt="react" src="assets/images/react.svg" />
+  <footer>
+    <div class="footer-copyright" id="footer">
+      <div id="footer-text">
+        <span>
+          <i className="tiny material-icons"> pets </i> Woof Pack <br/>
+          © 2014 Copyright Text
+        </span>
+        {/* <a class="grey-text text-lighten-4 right" href="#!">More Links</a> */}
+      </div>
     </div>
   </footer>
 );

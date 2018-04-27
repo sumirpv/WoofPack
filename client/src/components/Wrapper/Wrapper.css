@@ -1,6 +1,7 @@
-
 .container {
   padding-left: 150px;
+  min-height: 600px;
+  /* position: relative; */
 }
 
   @media only screen and (max-width : 992px) {
