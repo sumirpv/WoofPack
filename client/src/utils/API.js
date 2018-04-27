@@ -55,6 +55,9 @@ export default {
 
     logout: function () {
         return axios.get('/api/logout');
+    },
+    sendCoins: function (twoWhoAndAmount){
+        return axios.post("/api/sendcoin", twoWhoAndAmount )
     }
 
 }

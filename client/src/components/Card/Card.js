@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Row, Col } from "../Grid"; 
+import { Roww, Col } from "../Grid"; 
 import Button from "../Button";
 import ChatModal from "../ChatModal"
+import SendCoin from "./SendCoin"
 import "./Card.css";
+import {Input, Row} from "react-materialize"
 import API from "../../utils/API.js";
 
 class Card extends Component {
@@ -72,10 +74,10 @@ class Card extends Component {
     render(){
         console.log(this.props);
         return(
-    <Row>
+    <Roww>
         <Col size="md-6">
             <div className="card-panel">
-                <Row>
+                <Roww>
                     <Col size="md-2">
                         <div className="card" id="user-card">
                             <div className="card-image waves-effect waves-block waves-light">
@@ -138,13 +140,14 @@ class Card extends Component {
                         </div>
                         <button onClick={this.clickChatModal} > Send a Chat </button>
                         <Button onClick={this.addPack}/>
-                        
+                       <SendCoin id={this.props._id}/>
                     </Col>
-                </Row>
+                </Roww>
             </div>
         </Col>
         {this.openChatModal()}
-    </Row>    
+       
+    </Roww>    
     // <div 
     //     The below info was borrowed from another App until we know all the info that we are putting into the card.
     //     role="img"
