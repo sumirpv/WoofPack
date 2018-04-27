@@ -43,7 +43,8 @@ module.exports = function (app) {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            picture: req.file.path.replace('client/public/', "")
+            picture: req.file.path.replace('client/public/', ""),
+            myPack: req.body.myPack
         })
             .then(function (data) {
                 req.session.user = {
@@ -99,7 +100,7 @@ module.exports = function (app) {
     // check login
     app.post("/api/login", function (req, res) {
         db.Profile.find({ username: req.body.username }).then(function (data) {
-            //console.log(data);
+            // console.log(data);
             if (data.length === 0) {
                 //console.log("yay");
                 res.send(false)
@@ -111,7 +112,8 @@ module.exports = function (app) {
                     firstname: data[0].firstname,
                     email: data[0].email,
                     picture: data[0].picture,
-                    username: data[0].username
+                    username: data[0].username,
+                    myPack: data[0].myPack
                 }
                 //console.log("when login this is session", req.session.user)
                 res.send(true)
@@ -135,8 +137,11 @@ module.exports = function (app) {
 
     //getting all users from db 
     app.get("/api/alluser", function (req, res) {
-        // console.log("alluserdata", req.body);
-        db.Profile.find({}).then(function (data) {
+        //get req.session.mypack and filter out those who are already in your pack
+        mypack = req.session.user.myPack;
+        
+        
+        db.Profile.find( { _id: { $nin : [ObjectId("5ae3933acc99491e77ff64ea"), ObjectId("5ae38a3bd109a51d263d57bf")] } } ).then(function (data) {
             console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
@@ -157,33 +162,12 @@ module.exports = function (app) {
 
     //Get User's Pack from DB
     app.get('/api/mypack', function (req, res) {
-        var myPackInfo = [];
         var id = req.session.user.id
         var o_id = new ObjectId(id);
 
         db.Profile.find({ _id: o_id }).populate("myPack")
             .then(function (data) {
-                console.log(data)
                 res.send(data);
-        
-                // for (let i = 0; i < data[0].myPack.length; i++) {
-                //     var id = data[0].myPack[i];
-                //     var o_id = new ObjectId(id);
-                //     o_ids.push(o_id)
-                // }
-
-            // }).then( function () {
-            //     for (let i=0; i< o_ids.length; i++) {
-            //         db.Profile.find({ _id: o_ids[i]})
-            //         .then(resy => {
-            //             myPackInfo.push(resy)
-            //             // console.log(myPackInfo);
-            //         })
-            //     }
-            // })
-            // .then(function () {
-            //     res.send(myPackInfo);
-            //     console.log(myPackInfo)
             }).catch(err => res.status(422).json(err));
     });
 
