@@ -44,7 +44,8 @@ const profileSchema = new Schema({
     ref: "Message"
   }], 
   myPack: [{
-    type: String
+    type: Schema.Types.ObjectId,
+    ref: "Profile"
   }]
 
 

@@ -157,22 +157,33 @@ module.exports = function (app) {
 
     //Get User's Pack from DB
     app.get('/api/mypack', function (req, res) {
+        var myPackInfo = [];
+        var id = req.session.user.id
+        var o_id = new ObjectId(id);
 
-        db.Profile.find({ _id: req.session.user.id }).
-            then(function (data) {
-                console.log('data', data[0]);
-                // res.send(data);
-                var myPackInfo = [];
-                for (let i=0; i< data[0].myPack.length; i++) {
-                    var id = data[0].myPack[i];
-                    var o_id = new ObjectId(id);
-                    db.Profile.find({ _id: o_id})
-                    .then(resy => {
-                        myPackInfo.push(resy)
-                        console.log(resy);
-                        res.send(resy);
-                    });
-                }
+        db.Profile.find({ _id: o_id }).populate("myPack")
+            .then(function (data) {
+                console.log(data)
+                res.send(data);
+        
+                // for (let i = 0; i < data[0].myPack.length; i++) {
+                //     var id = data[0].myPack[i];
+                //     var o_id = new ObjectId(id);
+                //     o_ids.push(o_id)
+                // }
+
+            // }).then( function () {
+            //     for (let i=0; i< o_ids.length; i++) {
+            //         db.Profile.find({ _id: o_ids[i]})
+            //         .then(resy => {
+            //             myPackInfo.push(resy)
+            //             // console.log(myPackInfo);
+            //         })
+            //     }
+            // })
+            // .then(function () {
+            //     res.send(myPackInfo);
+            //     console.log(myPackInfo)
             }).catch(err => res.status(422).json(err));
     });
 
