@@ -4,20 +4,33 @@ import API from "../../utils/API.js";
 
 class FindPack extends Component {
  state ={
-    user:[]
+    user:[],
+    currentuser: ''
  };
+
+
  componentDidMount(){
      this.getAllUser();
+     this.setState({
+         currentuser: this.props.username
+     })
  }
 
  getAllUser = () => {
      API.getAllUser()
-     .then(res =>
+     .then(res => {
+     //filter out yourself from res.data
+     const filt = res.data.filter(x => x.username !== this.state.currentuser);
+     console.log(filt)
     this.setState({
-        user:res.data
+        user:filt
     })
+}
+    
 ).catch(error => console.log(error));
  };
+
+ 
 
     render() {
         return (

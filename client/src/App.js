@@ -55,7 +55,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/profile" render={() => (this.state.session === true ? <Profile/> : <Home/>)} />
               <Route exact path="/findpack" 
-                render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/> 
+                render={() => (this.state.session === true ? <FindPack username={this.state.username}/> : <Home/>)}/> 
               <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack username={this.state.username} /> : <Home/>)}/>
               <Route component={NoMatch} />
             </Switch>
