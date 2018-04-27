@@ -23,7 +23,9 @@ class SendCoin extends Component {
 
     sendData = event => {
         API.sendCoins(this.state).then(result => {
-
+            if (result.data === true){
+               alert("You sent " + this.state.coinValue + " dogCoins")
+            }
         })
         console.log(this.state.coinValue); 
         console.log(this.state.reciver)
