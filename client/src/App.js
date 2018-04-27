@@ -52,7 +52,7 @@ class App extends Component {
               <Route exact path="/profile" render={() => (this.state.session === true ? <Profile/> : <Home/>)} />
               <Route exact path="/findpack" 
                 render={() => (this.state.session === true ? <FindPack/> : <Home/>)}/> 
-              <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack /> : <Home/>)}/>
+              <Route exact path="/mypack" render={() => (this.state.session === true ? <MyPack username={this.state.username} /> : <Home/>)}/>
             </Switch>
           </Wrapper>
         </div>

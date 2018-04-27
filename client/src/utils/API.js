@@ -43,5 +43,9 @@ export default {
 
     addPack: function (username2) {
         return axios.put('/api/addpack/', username2);
+    },
+
+    getPack: function (username) {
+        return axios.get('/api/mypack', username)
     }
 }

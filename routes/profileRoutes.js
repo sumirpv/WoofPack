@@ -3,7 +3,7 @@ var db = require("../models")
 var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 var ObjectId = require('mongodb').ObjectId;
-//var router = express.Router();
+
 
 var multerConf = {
     storage: multer.diskStorage({
@@ -132,9 +132,9 @@ module.exports = function (app) {
         })
     })
 
-    //getting all user data for the pack
+    //getting all users from db 
     app.get("/api/alluser", function (req, res) {
-        console.log("alluserdata", req.body);
+        // console.log("alluserdata", req.body);
         db.Profile.find({}).then(function (data) {
             console.log(data);
             res.send(data);
@@ -144,14 +144,28 @@ module.exports = function (app) {
 
     //Add Pack Member   
     app.put("/api/addpack/", function (req, res){
-        console.log('this is body for adding a pack member', req.body.username);
+        // console.log('this is body for adding a pack member', req.body.username);
         db.Profile.findOneAndUpdate({ 
             _id : req.session.user.id}, { $push : { myPack : req.body.username }}, { new : true })
             .then(data => {
                 res.json(data);
             })
             
-    })
+    });
+
+    //Get User's Pack from DB
+    app.get ('/api/mypack', function (req, res){
+
+        db.Profile.find({_id: req.session.user.id}).
+        then(function (data) {
+            // console.log(data);
+            res.send(data);
+        }).catch(err => res.status(422).json(err));
+        // db.Profile.find({username: req.body.username}).then(function (data) {
+        //     console.log(data);
+        //     res.send(data);
+        // }).catch(err => res.status(422).json(err));
+    });
 
     
 };
