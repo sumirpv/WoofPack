@@ -51,5 +51,11 @@ export default {
 
     getPackInfo: function (username) {
         return axios.post('/api/mypack/info', username)
+    },
+
+    logout: function () {
+        console.log("logout triggered")
+        return axios.get('/api/logout')
     }
+
 }
