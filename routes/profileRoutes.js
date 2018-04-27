@@ -167,5 +167,12 @@ module.exports = function (app) {
         // }).catch(err => res.status(422).json(err));
     });
 
+    app.post('/api/mypack/info', function (req, res) {
+        db.Profile.find({username: req.body.username})
+        .then(function (data){
+            res.send(data);
+        }).catch(err => res.status(422).json(err));
+    });
+
     
 };

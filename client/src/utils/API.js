@@ -47,5 +47,9 @@ export default {
 
     getPack: function (username) {
         return axios.get('/api/mypack', username)
+    },
+
+    getPackInfo: function (username) {
+        return axios.post('/api/mypack/info', username)
     }
 }
