@@ -219,6 +219,24 @@ module.exports = function (app) {
             })
         })
     })
+    // app.post("/api/sendcoin", function(req, res){
+    //     console.log("api/sendcoin", req.body)
+    //     console.log("this is the sender", req.session.user.id)
+    //     var reciver = req.body.reciver
+    //     var o_id = new ObjectId(reciver);
+    //     db.Profile.update({_id: o_id}, {$inc:{dogCoin: req.body.coinValue}}).then(function(data){
+    //         res.send("updated"); 
+    //     })
+    // })
+
+
+
+
+    app.get('/api/rating', function (req, res){
+        console.log("api rating ", req.body);
+       // db.Profile.findOne()
+    })
+
 
     
 };
