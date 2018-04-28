@@ -61,7 +61,7 @@ class MyProfile extends Component {
     render= () => {
         return(
             <div>
-                <RatingCoins />
+                <RatingCoins rating= {this.state.user.rating}/>
                 {this.initAddDogModal()}
                 <PersonalData userData={this.createUserData} 
                     about={this.state.user.about}

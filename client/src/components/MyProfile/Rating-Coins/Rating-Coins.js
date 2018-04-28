@@ -3,7 +3,8 @@ import "./Rating-coins.css";
 var Rating = require('react-rating');
 
 
-const RatingCoins = () => {
+const RatingCoins = (props) => {
+    console.log("prpos", props)
 
     return (
     <div className="row">
@@ -15,7 +16,7 @@ const RatingCoins = () => {
                     </div>
                     <div className="col s10">
                         <span className="black-text">
-                            MyRating   <Rating  start={0} stop = {5} readonly  placeholderRating="3"  />
+                            MyRating   <Rating  start={0} stop = {5} readonly   initialRating={props.rating} />
                     </span>
                     {/* <fieldset class="rating">
                         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
