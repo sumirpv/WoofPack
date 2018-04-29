@@ -138,6 +138,7 @@ module.exports = function (app) {
     //getting all users from db 
     app.get("/api/alluser", function (req, res) {
         //get req.session.mypack and filter out those who are already in your pack
+        console.log(req.session.user.myPack)
         mypack = req.session.user.myPack;
         mypackarray = [];
         for (let i=0; i<mypack.length; i++) {

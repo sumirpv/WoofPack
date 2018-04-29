@@ -24,8 +24,8 @@
 .card-image.waves-effect.waves-block.waves-light {
     margin: auto;
     /* text-align: center; */
-    padding-left: 38px;
-    padding-top: 20px;
+    padding-left: 0px;
+    padding-top: 0px;
 }
 
 .card-panel {
