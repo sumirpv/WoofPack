@@ -59,8 +59,8 @@ export default {
     sendCoins: function (twoWhoAndAmount){
         return axios.post("/api/sendcoin", twoWhoAndAmount )
     },
-    getRating: function (rate){
+    newRating: function (rate){
         return axios.post('/api/rating', rate);
-    }
+    },
 
 }

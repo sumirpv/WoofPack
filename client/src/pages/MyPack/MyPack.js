@@ -50,9 +50,10 @@ class MyPack extends Component {
                         picture = {member.picture}
                         about = {member.about}
                         address = {member.address}
-                        username = {member.user}
+                        username = {member.username}
                         _id = {member._id}
                         message = {member.message}
+                        rating = {member.rating}
                         />
                        )
                     

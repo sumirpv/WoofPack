@@ -49,7 +49,8 @@ class App extends Component {
           {/* <NavHeader /> */}
           <Nav firstname={this.state.firstname}
           email={this.state.email}
-          picture= {this.state.picture}/>
+          picture= {this.state.picture}
+          />
           <Wrapper >
             <Switch>
               <Route exact path="/" component={Home} />
