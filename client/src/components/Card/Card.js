@@ -16,10 +16,10 @@ class Card extends Component {
         this.state = {
             chatOpen: false,
             userName1: "",
-            userName2: ""
+            userName2: "",
+            dogs: []
         }
     }
-
 
 
     componentDidMount() {
@@ -29,6 +29,7 @@ class Card extends Component {
                 this.setState({
                     session: true,
                     userName1: res.data.username,
+                    dogs: this.props.dog
                 })
             }
         });
@@ -94,8 +95,7 @@ class Card extends Component {
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">User Info<i className="small material-icons right">cancel</i></span>
                                         <br />
-                                        {/* <span><b>Name: </b>Johnny Glasses</span>
-                                <br/> */}
+
                                         <span><b>Username: </b>{this.props.username}</span>
                                         <br />
                                         <span><b>Email: </b>{this.props.email}</span>
@@ -108,17 +108,18 @@ class Card extends Component {
                                         <span><b>Dog Coin: </b>{this.props.dogCoin}</span>
                                     </div>
                                 </div>
-                                {/* <span className="white-text">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                </span> */}
+
                             </Col>
+
+
                             <Col size="md-2">
-                                <div className="card" id="dog-card">
+                            {/* //if no dogs then show default dog info */}
+                                {this.state.dogs.length === 0 ? (<div className="card" id="dog-card">
                                     <div className="card-image waves-effect waves-block waves-light">
                                         <img id="dog-img" alt="dog-img" className="activator" src="https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&h=350" />
                                     </div>
                                     <div className="card-content">
-                                        <span className="card-title activator grey-text text-darken-4">Rex<i className="material-icons right"></i></span>
+                                        <span className="card-title activator grey-text text-darken-4">REX<i className="material-icons right"></i></span>
                                         <p><a alt="unknown" href="/">Link to user profile?</a></p>
                                     </div>
                                     <div className="card-reveal">
@@ -139,8 +140,39 @@ class Card extends Component {
                                         <span><b>Rating: </b>5 stars</span>
                                         <br />
                                     </div>
-                                </div>
-                                
+                                </div>) : (
+                                //if dogs, then map over dogs array and show all dogs
+                                 ((<div className="card" id="dog-card">
+                                    <div className="card-image waves-effect waves-block waves-light">
+                                        <img id="dog-img" alt="dog-img" className="activator" src={this.state.dogs[0].picture} />
+                                    </div>
+                                    <div className="card-content">
+                                        <span className="card-title activator grey-text text-darken-4">{this.state.dogs[0].dogName}<i className="material-icons right"></i></span>
+                                        <p><a alt="unknown" href="/">Link to user profile?</a></p>
+                                    </div>
+                                    <div className="card-reveal">
+                                        <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
+                                        <br />
+                                        <span><b>About this doggo</b></span>
+                                        <br />
+                                        <span><b>Breed: </b>{this.state.dogs[0].breed}</span>
+                                        <br />
+                                        <span><b>Age: </b>{this.state.dogs[0].age}</span>
+                                        <br />
+                                        <span><b>Size: </b>{this.state.dogs[0].size}</span>
+                                        <br />
+                                        <span><b>Temperment: </b>{this.state.dogs[0].temperment}</span>
+                                        <br />
+                                        <span><b>More Deets (About Me): </b>{this.state.dogs[0].aboutDog}</span>
+                                        <br />
+                                        <span><b>Rating: </b>5 stars</span>
+                                        <br />
+                                    </div>
+                                </div>))
+                                )}
+                                )}
+
+
                                 <Ratings id={this.props._id} />
 
                                 {this.props.cardtype === "findpack" ? < Button onClick={this.addPack} />

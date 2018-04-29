@@ -23,7 +23,7 @@ class FindPack extends Component {
      //filter out yourself from res.data
      const filt = res.data.filter(x => x.username !== this.state.currentuser);
     this.setState({
-        user:filt
+        user: filt
     })
 }
     
