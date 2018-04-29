@@ -220,9 +220,15 @@ module.exports = function (app) {
         })
     })
 
-    app.get('/api/rating', function (req, res){
+    app.post('/api/rating', function (req, res){
         console.log("api rating ", req.body);
-       // db.Profile.findOne()
+        var id= req.body.reciver;
+        var o_id= new Object(id);
+        db.Profile.update({_id: o_id}, {rating : req.body.rating}).
+        then(function(data){
+            console.log("this is rating res.data", data);
+            res.send(data);
+        })
     })
 
 

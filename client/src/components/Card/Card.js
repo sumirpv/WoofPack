@@ -6,7 +6,7 @@ import SendCoin from "./SendCoin"
 import "./Card.css";
 import {Input, Row} from "react-materialize"
 import API from "../../utils/API.js";
-import Ratings from "./Ratings/Ratings.js"
+import Ratings from "./Ratings"
 
 
 class Card extends Component {
