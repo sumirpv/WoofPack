@@ -209,16 +209,12 @@ module.exports = function (app) {
     })
 
     app.post('/api/rating', function (req, res){
-        console.log("api rating ", req.body);
-        var id= req.body.reciver;
-        var o_id= new Object(id);
-        db.Profile.update({_id: o_id}, {rating : req.body.rating}).
+        console.log("req.body.id ", req.body.id);
+        var o_id= new Object(req.body.id);
+        db.Profile.update({_id:o_id}, {$set:{rating : req.body.rating}}).
         then(function(data){
             console.log("this is rating res.data", data);
-            res.send(data);
-        })
-    })
-
-
-    
+            res.end();
+        }).catch(err => res.status(422).json(err));
+    }) 
 };

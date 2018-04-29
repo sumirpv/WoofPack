@@ -1,39 +1,52 @@
 import React, { Component } from "react";
 import "./Ratings.css";
 import API from "../../../utils/API.js";
-
 var Rating = require('react-rating');
+var FontAwesome = require('react-fontawesome');
 
 class Ratings extends Component {
 
     constructor(props){
         super(props); 
     }
-    state ={
-        rating :this.props.rating,
-        reciver: this.props.id
+    state = {
+        rating : "",
+        receiver : this.props.id
     }
 
-
-    getRating =(rate) =>{
-    console.log("value of the rating is ", rate);
-        API.getRating(this.state).then(res => {
-            console.log("ratingsssss", res.data.data);
-            if (res.data === true){
+    updateRating = (rate) => {
+        console.log("value of the rating is ", rate);
+        API.newRating({
+            id : this.state.receiver,
+            rating : rate
+        }).then(res => {
+            this.setState({
+                rating : rate,
+            })
+            if (res.data === true) {
                 alert("You set " + this.state.rating + " rating")
-             }
-         })
-         console.log("after the rating api ",this.state.rating); 
-         console.log("after the rating  receiver api ",this.state.reciver)
+            }
+        });
+    };
 
-    }
     render(){
-    return (
+        return (
 
-        <div><b>Rating: <Rating  name ="rating" stop ={5} step={1}  fractions={2} onChange ={(rate) =>this.getRating(rate)}/></b></div>
+            <div><b>Rating: 
+                <Rating 
+                    id ="rating" 
+                    emptySymbol="fa fa-star-o fa-2x"
+                    fullSymbol="fa fa-star fa-2x"
+                    stop ={5} 
+                    fractions={2} 
+                    initialRating={this.state.rating} 
+                    onChange = {(rate) => 
+                    this.updateRating(rate)}
+                />
+            </b></div>
 
-)
-}
+        )
+    }
 }
 
 export default Ratings;
