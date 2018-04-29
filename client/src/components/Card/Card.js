@@ -173,7 +173,7 @@ class Card extends Component {
                                 )}
 
 
-                                <Ratings id={this.props._id} />
+                                <Ratings userRating={this.props.rating} id={this.props._id} />
 
                                 {this.props.cardtype === "findpack" ? < Button onClick={this.addPack} />
                                     : null}
