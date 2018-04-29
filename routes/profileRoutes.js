@@ -139,9 +139,13 @@ module.exports = function (app) {
     app.get("/api/alluser", function (req, res) {
         //get req.session.mypack and filter out those who are already in your pack
         mypack = req.session.user.myPack;
-        
-        
-        db.Profile.find( { _id: { $nin : [ObjectId("5ae3933acc99491e77ff64ea"), ObjectId("5ae38a3bd109a51d263d57bf")] } } ).then(function (data) {
+        mypackarray = [];
+
+        for (let i=0; i<mypack.length; i++) {
+            var o_id = new ObjectId(mypack[i]);
+            mypackarray.push(o_id);
+        };
+        db.Profile.find( { _id: { $nin : mypackarray } } ).then(function (data) {
             console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
