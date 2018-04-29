@@ -19,9 +19,9 @@ class FindPack extends Component {
  getAllUser = () => {
      API.getAllUser()
      .then(res => {
+         
      //filter out yourself from res.data
      const filt = res.data.filter(x => x.username !== this.state.currentuser);
-     console.log(filt)
     this.setState({
         user:filt
     })
