@@ -32,7 +32,7 @@ class Ratings extends Component {
     render(){
         return (
 
-            <div><b>Rating: 
+            <div><b>Rating:
                 <Rating 
                     id ="rating" 
                     emptySymbol="fa fa-star-o fa-2x"

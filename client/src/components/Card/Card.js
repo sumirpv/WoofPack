@@ -169,7 +169,7 @@ class Card extends Component {
                                         <br />
                                     </div>
                                 </div>))
-                                )}
+                                // )}
                                 )}
 
 
