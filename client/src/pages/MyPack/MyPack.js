@@ -41,6 +41,7 @@ class MyPack extends Component {
                 {this.state.packArray.map(member => {
                     return (
                         <Card 
+                        cardtype = {"mypack"}
                         address = {member.address}
                         dog = {member.dog}
                         firstname = {member.firstname}

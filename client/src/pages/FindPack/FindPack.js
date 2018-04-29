@@ -38,6 +38,7 @@ class FindPack extends Component {
                 <h1> Find Pack Members</h1>
                 {this.state.user.map(user =>(
                     <Card 
+                    cardtype = {"findpack"}
                     key = {user._id}
                     _id = {user._id}
                     username = {user.username}

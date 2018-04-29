@@ -142,11 +142,13 @@ module.exports = function (app) {
         mypackarray = [];
 
         for (let i=0; i<mypack.length; i++) {
+            console.log('for loop has started')
             var o_id = new ObjectId(mypack[i]);
             mypackarray.push(o_id);
+            console.log('mypackarray',mypackarray);
         };
         db.Profile.find( { _id: { $nin : mypackarray } } ).then(function (data) {
-            console.log(data);
+            // console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
     });
