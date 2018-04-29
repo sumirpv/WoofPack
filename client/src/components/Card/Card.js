@@ -78,7 +78,7 @@ class Card extends Component {
     render() {
         // console.log(this.props);
         return (
-
+        <div>
             <Roww>
                 <div className="col s6">
                     <div className="card">
@@ -98,28 +98,50 @@ class Card extends Component {
                             <br />
                             <span><b>Address: </b>{this.props.address}</span>
                             <br />
-
                         </div>
                     </div>
                 </div>
 
-                <div className="col s6">
-                    <div className="card">
+               <div className="col s6">
+                    {/* //if no dogs then show default dog info */}
+                    {this.state.dogs.length === 0 ? (<p> no dog </p>) : 
+                        //if dogs, then map over dogs array and show all dogs
+                        (<div className="card">
                         <div className="card-image waves-effect waves-block waves-light">
-                            <img className="activator" src="images/office.jpg" />
+                            <img className="activator" src={this.state.dogs[0].picture} />
                         </div>
                         <div className="card-content">
-                            <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
+                            <span className="card-title activator grey-text text-darken-4">{this.state.dogs[0].dogName}<i className="material-icons right">more_vert</i></span>
                         </div>
                         <div className="card-reveal">
-                            <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
-                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            <span className="card-title grey-text text-darken-4">{this.state.dogs[0].dogName}<i className="material-icons right">close</i></span>
+                            <span><b>Breed: </b>{this.state.dogs[0].breed}</span>
+                            <br />
+                            <span><b>Age: </b>{this.state.dogs[0].age}</span>
+                            <br />
+                            <span><b>Size: </b>{this.state.dogs[0].size}</span>
+                            <br />
+                            <span><b>Temperment: </b>{this.state.dogs[0].temperment}</span>
+                            <br />
+                            <span><b>More Deets (About Me): </b>{this.state.dogs[0].aboutDog}</span>
+                            <br />
                         </div>
                     </div>
-
+                    )}
                 </div>
+             </Roww>
+             <Roww>
+                <Ratings id={this.props._id} />
 
+                    {this.props.cardtype === "findpack" ? < Button onClick={this.addPack} />
+                        : null}
+                    {this.props.cardtype === "mypack" ? <SendCoin id={this.props._id} />
+                        : null}
+                    {this.props.cardtype === "mypack" ? <button onClick={this.clickChatModal} > Send a Chat </button>
+                        : null}
             </Roww>
+            {this.openChatModal()}
+        </div>
 
 
         )

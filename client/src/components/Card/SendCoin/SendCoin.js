@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, Row } from "react-materialize"
 import $ from "jquery"
 import API from '../../../utils/API.js'
+import Button from "../../Button";
 
 
 class SendCoin extends Component {
@@ -35,9 +36,9 @@ class SendCoin extends Component {
 
     render(){
         return (
-            <Row>
-                <div className="col s8">
-                <Input onChange={this.handleInputChange}  name="coinValue" type='select' label="Materialize Select" defaultValue='2'>
+            <div>
+                <div className="col s10">
+                <Input onChange={this.handleInputChange}  name="coinValue" type='select' label="Send Dog Coins" defaultValue='2'>
                     <optgroup label="Walk">
                         <option  value="5" >Short walk 5 Coins</option>
                         <option value="10" >Long walk 10 Coins</option>
@@ -52,11 +53,10 @@ class SendCoin extends Component {
                     </optgroup>
                 </Input>
                 </div>
-                <div className="col s4">
-                <button onClick={this.sendData}>Send Coin </button>
+                <div className="col s2">
+                <button className="btn btn-secondary"onClick={this.sendData}>Send Coin </button>
                 </div>
-                
-            </Row>
+           </div>
 
         )
     }
