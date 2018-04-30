@@ -27,7 +27,6 @@ class Modal extends Component {
                 this.setState({
                     avatar: event.target.files[0]
                 })
-                console.log(event.target.files[0])
                 break;
             default:
                 const { name, value } = event.target;
@@ -39,7 +38,6 @@ class Modal extends Component {
    
 
     onSubmit = (event) => {
-        console.log('form submitted');
         event.preventDefault();
 
         const { firstname, lastname, address, phone, about, username, email, password, avatar } = this.state;
@@ -58,7 +56,6 @@ class Modal extends Component {
         formData.append('token', token);
 
         API.createUser(formData).then((result) => {
-            console.log(result)  
              Redirect('/profile'); 
         });
     };

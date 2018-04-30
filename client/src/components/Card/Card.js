@@ -25,7 +25,6 @@ class Card extends Component {
     }
     componentDidMount() {
         API.checkIfsession().then(res => {
-            console.log("this is res.data when check session", res.data);
             if (res.data.auth === true) {
                 this.setState({
                     session: true,
@@ -62,18 +61,15 @@ class Card extends Component {
     }
 
     closeModal = () => {
-        console.log('close modal')
         this.setState({
             chatOpen: false
         })
     };
 
     addPack = () => {
-        console.log('add pack clicked');
         var usernameObj = { username: this.state.userName2 };
 
         API.addPack(usernameObj).then(res => {
-            console.log('added pack member');
         });
 
         this.setState({
@@ -86,7 +82,6 @@ class Card extends Component {
 
 
     render() {
-        // console.log(this.props);
         return (
             <Roww>
                 <Col size="md-6">

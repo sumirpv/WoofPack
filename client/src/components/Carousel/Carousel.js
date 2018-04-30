@@ -6,14 +6,12 @@ class Carousel extends Component {
 
 componentDidMount () {
     var carousel = document.getElementsByClassName(".carousel .carousel-item")
-    console.log(carousel)
     carousel[0].style.visibility = "visible"
 }
 
     render() {
 
  
-console.log("carousel")
         return (
             <div>
                 <h1> Carousel </h1>

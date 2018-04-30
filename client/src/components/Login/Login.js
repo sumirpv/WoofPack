@@ -44,7 +44,6 @@ handleLogin = () => {
                 alert("wrong creds"); 
                 this.props.closeModal();
            }
-           //console.log(result.data)
        })
    }
   

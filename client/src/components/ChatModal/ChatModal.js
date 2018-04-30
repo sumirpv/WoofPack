@@ -23,7 +23,6 @@ class ChatModal extends React.Component {
 
     componentDidMount() {
             API.checkIfsession().then(res =>{
-              console.log("this is res.data when check session" , res.data); 
               if (res.data.auth === true){
               this.setState({session: true, 
                 userName1: res.data.username, 

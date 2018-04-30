@@ -15,7 +15,6 @@ class Ratings extends Component {
     }
 
     updateRating = (rate) => {
-        console.log("value of the rating is ", rate);
         API.newRating({
             id : this.state.receiver,
             rating : rate
@@ -30,6 +29,14 @@ class Ratings extends Component {
     };
 
     render(){
+        console.log("rating",this.props);
+        const rating = this.props.userRating || ["0"];
+        let sum = 0;
+         rating.map( rate => {
+             sum += parseInt(rate);
+        });
+    
+        const avg = sum / rating.length; 
         return (
 
             <div><b>Rating:
@@ -39,7 +46,7 @@ class Ratings extends Component {
                     fullSymbol="fa fa-star fa-2x"
                     stop ={5} 
                     fractions={2} 
-                    initialRating={this.state.rating} 
+                    initialRating={avg} 
                     onChange = {(rate) => 
                     this.updateRating(rate)}
                 />

@@ -14,7 +14,6 @@ class SendCoin extends Component {
     }
 
     handleInputChange = event => {
-        console.log("it hit"); 
         const { name, value } = event.target;
         this.setState({
           [name]: value
@@ -27,8 +26,7 @@ class SendCoin extends Component {
                alert("You sent " + this.state.coinValue + " dogCoins")
             }
         })
-        console.log(this.state.coinValue); 
-        console.log(this.state.reciver)
+
     }
 
 

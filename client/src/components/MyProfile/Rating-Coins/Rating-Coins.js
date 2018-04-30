@@ -5,6 +5,14 @@ var Rating = require('react-rating');
 
 const RatingCoins = (props) => {
 
+    const rating = props.rating || ["0"];
+    let sum = 0;
+     rating.map( rate => {
+         sum += parseInt(rate);
+    });
+
+    const avg = sum / rating.length; 
+
     return (
     <div className="row">
         <div className="col s6">
@@ -22,7 +30,7 @@ const RatingCoins = (props) => {
                                 stop = {5}
                                 fractions={2} 
                                 readonly 
-                                initialRating={props.rating} 
+                                initialRating={avg } 
                             />
                         </span>
                     </div>
