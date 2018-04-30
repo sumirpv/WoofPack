@@ -74,7 +74,7 @@ class MyProfile extends Component {
                     phone={this.state.user.phone}
                     picture={this.state.user.picture}/>
                 <div>
-                    <button className="waves-effect waves-light btn" onClick={this.clickAddDogModal} ><i class="material-icons left">add_circle</i> Add your Dog </button>
+                    <button className="waves-effect waves-light btn" id="addDog" onClick={this.clickAddDogModal} ><i class="material-icons left" >add_circle</i> Add your Dog </button>
                 </div>
                 {this.state.dogs.map(dog => {
                     return(

@@ -16,7 +16,7 @@ const RatingCoins = (props) => {
                     </div>
                     <div className="col s10">
                         <span className="black-text">
-                            MyRating   
+                            <span id="ratings">MyRating  </span> 
                             <Rating  
                                 emptySymbol="fa fa-star-o fa-2x"
                                 fullSymbol="fa fa-star fa-2x"
@@ -37,8 +37,8 @@ const RatingCoins = (props) => {
                         <i class="material-icons">monetization_on</i>
                     </div>
                     <div className="col s10">
-                        <span className="black-text">
-                            Dog Coins
+                        <span className="black-text" >
+                           <span id="dogCoins"> Dog Coins </span>
                     </span>
                     </div>
                 </div>
