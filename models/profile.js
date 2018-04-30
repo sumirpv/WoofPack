@@ -32,7 +32,7 @@ const profileSchema = new Schema({
   address: { type: String, required: true },
   about: { type: String, required: true },
   picture: { type: String },
-  rating: { type: String, default: 5},
+  rating: { type: String },
   token: {type: String},
   dogCoin: { type: Number},
   dog : [{

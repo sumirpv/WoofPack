@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API.js";
 import "./Login.css";
+import $ from "jquery"; 
 
 function Redirect(where){
     window.location = where
@@ -38,7 +39,10 @@ handleLogin = () => {
                Redirect('/profile'); 
            }
            if (result.data === false) {
-               alert("wrong creds"); 
+                $("#username").val("");
+                $("#password").val("");
+                alert("wrong creds"); 
+                this.props.closeModal();
            }
            //console.log(result.data)
        })

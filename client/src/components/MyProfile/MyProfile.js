@@ -4,6 +4,8 @@ import PersonalData from "./PersonalData";
 import DogData from "./DogData";
 import API from '../../utils/API.js'
 import AddDogModal from "../AddDogModal";
+import "./MyProfile.css";
+
 
 class MyProfile extends Component {
     state = {
@@ -46,7 +48,7 @@ class MyProfile extends Component {
         if (this.state.addDogOpen === true) {
             return <AddDogModal
                 header={"Add Dog to Your Pack"}
-                closeModal = { this.closeModal}
+                closeModal = { this.closeModal }
             />
         };
     };

@@ -78,7 +78,7 @@ module.exports = function (app) {
             return db.Profile.findOneAndUpdate({
                 _id: req.session.user.id
             }, { $push: { dog: data._id } }, { new: true });
-            res.json(data);
+            res.json("test ", data);
         }).catch(function (err) {
             res.json(err);
         });
