@@ -1,0 +1,33 @@
+
+
+
+#firstName,#lastName,#phone,#address,#aboutMe{
+    font-size: 20px;
+
+}
+
+.input-field.inline {
+    display: inline-block;
+     vertical-align: baseline; 
+    margin-left: 5px;
+}
+
+.input-field {
+    position: relative;
+    margin-top: 0; 
+     margin-bottom: 0;
+}
+.about{
+    vertical-align: -webkit-baseline-middle !important;
+}
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+   
+    border-bottom: 0;
+}
+
+.card-panel{
+    padding-left: 5%;
+}
+#btnSave {
+    float:left;
+}
