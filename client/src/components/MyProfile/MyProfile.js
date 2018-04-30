@@ -63,7 +63,7 @@ class MyProfile extends Component {
     render= () => {
         return(
             <div>
-                <RatingCoins rating= {this.state.user.rating}/>
+                <RatingCoins rating= {this.state.user.rating} dogCoin={this.state.user.dogCoin} />
                 {this.initAddDogModal()}
                 <PersonalData userData={this.createUserData} 
                     about={this.state.user.about}
@@ -72,7 +72,8 @@ class MyProfile extends Component {
                     firstname={this.state.user.firstname}
                     lastname={this.state.user.lastname}
                     phone={this.state.user.phone}
-                    picture={this.state.user.picture}/>
+                    picture={this.state.user.picture}
+                    />
                 <div>
                     <button className="waves-effect waves-light btn" id="addDog" onClick={this.clickAddDogModal} ><i class="material-icons left" >add_circle</i> Add your Dog </button>
                 </div>

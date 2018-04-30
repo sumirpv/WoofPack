@@ -4,7 +4,6 @@ var Rating = require('react-rating');
 
 
 const RatingCoins = (props) => {
-    console.log("props", props)
 
     return (
     <div className="row">
@@ -38,7 +37,7 @@ const RatingCoins = (props) => {
                     </div>
                     <div className="col s10">
                         <span className="black-text" >
-                           <span id="dogCoins"> Dog Coins </span>
+                           <span id="dogCoins"> {props.dogCoin} </span>
                     </span>
                     </div>
                 </div>
