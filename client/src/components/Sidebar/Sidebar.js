@@ -17,7 +17,7 @@ class Sidebar extends Component {
                     user={{
                         background: "http://www.pawculture.com/uploads/dog-walking-mistakes-card.jpg",
                         image: this.props.picture,
-                        name: this.props.userName,
+                        name: this.props.userName
                         // email: this.props.email
                     }}
                 />
