@@ -20,31 +20,23 @@ class MyProfile extends Component {
     
     loadUser = () => {
         API.getUserData().then((result) =>{
-            console.log("this is the result.data", result.data); 
             this.setState({user: result.data, dogs: result.data.dog}) 
-            console.log("this is the state.user.dogs ",this.state.dogs); 
         })
            
     };
     
-    // addDog () {
-    //     console.log("cliiick");
-    // }
+
 
     clickAddDogModal = () => {
-        console.log(this.state.addDogOpen);
-        console.log("add dog btn clicked");
+  
         this.setState({
             addDogOpen: true
         });
-        // console.log(this.state.addDogOpen);
+     
     };
     
     initAddDogModal = () => {
-        // console.log("clicked");
-        // bring up the modal here
-        console.log("initAdd func was hit");
-        console.log(this.state.addDogOpen);
+
         if (this.state.addDogOpen === true) {
             return <AddDogModal
                 header={"Add Dog to Your Pack"}
@@ -54,7 +46,6 @@ class MyProfile extends Component {
     };
 
     closeModal = () => {
-        console.log("close modal");
         this.setState({
             addDogOpen : false
         });

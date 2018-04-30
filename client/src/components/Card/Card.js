@@ -82,7 +82,7 @@ class Card extends Component {
 
 
     render() {
-        return (
+            return (
             <Roww>
                 <Col size="md-6">
 
