@@ -62,9 +62,13 @@ class Home extends Component {
             <div>
             
                     <h1> WoofPack </h1>
-                    <button onClick={this.clickSignupModal} > Sign up </button>
-                    <button onClick={this.clickLoginModal} > Login </button>
 
+                    {this.props.loggedIn === true ? null :  <button onClick={this.clickSignupModal} > Sign up </button> }
+                    {this.props.loggedIn === true ? null :  <button onClick={this.clickLoginModal} > Login </button> }
+                    
+                  
+
+                
                 {this.openSignupModal()}
                 {this.openLoginModal()}
             </div>

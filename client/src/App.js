@@ -40,7 +40,14 @@ class App extends Component {
       username: res.data.username})
       }
     })
-  }
+  };
+
+  HomePage = ( props ) => {
+    return (
+      <Home loggedIn={this.state.session}  />
+    )
+  };
+  
 
   render() {
     return (
@@ -53,7 +60,7 @@ class App extends Component {
           />
           <Wrapper >
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={this.HomePage} />
               <Route exact path="/profile" render={() => (this.state.session === true ? <Profile/> : <Home/>)} />
               <Route exact path="/findpack" 
                 render={() => (this.state.session === true ? <FindPack username={this.state.username}/> : <Home/>)}/> 
