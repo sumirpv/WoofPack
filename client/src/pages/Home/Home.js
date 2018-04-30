@@ -67,14 +67,9 @@ class Home extends Component {
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickLoginModal} > Login </button> }
                     
 
-                {this.openSignupModal()}
-
+                {/* {this.openSignupModal()}
                 {this.openLoginModal()} */}
-
-                {this.openLoginModal()}
-
-            <Slider className="slider-home" fullscreen="true" interval={1000000 } > 
-
+            <Slider className="slider-home" fullscreen="true" interval={10000}> 
                 <Slide
                     src="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"
                     title="This is our big Tagline!">
@@ -91,7 +86,7 @@ class Home extends Component {
                     {this.openLoginModal()} 
                 </Slide>
 
-                <Slide
+                {/* <Slide
                     src="https://dingo.care2.com/pictures/greenliving/1404/1403349.large.jpg"
                     title="Left aligned Caption"
                     // placement="left">
@@ -121,7 +116,7 @@ class Home extends Component {
                     <button onClick={this.clickLoginModal} > Login </button>
                     {this.openSignupModal()}
                     {this.openLoginModal()} 
-                </Slide>
+                </Slide> */}
                 
                 
             </Slider> 
@@ -135,8 +130,8 @@ class Home extends Component {
                     </div>
                 <Parallax imageSrc="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"/> */}
             </div>
-            {this.openSignupModal()}
-            {this.openLoginModal()}
+            {/* {this.openSignupModal()}
+            {this.openLoginModal()} */}
 
             </div>
         )
