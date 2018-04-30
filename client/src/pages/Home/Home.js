@@ -61,7 +61,7 @@ class Home extends Component {
         return (
             <div className="home-pg">
             
-                    <h1> WoofPack </h1>
+                    {/* <h1> WoofPack </h1>
 
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickSignupModal} > Sign up </button> }
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickLoginModal} > Login </button> }
@@ -70,8 +70,8 @@ class Home extends Component {
 
                 
                 {this.openSignupModal()}
-                {this.openLoginModal()}
-            {/* <Slider className="slider-home" fullscreen="true" interval={10000}> 
+                {this.openLoginModal()} */}
+            <Slider className="slider-home" fullscreen="true" interval={10000}> 
                 <Slide
                     src="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"
                     title="This is our big Tagline!">
@@ -121,7 +121,7 @@ class Home extends Component {
                 
                 
             </Slider> 
-            {/* <div>
+            <div>
                 <Parallax imageSrc="https://www.professionalpetnanny.com/wp-content/themes/petnanny/images/cincinnati-dog-walking-slide.jpg"/>
                     <div className="section white">
                         <div className="row container">
@@ -132,7 +132,7 @@ class Home extends Component {
                 <Parallax imageSrc="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"/>
             </div>
             {this.openSignupModal()}
-            {this.openLoginModal()} */}
+            {this.openLoginModal()}
 
             </div>
         )
