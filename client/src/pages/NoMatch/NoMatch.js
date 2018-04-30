@@ -6,11 +6,8 @@ const NoMatch = () => (
     <Wrapper>
         <Roww>
             <Col size="md-12">
-                <h1>404 Page Not Found</h1>
                 <h1>
-                    <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                        🙄
-                    </span>
+                    <img src="https://qph.fs.quoracdn.net/main-qimg-1374b6fde81b047e717bdb09aa86bb72" alt="Sorry Page nor found" style={{backgroundSize: "cover"}}/>  
                 </h1>
             </Col>
         </Roww>
