@@ -14,6 +14,7 @@ import Wrapper from "./components/Wrapper";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import API from './utils/API.js'
 import "./App.css";
+// import Sidebar from "./components/Sidebar";
 
 class App extends Component {
    state = {
@@ -51,6 +52,10 @@ class App extends Component {
           email={this.state.email}
           picture= {this.state.picture}
           />
+          {/* <Sidebar firstname={this.state.firstname}
+          email={this.state.email}
+          picture= {this.state.picture}
+          /> */}
           <Wrapper >
             <Switch>
               <Route exact path="/" component={Home} />
