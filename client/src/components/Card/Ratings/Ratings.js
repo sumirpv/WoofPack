@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Ratings.css";
 import API from "../../../utils/API.js";
 var Rating = require('react-rating');
-var FontAwesome = require('react-fontawesome');
+// var FontAwesome = require('react-fontawesome');
 
 class Ratings extends Component {
 
