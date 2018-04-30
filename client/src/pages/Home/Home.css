@@ -1,19 +1,63 @@
-/* body {
-    background-image: url("https://www.professionalpetnanny.com/wp-content/themes/petnanny/images/cincinnati-dog-walking-slide.jpg");
-    height: 1000px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-} */
-
-/* .modal-content {
-    background-color: red;
-    height: 1000px;
-} */
-
 .top {
     z-index: 10000;
 }
+
+.home-btn {
+    
+    margin-bottom: 2.5%;
+    margin-top: 0;
+    border-radius: 5%;
+    background-color: rgb(7, 177, 245);
+    padding: 2%;
+    color: white;
+    
+}
+
+.buttons-div {
+    margin: 0 auto;
+}
+
+/* .tinted {
+    
+} */
+
+.main-title, .more-info {
+    text-align: center;
+    color: rgb(7, 177, 245);
+    display: block;
+    font-family: 'Merienda One', cursive;
+    margin-bottom: 5%
+}
+
+.main-title {
+    font-size: 350%;
+}
+.main-home {
+    margin: 0 auto!important;
+    width: 100%!important
+}
+.slider-home {
+    margin: 0 auto!important;
+    width: 100%!important
+}
+
+.slider-home img {
+    opacity: .5;
+}
+
+.slider-text {
+    color: white
+}
+
+hr { 
+    margin-top: 5%;
+    border-top: 3px double #8c8b8b;
+    
+} 
+
+.about {
+    margin-top: 5%;
+    line-height: 200.5%;
+    font-size: 125%;
+}
+
