@@ -61,31 +61,27 @@ class Home extends Component {
         return (
             <div className="home-pg">
             
-                    {/* <h1> WoofPack </h1>
+                    <h1> WoofPack </h1>
 
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickSignupModal} > Sign up </button> }
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickLoginModal} > Login </button> }
                     
 
                 {this.openSignupModal()}
-<<<<<<< HEAD
-                {this.openLoginModal()} */}
-=======
                 {this.openLoginModal()}
->>>>>>> d2fa416eb104d6628e924bb15339da6b0631f381
-            <Slider className="slider-home" fullscreen="true" interval={10000}> 
+            {/* <Slider className="slider-home" fullscreen="true" interval={10000}> 
                 <Slide
                     src="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"
                     title="This is our big Tagline!">
                     Here's our small slogan.
                     <button onClick={this.clickSignupModal} > Sign up </button>
                     <button onClick={this.clickLoginModal} > Login </button>
-                     {/* <Modal  
+                     <Modal  
                         header='Modal Header'
                         fixedFooter
                         trigger={<Button>MODAL WITH FIXED FOOTER</Button>}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </Modal> */}
+                    </Modal>
                     {this.openSignupModal()}
                     {this.openLoginModal()} 
                 </Slide>
@@ -93,7 +89,7 @@ class Home extends Component {
                 <Slide
                     src="https://dingo.care2.com/pictures/greenliving/1404/1403349.large.jpg"
                     title="Left aligned Caption"
-                    // placement="left">
+                    placement="left">
                     >
                     Here's our small slogan.
                     <button onClick={this.clickSignupModal} > Sign up </button>
@@ -123,13 +119,9 @@ class Home extends Component {
                 </Slide>
                 
                 
-            </Slider> 
+            </Slider>  */}
             <div>
-<<<<<<< HEAD
-                <Parallax imageSrc="https://www.professionalpetnanny.com/wp-content/themes/petnanny/images/cincinnati-dog-walking-slide.jpg"/>
-=======
                 {/* <Parallax imageSrc="https://www.professionalpetnanny.com/wp-content/themes/petnanny/images/cincinnati-dog-walking-slide.jpg"/>
->>>>>>> d2fa416eb104d6628e924bb15339da6b0631f381
                     <div className="section white">
                         <div className="row container">
                             <h2 className="header">Parallax</h2>
