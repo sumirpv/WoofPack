@@ -50,9 +50,10 @@ constructor (props) {
                         </Link>
                     </li>
                     <li>
-                        <button id="logoutBtn" onClick={this.clickLogout} 
+                        {this.props.loggedIn === true ? <button id="logoutBtn" onClick={this.clickLogout} 
                         style={{backgroundColor:"red"}}
-                        > Logout </button>
+                        > Logout </button>  :  null }
+                        
                     </li>
                 </ul>
                 <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>

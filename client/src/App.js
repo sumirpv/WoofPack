@@ -57,7 +57,7 @@ class App extends Component {
           <Nav firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
-          />
+          loggedIn = {this.state.session}/>
           <Wrapper >
             <Switch>
               <Route exact path="/" render={this.HomePage} />
