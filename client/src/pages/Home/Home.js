@@ -69,7 +69,7 @@ class Home extends Component {
 
                 {this.openSignupModal()}
                 {this.openLoginModal()}
-            <Slider className="slider-home" fullscreen="true" interval={10000}> 
+            <Slider className="slider-home" fullscreen="true" interval={1000000}> 
                 <Slide
                     src="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"
                     title="This is our big Tagline!">
