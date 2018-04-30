@@ -146,7 +146,7 @@ module.exports = function (app) {
             mypackarray.push(o_id);
         };
         db.Profile.find( { _id: { $nin : mypackarray } } ).populate("dog").then(function (data) {
-            console.log(data);
+            // console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
     });
@@ -169,8 +169,9 @@ module.exports = function (app) {
         var id = req.session.user.id
         var o_id = new ObjectId(id);
 
-        db.Profile.find({ _id: o_id }).populate("myPack")
+        db.Profile.find({ _id: o_id }).populate({path: "myPack", populate: {path:"dog"}})
             .then(function (data) {
+                console.log(data);
                 res.send(data);
             }).catch(err => res.status(422).json(err));
     });

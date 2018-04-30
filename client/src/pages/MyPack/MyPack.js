@@ -9,7 +9,8 @@ class MyPack extends Component {
         this.state = {
             myPack: [],
             myPackInfo: [],
-            packArray: []
+            packArray: [],
+            
         }
     }
     //API get route from db to grab pack members, add to state and then map over them 
@@ -27,7 +28,8 @@ class MyPack extends Component {
             console.log(res.data);
             this.setState({
                 myPackInfo: res.data,
-                packArray: res.data[0].myPack
+                packArray: res.data[0].myPack,
+            
             });
             
         }).catch(error => console.log(error));
