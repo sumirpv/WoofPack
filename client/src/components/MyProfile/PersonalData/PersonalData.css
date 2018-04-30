@@ -31,3 +31,4 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 #btnSave {
     float:left;
 }
+

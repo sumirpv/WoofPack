@@ -64,7 +64,7 @@ class PersonalData extends Component {
                             <div className="row">
                                 <div class="input-field col s12">About me:
                                 <div class="input-field inline about">
-                                    <textarea name="aboutMe"  value={this.props.about} onChange={this.handleInputChange} id="aboutMe" className="materialize-textarea"></textarea>
+                                    <textarea name="aboutMe"  value={this.props.about} onChange={this.handleInputChange} id="aboutMe" className="materialize-textarea "></textarea>
                                     </div>
                                 </div>
                             </div>
