@@ -1,4 +1,11 @@
 .modal {
     display: block;
     z-index: 1;
+    max-height: 200%!important;
+    overflow-y: scroll!important;
+    padding: -2%;
 }
+
+h5 {
+    color: rgb(5, 138, 190)
+}   
