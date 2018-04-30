@@ -35,7 +35,7 @@ class SendCoin extends Component {
         return (
             <Row>
                 <div className="col s8">
-                <Input onChange={this.handleInputChange}  name="coinValue" type='select' label="Materialize Select" defaultValue='2'>
+                <Input onChange={this.handleInputChange}  name="coinValue" type='select' label="Send Coins" defaultValue='2'>
                     <optgroup label="Walk">
                         <option  value="5" >Short walk 5 Coins</option>
                         <option value="10" >Long walk 10 Coins</option>

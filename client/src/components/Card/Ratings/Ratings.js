@@ -39,7 +39,7 @@ class Ratings extends Component {
         const avg = sum / rating.length; 
         return (
 
-            <div><b>Rating:
+            <div><b>
                 <Rating 
                     id ="rating" 
                     emptySymbol="fa fa-star-o fa-2x"
