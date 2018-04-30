@@ -1,7 +1,7 @@
 .modal {
     display: block;
     z-index: 1;
-    max-height: 200%!important;
+    max-height: 225%!important;
     overflow-y: scroll!important;
     padding: -2%;
 }
