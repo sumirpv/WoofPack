@@ -1,5 +1,5 @@
 var path = require("path");
-var db = require("../models")
+var db = require("../models");
 var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 var ObjectId = require('mongodb').ObjectId;
@@ -53,7 +53,8 @@ module.exports = function (app) {
                     firstname: data.firstname,
                     email: data.email,
                     picture: data.picture,
-                    username: data.username
+                    username: data.username,
+                    myPack: data.myPack
                 };
                 //console.log("this is req.session.user on login", req.session.user)
                 res.json(data);
