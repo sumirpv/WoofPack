@@ -87,6 +87,8 @@ class AddDogModal extends Component {
                                                 <input value={this.state.age} name={"age"} onChange={this.handleInputChange} placeholder="Dog Age" id="age" type="text" className="validate">
                                                 </input>
                                             </div>
+                                        </div>
+                                        <div className="input-field col s6">
                                             <div className="form-group">
                                                 <input value={this.state.temperment} name={"temperment"} onChange={this.handleInputChange} placeholder="Temperment" id="temperment" type="text" className="validate">
                                                 </input>
@@ -107,7 +109,7 @@ class AddDogModal extends Component {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                                        <button type="submit"  id="addDog2"class="btn btn-secondary" data-dismiss="modal">Submit</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
 

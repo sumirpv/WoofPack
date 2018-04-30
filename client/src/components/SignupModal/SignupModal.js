@@ -73,7 +73,7 @@ class Modal extends Component {
                             <div className="row">
                                 <form className="col s12" onSubmit={this.onSubmit}>
                                     <div className="row">
-                                        <div className="input-field col s6">
+                                        <div className="col s6">
                                             <div className="form-group">
                                                 <input value={this.state.firstname} name={"firstname"} onChange={this.handleInputChange} placeholder="First Name" id="first-name" type="text" className="validate">
                                                 </input>
@@ -94,6 +94,9 @@ class Modal extends Component {
                                                 <input value={this.state.about} name={"about"} onChange={this.handleInputChange} placeholder="about" id="about" type="text" className="validate">
                                                 </input>
                                             </div>
+                                        </div>
+                                        <div className="col s6">
+                                            
                                             <div className="form-group">
                                                 <input value={this.state.username} name={"username"} onChange={this.handleInputChange} placeholder="User Name" id="username" type="text" className="validate">
                                                 </input>
@@ -110,14 +113,14 @@ class Modal extends Component {
                                                 <input value={this.state.image} name={"avatar"} onChange={this.handleInputChange} id="avatar" type="file">
                                                 </input>
                                             </div>
+                                            
                                         </div>
+                                            
                                     </div>
-
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
+                                        <button type="submit" id="signup2" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                                        <button type="button" id="signup3" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
-
                                 </form>
 
                             </div>
