@@ -75,10 +75,12 @@ module.exports = function (app) {
         }).then(function (data) {
             //console.log("dog id" + data._id);
             //console.log("prof id" + req.session.user.id);
-            return db.Profile.findOneAndUpdate({
+            db.Profile.findOneAndUpdate({
                 _id: req.session.user.id
-            }, { $push: { dog: data._id } }, { new: true });
-            res.json("test ", data);
+            }, { $push: { dog: data._id } }, { new: true }).then(function (dogData) {
+                res.json(dogData);
+            });
+            
         }).catch(function (err) {
             res.json(err);
         });
