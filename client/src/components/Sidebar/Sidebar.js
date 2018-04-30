@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import { SideNav, Button, SideNavItem, Icon } from 'react-materialize';
 
 class Sidebar extends Component {
+    constructor (props) {
+        super (props)
+    }
     render() {
         return (
             <SideNav
@@ -10,12 +13,12 @@ class Sidebar extends Component {
                 trigger={<Button><Icon>dehaze</Icon></Button>}
                 options={{ closeOnClick: true }}
             >
-                <SideNavItem className="side" userView
+                <SideNavItem userView
                     user={{
-                        background: "https://pics.me.me/woof-woof-give-me-seed-lol-7523100.png",
-                        image: '{this.props.picture}',
-                        name: '{this.props.firstname}',
-                        email: '{this.props.email}'
+                        background: "http://www.pawculture.com/uploads/dog-walking-mistakes-card.jpg",
+                        image: this.props.picture,
+                        name: this.props.userName,
+                        // email: this.props.email
                     }}
                 />
                 {/* <SideNavItem
@@ -24,7 +27,8 @@ class Sidebar extends Component {
                 <SideNavItem>
                     <Link to="/profile">
                         Profile
-                    </Link> 
+                    </Link>
+                <br></br>
                 </SideNavItem>
 
                 <SideNavItem>

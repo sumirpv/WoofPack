@@ -54,11 +54,16 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav firstname={this.state.firstname}
+          {/* <NavHeader /> */}
+          {/* <Nav firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
           loggedIn = {this.state.session}/>
-          /> 
+          /> */}
+          <Sidebar userName={this.state.username}
+          email={this.state.email}
+          picture= {this.state.picture}
+          />
           <Wrapper >
             <Switch>
               <Route exact path="/" render={this.HomePage} />
@@ -69,6 +74,7 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </Wrapper>
+          {/* <Footer /> */}
         </div>
       </Router>
     )
