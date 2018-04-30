@@ -58,15 +58,12 @@ class App extends Component {
           <Nav firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
-<<<<<<< HEAD
           loggedIn = {this.state.session}/>
-=======
           />
           {/* <Sidebar firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
           /> */}
->>>>>>> home-page-styling
           <Wrapper >
             <Switch>
               <Route exact path="/" render={this.HomePage} />
