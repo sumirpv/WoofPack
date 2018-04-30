@@ -6,10 +6,11 @@ class Sidebar extends Component {
     render() {
         return (
             <SideNav
+                className="sideNav"
                 trigger={<Button><Icon>dehaze</Icon></Button>}
                 options={{ closeOnClick: true }}
             >
-                <SideNavItem userView
+                <SideNavItem className="side" userView
                     user={{
                         background: "https://pics.me.me/woof-woof-give-me-seed-lol-7523100.png",
                         image: '{this.props.picture}',

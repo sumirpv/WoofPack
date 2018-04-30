@@ -61,15 +61,20 @@ class Home extends Component {
         return (
             <div className="home-pg">
             
-                    <h1> WoofPack </h1>
+                    {/* <h1> WoofPack </h1>
 
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickSignupModal} > Sign up </button> }
                     {this.props.loggedIn === true ? null :  <button onClick={this.clickLoginModal} > Login </button> }
                     
 
                 {this.openSignupModal()}
+
+                {this.openLoginModal()} */}
+
                 {this.openLoginModal()}
-            <Slider className="slider-home" fullscreen="true" interval={1000000}> 
+
+            <Slider className="slider-home" fullscreen="true" interval={1000000 } > 
+
                 <Slide
                     src="https://www.protectivity.com/protectivity-blog/wp-content/uploads/sites/102/2015/09/dog-walking.jpg"
                     title="This is our big Tagline!">
