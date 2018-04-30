@@ -9,6 +9,7 @@ import API from "../../utils/API.js";
 import Ratings from "./Ratings"
 
 
+
 class Card extends Component {
     constructor(props) {
         super(props)
@@ -17,11 +18,11 @@ class Card extends Component {
             chatOpen: false,
             userName1: "",
             userName2: "",
-            dogs: []
+            dogs: [],
+            showcard: true
+            
         }
     }
-
-
     componentDidMount() {
         API.checkIfsession().then(res => {
             console.log("this is res.data when check session", res.data);
@@ -35,10 +36,13 @@ class Card extends Component {
         });
 
         this.setState({
-            userName2: this.props._id
+            userName2: this.props._id,
+            showcard: true
         })
 
-    }
+    };
+
+    
 
     clickChatModal = () => {
 
@@ -70,8 +74,14 @@ class Card extends Component {
 
         API.addPack(usernameObj).then(res => {
             console.log('added pack member');
+        });
+
+        this.setState({
+            showcard: false
         })
     };
+
+    
 
 
 
@@ -80,7 +90,9 @@ class Card extends Component {
         return (
             <Roww>
                 <Col size="md-6">
-                    <div className="card-panel">
+
+                    {this.state.showcard === true ? 
+                    <div className="card-panel" >
                         <Roww>
                             <Col size="md-2">
                                 <div className="card" id="user-card">
@@ -185,7 +197,8 @@ class Card extends Component {
 
                             </Col>
                         </Roww>
-                    </div>
+                    </div> : null
+                    }
                 </Col>
                 {this.openChatModal()}
 

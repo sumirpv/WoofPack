@@ -141,7 +141,7 @@ module.exports = function (app) {
         mypack = req.session.user.myPack;
         mypackarray = [];
         for (let i=0; i<mypack.length; i++) {
-            console.log('for loop has started')
+            // console.log('for loop has started')
             var o_id = new ObjectId(mypack[i]);
             mypackarray.push(o_id);
         };
@@ -171,7 +171,7 @@ module.exports = function (app) {
 
         db.Profile.find({ _id: o_id }).populate({path: "myPack", populate: {path:"dog"}})
             .then(function (data) {
-                console.log(data);
+                // console.log(data);
                 res.send(data);
             }).catch(err => res.status(422).json(err));
     });
