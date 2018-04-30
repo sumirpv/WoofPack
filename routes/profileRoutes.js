@@ -1,5 +1,5 @@
 var path = require("path");
-var db = require("../models")
+var db = require("../models");
 var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 var ObjectId = require('mongodb').ObjectId;

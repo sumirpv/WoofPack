@@ -1,5 +1,5 @@
 module.exports = {
     Profile: require("./profile"),
-    Dog: require("./dog"),
+    Dog: require("./Dog"),
     Message: require("./message")
   };
