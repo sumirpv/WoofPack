@@ -53,7 +53,8 @@ module.exports = function (app) {
                     firstname: data.firstname,
                     email: data.email,
                     picture: data.picture,
-                    username: data.username
+                    username: data.username,
+                    myPack: data.myPack
                 };
                 //console.log("this is req.session.user on login", req.session.user)
                 res.json(data);
