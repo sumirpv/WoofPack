@@ -54,24 +54,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {/* <NavHeader /> */}
-          {/* <Nav firstname={this.state.firstname}
+          <Nav firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
           loggedIn = {this.state.session}/>
-<<<<<<< HEAD
-          /> */}
-          <Sidebar firstname={this.state.firstname}
-          email={this.state.email}
-          picture= {this.state.picture}
-          />
-=======
-          />
-          {/* <Sidebar firstname={this.state.firstname}
-          email={this.state.email}
-          picture= {this.state.picture}
-          /> */}
->>>>>>> d2fa416eb104d6628e924bb15339da6b0631f381
+          /> 
           <Wrapper >
             <Switch>
               <Route exact path="/" render={this.HomePage} />
@@ -82,7 +69,6 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </Wrapper>
-          {/* <Footer /> */}
         </div>
       </Router>
     )
