@@ -14,6 +14,7 @@ import Wrapper from "./components/Wrapper";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import API from './utils/API.js'
 import "./App.css";
+// import Sidebar from "./components/Sidebar";
 
 class App extends Component {
    state = {
@@ -57,7 +58,15 @@ class App extends Component {
           <Nav firstname={this.state.firstname}
           email={this.state.email}
           picture= {this.state.picture}
+<<<<<<< HEAD
           loggedIn = {this.state.session}/>
+=======
+          />
+          {/* <Sidebar firstname={this.state.firstname}
+          email={this.state.email}
+          picture= {this.state.picture}
+          /> */}
+>>>>>>> home-page-styling
           <Wrapper >
             <Switch>
               <Route exact path="/" render={this.HomePage} />
