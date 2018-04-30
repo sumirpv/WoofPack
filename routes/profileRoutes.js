@@ -214,7 +214,7 @@ module.exports = function (app) {
     app.post('/api/rating', function (req, res){
         console.log("req.body.id ", req.body.id);
         var o_id= new Object(req.body.id);
-        db.Profile.update({_id:o_id}, {$set:{rating : req.body.rating}}).
+        db.Profile.update({_id:o_id}, {$push:{rating : req.body.rating}}).
         then(function(data){
             console.log("this is rating res.data", data);
             res.end();
