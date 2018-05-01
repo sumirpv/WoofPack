@@ -39,20 +39,20 @@ class Sidebar extends Component {
                     divider
                 /> */}
                 <SideNavItem>
-                    <Link to="/profile">
+                    <Link to="/profile" className="sidebar-text">
                         Profile
                     </Link>
                 <br></br>
                 </SideNavItem>
 
                 <SideNavItem>
-                    <Link to="/findpack">
+                    <Link to="/findpack" className="sidebar-text">
                         Grow Pack
                     </Link>
                 </SideNavItem>
 
                 <SideNavItem>
-                    <Link to="/mypack">
+                    <Link to="/mypack" className="sidebar-text">
                         My Pack
                     </Link>
                 </SideNavItem>
