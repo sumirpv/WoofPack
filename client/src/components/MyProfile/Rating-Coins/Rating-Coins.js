@@ -15,6 +15,7 @@ const RatingCoins = (props) => {
 
     return (
     <div className="row">
+    
         <div className="col s6">
             <div className="profile-card rating-coins card-panel grey lighten-5 z-depth-1">
                 <div className="row valign-wrapper">

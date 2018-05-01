@@ -36,37 +36,42 @@ class PersonalData extends Component {
                     <div className="row valign-wrapper">
                         <form class="col s12">
                             <div className="row about-row">
-                            <h3 className="profile-header"> About You </h3>
-                                <div className="input-field col s6"> 
-                                <i class="material-icons">face</i>
-                                    <div class="input-field inline" className="profile-text">
-                                    <input name="firstName" value={this.props.firstname} onChange={this.handleInputChange} id="firstName" type="text" className="validate" />
+                                <div className="input-field col s6 profile-text">  <i class="material-icons">face</i>
+                                
+                                    <div class="input-field inline profile-text">
+                                    <input name="firstName" value={this.props.firstname} onChange={this.handleInputChange} id="firstName" type="text" className="validate profile-text" />
                                     </div>
                                 </div>
-                                <div className="input-field col s6"> 
+                                {/* <div className="input-field col s6"> 
                                 <div class="input-field inline" className="profile-text">
                                     <input name="lastName" value={this.props.lastname} onChange={this.handleInputChange} id="lastName" type="text" className="validate" />
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
-                            <div className="row">
-                                <div className="input-field col s6"><i class="material-icons">contact_phone</i>
+
+                            <div className="row about-row">
+                                <div className="input-field col s6 profile-text"><i class="material-icons">contact_phone</i>
                                
-                                <div class="input-field inline" className="profile-text">
-                                    <input name="phone"  value={this.props.phone} onChange={this.handleInputChange} id="phone" type="text" className="validate" />
+                                <div class="input-field inline profile-text">
+                                    <input name="phone"  value={this.props.phone} onChange={this.handleInputChange} id="phone" type="text" className="validate profile-text" />
                                  </div>   
                                 </div>
-                                <div className="input-field col s6" className="profile-text"><i class="material-icons">home</i>
-                                <div class="input-field inline">
-                                    <input name="address"  value={this.props.address} onChange={this.handleInputChange} id="address" type="text" className="validate" />
+
+                            </div>
+                            <div className="row about-row">
+                            <div className="input-field col s6" className="profile-text"><i class="material-icons">home</i>
+
+                                <div class="input-field inline profile-text">
+                                    <input name="address"  value={this.props.address} onChange={this.handleInputChange} id="address" type="text" className="validate profile-text" />
                                    </div> 
                                 </div>
                             </div>
 
-                            <div className="row">
-                                <div class="input-field col s12">About me:
-                                <div class="input-field inline about">
-                                    <textarea name="aboutMe"  value={this.props.about} onChange={this.handleInputChange} id="aboutMe" className="materialize-textarea "></textarea>
+
+                            <div className="row about-row">
+                                <div class="input-field col s12 profile-text">About me:
+                                <div class="input-field inline about profile-text">
+                                    <textarea name="aboutMe"  value={this.props.about} onChange={this.handleInputChange} id="aboutMe" className="materialize-textarea profile-text "></textarea>
                                     </div>
                                 </div>
                             </div>

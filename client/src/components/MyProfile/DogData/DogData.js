@@ -5,26 +5,27 @@ import "./DogData.css";
 const DogData = (props) => {
 
     return (
-        <div className="profile-card card-panel grey lighten-5 z-depth-1">
+        <div className="profile-card card-panel grey lighten-5 z-depth-1 dog-text">
+        <h3 className="profile-header"> {props.name} </h3>
             <div className="row">
-            <h3 className="profile-header"> About Your Doggo </h3>
-                    <div className="col s2">
-                        <img src={props.picture} alt="" class="circle responsive-img" />
+            
+                    <div className="col s4">
+                        <img src={props.picture} alt="" class="circle responsive-img dog-img" />
                     </div>
-                    <div className="col s5">
-                        <div> <span> <h5>{props.name} </h5></span> </div>
-                        <span className="black-text">
-                            <strong> Breed:   </strong>{props.breed}</span><br/>
-                        <span className="black-text">            
-                            <strong> Size:   </strong> {props.size} </span><br/>      
-                        <span className="black-text">        
-                            <strong> Age:   </strong> {props.age}  </span><br/>          
+                    <div className="col s4">
+                        
+                        <span className=" profile-text">
+                            {props.breed}</span> <br/><br/>
+                        <span className=" profile-text">            
+                            {props.size} </span><br/>  <br/>    
+                        <span className=" profile-text">        
+                            {props.age} years old </span><br/>          
                     </div>        
                                 
-                    <div className="col s5">
-                    <span className="black-text">           
-                            <strong> Temperment:   </strong> {props.temperment}</span><br/>
-                    <span id="aboutDog" className="black-text">
+                    <div className="col s4">
+                    <span className=" profile-text">           
+                    <strong> Temperment:   </strong> {props.temperment}</span><br/><br/>
+                    <span id="aboutDog" className=" profile-text">
                         <strong> About Me:   </strong>{props.about} efjhbwehcbehrbcveh veh cehrbc erhcv rhveverv evueuv ueerv </span>
                     </div>            
                            

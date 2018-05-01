@@ -1,3 +1,19 @@
 #aboutDog{
     overflow-y: scroll;
 }
+
+.dog-img {
+    width: 150px!important;
+}
+
+.profile-text {
+    display: inline;
+    color: rgba(5, 112, 173, 0.562)!important;
+    margin-left:3%!important;
+    font-size: 20px;
+  }
+
+  .dog-text {
+      color: rgba(5, 112, 173, 0.562)!important;
+      
+  }

@@ -40,3 +40,18 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     color: rgb(7, 177, 245);
     text-align: center;
 }
+
+.profile-text {
+    display: inline;
+    color: rgba(5, 112, 173, 0.562);
+    margin-left:3%!important;
+  }
+
+  input {
+      display: inline;
+  }
+
+  .waves-effect.waves-light.btn {
+    z-index: 0;
+    background-color: rgba(5, 112, 173, 0.562)!important;
+}

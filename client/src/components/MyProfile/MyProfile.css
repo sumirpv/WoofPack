@@ -1,5 +1,6 @@
 button.waves-effect.waves-light.btn {
     z-index: 0;
+    background-color: rgba(5, 112, 173, 0.562)!important;
 }
 #addDog{
     margin-bottom: 15px;
