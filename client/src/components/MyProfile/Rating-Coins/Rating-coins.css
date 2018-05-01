@@ -55,3 +55,17 @@ h1 { font-size: 1.5em; margin: 10px; }
   font-size: 23px;
   padding-right: 2%;
 }
+
+.profile-card {
+  border: solid 2px rgba(5, 112, 173, 0.562);
+  border-radius: 5px;
+}
+
+.profile-text {
+  color: rgba(5, 112, 173, 0.562);
+}
+
+.rating-coins {
+  height: 119px;
+  width: 255px;
+}
