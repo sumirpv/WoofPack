@@ -6,3 +6,17 @@
 #login3{
     margin-right: 8px; 
 }
+
+.btn.btn-secondary {
+    background-color: gray;
+}
+
+.btn.btn-secondary:hover {
+    box-shadow: 7px 8px 20px gray;
+}
+
+input#username,
+input#password {
+    border-bottom: 1px solid;
+}
+
