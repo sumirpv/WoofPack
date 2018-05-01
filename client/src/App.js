@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import API from './utils/API.js'
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import Favicon from 'react-favicon';
 
 class App extends Component {
    state = {
@@ -52,6 +53,8 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+      <Favicon url="http://sweetclipart.com/multisite/sweetclipart/files/dog_paw_print_blue.png" />
       <Router>
         <div>
           {/* <NavHeader /> */}
@@ -79,6 +82,7 @@ class App extends Component {
           {/* <Footer /> */}
         </div>
       </Router>
+      </div>
     )
   }
 }
