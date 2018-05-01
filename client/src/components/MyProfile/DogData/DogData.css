@@ -12,9 +12,20 @@
     color: rgba(5, 112, 173, 0.562)!important;
     margin-left:3%!important;
     font-size: 20px;
-  }
+}
 
-  .dog-text {
-      color: rgba(5, 112, 173, 0.562)!important;
+.dog-text {
+    color: rgba(5, 112, 173, 0.562)!important;
       
-  }
+}
+
+#dog-info-left {
+    float: left;
+}
+
+#dogDataImg {
+    width: 250px !important;
+    height: 250px !important;
+    margin-left: 25%;
+    border-radius: 50%;
+}

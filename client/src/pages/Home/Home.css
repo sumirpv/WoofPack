@@ -10,8 +10,11 @@
     border-radius: 5%;
     background-color: rgb(7, 177, 245);
     padding: 2%;
-    color: white;
-    
+    color: white;   
+}
+
+.home-btn:focus {
+    background-color: rgba(5, 112, 173, 0.562);
 }
 
 .buttons-div {

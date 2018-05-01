@@ -5,3 +5,11 @@ button.waves-effect.waves-light.btn {
 #addDog{
     margin-bottom: 15px;
 }
+ 
+#coin-div {
+    float: right;
+}
+
+#aboutMeDiv {
+    overflow-y: auto;
+}

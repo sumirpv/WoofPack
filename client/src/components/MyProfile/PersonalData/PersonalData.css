@@ -1,21 +1,30 @@
+#home-icon {
+    padding-left: 10px;
+}
 
-
+.responsive-img.user-profile-image {
+    width: auto;
+    max-height: 300px;
+}
 
 #firstName,#lastName,#phone,#address,#aboutMe{
     font-size: 20px;
-
 }
 
 .input-field.inline {
     display: inline-block;
-     vertical-align: baseline; 
+    vertical-align: baseline; 
     margin-left: 5px;
+}
+
+#aboutMeDiv {
+    overflow-y: auto;
 }
 
 .input-field {
     position: relative;
     margin-top: 0; 
-     margin-bottom: 0;
+    margin-bottom: 0;
 }
 .about{
     vertical-align: -webkit-baseline-middle !important;
@@ -29,6 +38,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .card-panel{
     padding-left: 5%;
 }
+
 #btnSave {
     float:left;
 }
@@ -36,6 +46,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 .about-row {
     margin: 20px; 
 }
+
 .profile-header{
     margin: 2%;
     color: rgb(7, 177, 245);
@@ -46,13 +57,13 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     display: inline;
     color: rgba(5, 112, 173, 0.562);
     margin-left:3%!important;
-  }
+}
 
-  input {
-      display: inline;
-  }
+input {
+    display: inline;
+}
 
-  .waves-effect.waves-light.btn {
+.waves-effect.waves-light.btn {
     z-index: 0;
     background-color: rgba(5, 112, 173, 0.562)!important;
 }
