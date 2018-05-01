@@ -15,18 +15,18 @@ const DogData = (props) => {
                     <div className="col s4">
                         
                         <span className=" profile-text">
-                            {props.breed}</span> <br/><br/>
+                        Breed: {props.breed}</span> <br/><br/>
                         <span className=" profile-text">            
-                            {props.size} </span><br/>  <br/>    
+                        Size: {props.size} </span><br/>  <br/>    
                         <span className=" profile-text">        
-                            {props.age} years old </span><br/>          
+                        Age:   {props.age} years old </span><br/>          
                     </div>        
                                 
                     <div className="col s4">
                     <span className=" profile-text">           
                     <strong> Temperment:   </strong> {props.temperment}</span><br/><br/>
                     <span id="aboutDog" className=" profile-text">
-                        <strong> About Me:   </strong>{props.about} efjhbwehcbehrbcveh veh cehrbc erhcv rhveverv evueuv ueerv </span>
+                        <strong> About Me:   </strong>{props.about}</span>
                     </div>            
                            
             </div>

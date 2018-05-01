@@ -19,6 +19,7 @@
 }
 .about{
     vertical-align: -webkit-baseline-middle !important;
+
 }
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
    
@@ -33,7 +34,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 }
 
 .about-row {
-    margin-bottom: 0px;
+    margin: 20px; 
 }
 .profile-header{
     margin: 2%;

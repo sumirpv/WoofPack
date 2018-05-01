@@ -53,7 +53,6 @@ class SendCoin extends Component {
                 <div className="col s4">
                 <button onClick={this.sendData}>Send Coin </button>
                 </div>
-                
             </Row>
 
         )

@@ -98,7 +98,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">{this.props.firstname + " " + this.props.lastname}<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to User Profile?</a></p>
+                                      
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">User Info<i className="small material-icons right">cancel</i></span>
@@ -128,7 +128,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">REX<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to user profile?</a></p>
+                                
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
@@ -156,7 +156,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">{this.state.dogs[0].dogName}<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to user profile?</a></p>
+                                     
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
