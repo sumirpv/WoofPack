@@ -71,3 +71,7 @@ img.circle {
   font-size: 26px;
   text-shadow: 3px 2px 2px white;
 }
+
+.indicator-item.active {
+  background-color: rgb(7, 177, 245) !important;
+}
