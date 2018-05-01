@@ -3,13 +3,18 @@
     width: 100%;
 } */
 
+.card-box {
+    border: solid 2px rgb(7, 177, 245);
+}
+
 #user-card {
     float: left;
     width: 45%;
     height: 275px;
     /* background-color:transparent; */
     /* opacity: 0.85; */
-    background-color: rgba(245, 245, 245, .50);
+    background-color: rgba(5, 112, 173, 0.562);
+    
     
 }
 
@@ -19,7 +24,7 @@
     height: 275px;
     /* background-color:transparent; */
     /* opacity: 0.70; */
-    background-color: rgba(245, 245, 245, .50);
+    background-color: rgba(5, 112, 173, 0.562);
 }
 
 .card-image.waves-effect.waves-block.waves-light {
@@ -112,3 +117,32 @@
       margin: 10px;
     }
 } */
+
+#chat-btn {
+    float:none!important;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left:1%;
+    border-radius: 5%;
+    background-color: rgb(7, 177, 245);
+    padding: 2%;
+    color: white;
+    
+}
+
+.coin-area {
+    border: solid 2px rgba(5, 112, 173, 0.562);
+    padding: 2%;
+}
+
+.coin-btn {
+        float:none!important;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        margin-left:1%;
+        border-radius: 5%;
+        background-color: rgb(7, 177, 245);
+        padding: 2%;
+        color: white;
+        
+}

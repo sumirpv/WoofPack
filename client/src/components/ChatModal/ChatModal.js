@@ -121,7 +121,7 @@ class ChatModal extends React.Component {
                                                 </div>
 
                                                 <input id="message" name="draftChat" type="text" placeholder="Message" value={this.state.draftChat} onChange={this.handleInputChange} />
-                                                <button id="send" onClick={this.handleSendChat}> Send </button>
+                                                <button className ="home-btn" id="send" onClick={this.handleSendChat}> Send </button>
                                             </div>
                                         </div>
                                     </div>

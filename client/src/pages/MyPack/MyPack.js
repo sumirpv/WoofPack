@@ -38,7 +38,7 @@ class MyPack extends Component {
     render() {
         return (
             <div>
-                <h1> {this.props.username}'s WoofPack </h1>
+                <h1 className = "main-title"> {this.props.username}'s WoofPack </h1>
                 {console.log(this.state.myPackInfo)}
                 {this.state.packArray.map(member => {
                     return (

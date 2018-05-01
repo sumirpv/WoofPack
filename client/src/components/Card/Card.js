@@ -84,8 +84,8 @@ class Card extends Component {
     render() {
 
             return (
-            <Roww>
-                <Col size="md-6">
+            <Roww >
+                <Col className = "card-box" size="md-6">
 
                     {this.state.showcard === true ? 
                     <div className="card-panel" >
@@ -98,7 +98,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">{this.props.firstname + " " + this.props.lastname}<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to User Profile?</a></p>
+                                        <p> Click image for more info </p>
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">User Info<i className="small material-icons right">cancel</i></span>
@@ -128,7 +128,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">REX<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to user profile?</a></p>
+                                        <p> Click image for more info </p>
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
@@ -205,7 +205,7 @@ class Card extends Component {
                         <Roww>
                             <Col size="md-12">
                                 <div className="chat-btn-area">
-                                    {this.props.cardtype === "mypack" ? <button onClick={this.clickChatModal} > Send a Chat </button>
+                                    {this.props.cardtype === "mypack" ? <button  id ="chat-btn" onClick={this.clickChatModal} > Send a Chat </button>
                                         : null}
                                 </div>
 

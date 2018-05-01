@@ -1,4 +1,12 @@
-.waves-effect.waves-light.btn {
+.home-btn {
   float: right;
-  background-color: gray;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left:1%;
+    border-radius: 5%;
+    background-color: rgb(7, 177, 245);
+    padding: 2%;
+    color: white;
+    
+
 }

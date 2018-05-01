@@ -51,7 +51,7 @@ class SendCoin extends Component {
                 </Input>
                 </div>
                 <div className="col s4">
-                <button onClick={this.sendData}>Send Coin </button>
+                <button className = "coin-btn" onClick={this.sendData}>Send Coin </button>
                 </div>
                 
             </Row>

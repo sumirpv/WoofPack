@@ -19,3 +19,15 @@ h6 {
     position: absolute;
     z-index: 1;
 }
+
+.home-btn {
+    
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left:1%;
+    border-radius: 5%;
+    background-color: rgb(7, 177, 245);
+    padding: 2%;
+    color: white;
+    
+}
