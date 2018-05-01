@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Modal from "../../components/SignupModal";
 import Login from "../../components/Login"
 import "./Home.css";
-import { Slider, Slide, Parallax, Button, Row, Col } from "react-materialize";
+import { Icon, Slider, Slide, Parallax, Button, Row, Col } from "react-materialize";
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 // import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
 
@@ -111,9 +111,38 @@ class Home extends Component {
                         <p>
                             We know that it can be stressful when you have to leave town, or stay late for work because your pup is counting on you! But day care is so expensive.
                         </p>
-                       
+
                         <p>
                             Joining a Woofpack allows you to still ensure your dog always gets the care they need, while getting to know and help your neighborhood dogs and humans. Sign up today and start enjoying the strength of the pack!  </p>
+
+                    </Col>
+                </Row>
+                <hr />
+
+                <Row>
+                    <Col s={12} className="works">
+                        
+
+                        
+                        <div className="section">
+                        <i class="material-icons">pets</i>
+                        
+                            <h5 className = "steps">Create your Pack</h5>
+                            
+                            <p className = "p-steps">Add packmembers based on distance, reviews, and dog size or temperment </p>
+                        </div>
+                        
+                        <div className="section">
+                        <i class="material-icons">chat</i>
+                            <h5 className = "steps">Connect</h5>
+                            <p className = "p-steps">Chat with your pack to set up meet and greets. </p>
+                        </div>
+                        
+                        <div className="section">
+                        <i class="material-icons">favorite</i>
+                            <h5 className = "steps">Let the fun begin!</h5>
+                            <p className = "p-steps">Have fun earning free dog sitting while meeting new friend and pups </p>
+                        </div>
 
                     </Col>
                 </Row>

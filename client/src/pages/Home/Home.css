@@ -51,14 +51,13 @@
 
 hr { 
     margin-top: 5%;
+    margin-bottom: 5%;
     border-top: 3px double #8c8b8b;
     
 } 
 
-.about {
+.about, works {
     position: relative;
-    
-    margin-top: 5%;
     line-height: 200.5%;
     font-size: 125%;
     color: rgb(59, 58, 58)
@@ -78,3 +77,29 @@ hr {
     z-index: -1;
 }
 
+.steps {
+    display: inline;
+    margin-left: 2%;
+    color: rgb(66, 66, 66);
+    color: white;
+    
+}
+
+.material-icons {
+    color: rgb(7, 177, 245);
+}
+
+.works {
+    margin-top: 2%;
+    background-image: url('chocolab.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    
+    background-blend-mode: screen;
+}
+
+.p-steps {
+    width: 70%;
+    font-size: 130%;
+}
