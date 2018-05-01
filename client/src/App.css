@@ -6,7 +6,7 @@ img {
 }
 
 .material-icons {
-  color: white;
+  color: rgb(7, 177, 245);
 }
 
 .btn.show-on-large:hover {
@@ -37,7 +37,9 @@ img.circle {
   position: fixed;
   height: 100%;
   width: 300px;
+  z-index: 2;
 }
+
 .side-nav .userView {
     position: relative;
     padding: 10px;
