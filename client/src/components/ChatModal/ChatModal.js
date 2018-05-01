@@ -11,7 +11,6 @@ var feedback;
 var username;
 var room = Math.random();
 
-
 class ChatModal extends React.Component {
     state = {
         draftChat: "",
@@ -22,14 +21,14 @@ class ChatModal extends React.Component {
     }
 
     componentDidMount() {
-            API.checkIfsession().then(res =>{
-              if (res.data.auth === true){
-              this.setState({session: true, 
-                userName1: res.data.username, 
-              })
-              }
-            })
-          
+        API.checkIfsession().then(res => {
+            if (res.data.auth === true) {
+                this.setState({
+                    session: true,
+                    userName1: res.data.username,
+                })
+            }
+        })
 
         //Listen for incoming messages from server
         socket.on('chat', (data) => {
@@ -46,7 +45,7 @@ class ChatModal extends React.Component {
         socket.emit("typing", { username: this.state.userName1 });
 
         //When typing feedback comes from server, display this to user
-        socket.on("typing",  (data) => {
+        socket.on("typing", (data) => {
             //add this info to state typing
             this.setState({
                 otherUsertyping: `${data.username} is typing`
@@ -60,11 +59,9 @@ class ChatModal extends React.Component {
         this.setState({
             [name]: value
         });
-        
     }
 
     handleSendChat = () => {
-
         //Query DOM
         message = document.getElementById('message');
         btn = document.getElementById('send');
@@ -72,18 +69,12 @@ class ChatModal extends React.Component {
         feedback = document.getElementById('feedback');
         feedback.innerHTML = ' ';
         room = 'abc123';
-
-
-
         this.addChatDB(this.state.userName1, this.state.userName2, message.value)
-
         //send chat to server
         socket.emit('chat', {
             message: this.state.draftChat,
             username: this.state.userName1
         });
-
-
     };
 
     addChatDB = (user1, user2, msgbody) => {
@@ -109,19 +100,19 @@ class ChatModal extends React.Component {
                                         <div className="input-field col s6">
                                             <div id="article-chat">
                                                 <div id="chat-window">
-                                                <h6>Messages </h6>
+                                                    <h6>Messages </h6>
                                                     {this.state.oldChat.map(chat => {
                                                         return (
-                                                        <div class="output"> {chat}
-                                                        </div>
+                                                            <div class="output"> {chat}
+                                                            </div>
                                                         )
                                                     })}
-                                
+
                                                     <div id="feedback"> </div>
                                                 </div>
 
                                                 <input id="message" name="draftChat" type="text" placeholder="Message" value={this.state.draftChat} onChange={this.handleInputChange} />
-                                                <button className ="home-btn" id="send" onClick={this.handleSendChat}> Send </button>
+                                                <button className="home-btn" id="send" onClick={this.handleSendChat}> Send </button>
                                             </div>
                                         </div>
                                     </div>
@@ -129,16 +120,13 @@ class ChatModal extends React.Component {
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-
         )
     }
 }

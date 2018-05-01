@@ -1,12 +1,12 @@
 .modal {
     z-index: 1000000!important;
-    max-height: 300%!important;
-   
+    max-height: 300%!important;   
 }
 
 h5 {
     color: rgb(5, 138, 190)
 } 
+
 #signup2{
     margin-right: 8px; 
 }

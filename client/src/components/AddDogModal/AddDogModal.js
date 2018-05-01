@@ -12,39 +12,37 @@ class AddDogModal extends Component {
     };
 
     state = {
-        dogName : "",
-        breed : "",
-        age : "",
+        dogName: "",
+        breed: "",
+        age: "",
         selected: "",
-        temperment : "",
-        size : "",
+        temperment: "",
+        size: "",
         // aboutDog : "",
-        avatar : ""
+        avatar: ""
     };
-    
+
     handleInputChange = (event) => {
         switch (event.target.name) {
-            case "avatar" : 
+            case "avatar":
                 this.setState({
-                    avatar : event.target.files[0]
+                    avatar: event.target.files[0]
                 });
                 console.log(event.target.files[0]);
                 break;
-            default : 
+            default:
                 const { name, value } = event.target;
                 this.setState({
-                    [name] : value
+                    [name]: value
                 });
         };
     };
 
     onSubmit = (event) => {
-        console.log("dog info submitted");
-        event.preventDefault();
 
+        event.preventDefault();
         const { dogName, breed, age, temperment, size, aboutDog, avatar } = this.state;
         let formData = new FormData();
-
         formData.append("dogName", dogName);
         formData.append("breed", breed);
         formData.append("age", age);
@@ -56,7 +54,6 @@ class AddDogModal extends Component {
         formData.append("token", token);
 
         API.createDog(formData).then((result) => {
-            console.log("redirect attempt");
             Redirect("/profile");
         });
     };
@@ -109,7 +106,7 @@ class AddDogModal extends Component {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit"  id="addDog2"class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                                        <button type="submit" id="addDog2" class="btn btn-secondary" data-dismiss="modal">Submit</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
 

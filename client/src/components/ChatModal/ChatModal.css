@@ -2,7 +2,6 @@
     border: solid 2px rgb(128, 125, 125);
     border-radius: 5px;
     height: 100px;
-
 }
 
 h6 {
@@ -21,7 +20,6 @@ h6 {
 }
 
 .home-btn {
-    
     margin-bottom: 1%;
     margin-top: 1%;
     margin-left:1%;
@@ -29,5 +27,4 @@ h6 {
     background-color: rgb(7, 177, 245);
     padding: 2%;
     color: white;
-    
 }

@@ -3,7 +3,6 @@
 }
 
 .home-btn {
-    
     margin-bottom: 1%;
     margin-top: 1%;
     margin-left:1%;
@@ -21,10 +20,6 @@
     margin: 0 auto;
     background-color: rgba(5, 112, 173, 0.562);
 }
-
-/* .tinted {
-    
-} */
 
 .main-title, .more-info {
     text-align: center;
@@ -51,21 +46,18 @@
 
 .slider-home img {
     opacity: .7;
-    
 }
 
 .slider-text {
     color: white;
-    text-shadow: 1.5px 1.5px 1px rgb(7, 177, 245);
-    
+    text-shadow: 1.5px 1.5px 1px rgb(7, 177, 245);   
 }
 
 hr { 
     margin-top: 5%;
     margin-bottom: 5%;
     border-top: 3px double #8c8b8b;
-    color: rgba(5, 112, 173, 0.562)
-    
+    color: rgba(5, 112, 173, 0.562)    
 } 
 
 .about,  {
@@ -74,7 +66,6 @@ hr {
     font-size: 125%;
     color: rgb(59, 58, 58)
 }
-
 
 .about:after {
     content : "";
@@ -94,23 +85,23 @@ hr {
     display: inline;
     margin-left: 2%;
     color: rgb(66, 66, 66);
-    color: white;
-    
+    color: white;    
 }
 
 .material-icons {
     color: rgb(7, 177, 245);
 }
+
 .works-row {
     margin-bottom: 0;
 }
+
 .works {
     margin-top: 2%;
     background-image: url('chocolab.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
-    
+    color: white;    
     background-blend-mode: screen;
 }
 
@@ -122,9 +113,11 @@ hr {
 .footer-container {
     min-height: 0!important;
 }
+
 .page-footer{
     background-color: rgba(5, 112, 173, 0.562)
 }
+
 .text-lighten-4 {
     text-align: right;
     margin: 0 auto;

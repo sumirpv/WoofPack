@@ -3,7 +3,7 @@ import "./SignupModal.css";
 import API from '../../utils/API.js'
 
 function Redirect(where) {
-        window.location = where;
+    window.location = where;
 }
 
 class Modal extends Component {
@@ -35,14 +35,11 @@ class Modal extends Component {
                 })
         }
     }
-   
 
     onSubmit = (event) => {
         event.preventDefault();
-
         const { firstname, lastname, address, phone, about, username, email, password, avatar } = this.state;
         let formData = new FormData();
-
         formData.append('firstname', firstname);
         formData.append('lastname', lastname);
         formData.append('address', address);
@@ -54,14 +51,12 @@ class Modal extends Component {
         formData.append('avatar', avatar);
         var token = "t " + Math.random();
         formData.append('token', token);
-
         API.createUser(formData).then((result) => {
-             Redirect('/profile'); 
+            Redirect('/profile');
         });
     };
 
     render() {
-
         return (
             <div class="modal" tabIndex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -96,7 +91,7 @@ class Modal extends Component {
                                             </div>
                                         </div>
                                         <div className="col s6">
-                                            
+
                                             <div className="form-group">
                                                 <input value={this.state.username} name={"username"} onChange={this.handleInputChange} placeholder="User Name" id="username" type="text" className="validate">
                                                 </input>
@@ -113,26 +108,20 @@ class Modal extends Component {
                                                 <input value={this.state.image} name={"avatar"} onChange={this.handleInputChange} id="avatar" type="file">
                                                 </input>
                                             </div>
-                                            
                                         </div>
-                                            
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" id="signup2" class="btn btn-secondary" data-dismiss="modal">Submit</button>
                                         <button type="button" id="signup3" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         )
     }
-
-
 }
+
 export default Modal

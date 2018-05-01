@@ -10,15 +10,13 @@ class MyPack extends Component {
             myPack: [],
             myPackInfo: [],
             packArray: [],
-            
         }
     }
-    //API get route from db to grab pack members, add to state and then map over them 
 
+    //API get route from db to grab pack members, add to state and then map over them 
     componentDidMount() {
         console.log('MyPack component mounted');
         this.getPack();
-
     }
 
     getPack = () => {
@@ -29,41 +27,35 @@ class MyPack extends Component {
             this.setState({
                 myPackInfo: res.data,
                 packArray: res.data[0].myPack,
-            
             });
-            
         }).catch(error => console.log(error));
     };
 
     render() {
         return (
             <div>
-                <h1 className = "main-title"> {this.props.username}'s WoofPack </h1>
+                <h1 className="main-title"> {this.props.username}'s WoofPack </h1>
                 {console.log(this.state.myPackInfo)}
                 {this.state.packArray.map(member => {
                     return (
-                        <Card 
-                        cardtype = {"mypack"}
-                        address = {member.address}
-                        dog = {member.dog}
-                        firstname = {member.firstname}
-                        lastname = {member.lastname}
-                        phone = {member.phone}
-                        email = {member.email}
-                        picture = {member.picture}
-                        about = {member.about}
-                        address = {member.address}
-                        username = {member.username}
-                        _id = {member._id}
-                        message = {member.message}
-                        rating = {member.rating}
+                        <Card
+                            cardtype={"mypack"}
+                            address={member.address}
+                            dog={member.dog}
+                            firstname={member.firstname}
+                            lastname={member.lastname}
+                            phone={member.phone}
+                            email={member.email}
+                            picture={member.picture}
+                            about={member.about}
+                            address={member.address}
+                            username={member.username}
+                            _id={member._id}
+                            message={member.message}
+                            rating={member.rating}
                         />
-                       )
-                    
-
-                    
+                    )
                 })}
-               
             </div>
         );
     }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav";
-// import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Home from "./pages/Home";
@@ -10,7 +9,6 @@ import FindPack from "./pages/FindPack";
 import MyPack from "./pages/MyPack";
 import NoMatch from "./pages/NoMatch";
 import Wrapper from "./components/Wrapper";
-// import NavHeader from "./components/NavHeader";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import API from './utils/API.js'
 import "./App.css";
@@ -24,7 +22,6 @@ class App extends Component {
         email: "", 
         picture: "",
         username: ""
-
     };
 
   componentDidMount(){
@@ -50,19 +47,12 @@ class App extends Component {
     )
   };
   
-
   render() {
     return (
       <div>
       <Favicon url="http://sweetclipart.com/multisite/sweetclipart/files/dog_paw_print_blue.png" />
       <Router>
         <div>
-          {/* <NavHeader /> */}
-          {/* <Nav firstname={this.state.firstname}
-          email={this.state.email}
-          picture= {this.state.picture}
-          loggedIn = {this.state.session}/>
-          /> */}
           <Sidebar 
             userName={this.state.username}
             email={this.state.email}
@@ -79,7 +69,6 @@ class App extends Component {
               <Route component={NoMatch} />
             </Switch>
           </Wrapper>
-          {/* <Footer /> */}
         </div>
       </Router>
       </div>

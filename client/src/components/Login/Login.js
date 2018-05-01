@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 import API from "../../utils/API.js";
 import "./Login.css";
-import $ from "jquery"; 
+import $ from "jquery";
 
-function Redirect(where){
+function Redirect(where) {
     window.location = where
 }
 
 class Login extends Component {
-constructor (props) {
-    super (props)
-}
+    constructor(props) {
+        super(props)
+    }
 
     state = {
         username: "",
         password: ""
     }
-
 
     handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -25,32 +24,30 @@ constructor (props) {
         })
     }
 
-handleLogin = () => {
-    var user = {
-        username: this.state.username,
-        password: this.state.password
+    handleLogin = () => {
+        var user = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        if (user.username === "" || user.password === "") {
+            alert("enter all fields")
+        }
+        else {
+            API.userLogin(user).then((result) => {
+                if (result.data === true) {
+                    Redirect('/profile');
+                }
+                if (result.data === false) {
+                    $("#username").val("");
+                    $("#password").val("");
+                    alert("wrong creds");
+                    this.props.closeModal();
+                }
+            })
+        }
     }
-    if (user.username === "" || user.password === ""){
-        alert("enter all fields")
-    }
-    else {
-        API.userLogin(user).then((result) =>{
-           if (result.data === true){
-               Redirect('/profile'); 
-           }
-           if (result.data === false) {
-                $("#username").val("");
-                $("#password").val("");
-                alert("wrong creds"); 
-                this.props.closeModal();
-           }
-       })
-   }
-  
-}
 
     render() {
-
         return (
             <div class="modal" tabIndex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -62,31 +59,27 @@ handleLogin = () => {
                             <div className="row">
                                 <form className="col s12" method='POST' action='/api/human' encType='multipart/form-data'>
                                     <div className="row">
-                                            <div className="form-group">
-                                                <input value={this.state.username} name={"username"} onChange={this.handleInputChange} placeholder="User Name" id="username" type="text" className="validate">
-                                                </input>
-                                            </div>
-                             
-                                            <div className="form-group">
-                                                <input value={this.state.password} name={"password"} onChange={this.handleInputChange} placeholder="Password" id="password" type="password" className="validate">
-                                                </input>
-                                            </div>
+                                        <div className="form-group">
+                                            <input value={this.state.username} name={"username"} onChange={this.handleInputChange} placeholder="User Name" id="username" type="text" className="validate">
+                                            </input>
+                                        </div>
+                                        <div className="form-group">
+                                            <input value={this.state.password} name={"password"} onChange={this.handleInputChange} placeholder="Password" id="password" type="password" className="validate">
+                                            </input>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id="login3"class="btn btn-secondary" data-dismiss="modal" onClick={this.handleLogin}>Login</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick = {this.props.closeModal}>Close</button>
+                            <button type="button" id="login3" class="btn btn-secondary" data-dismiss="modal" onClick={this.handleLogin}>Login</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={this.props.closeModal}>Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         )
     }
-
-
 }
 export default Login
 

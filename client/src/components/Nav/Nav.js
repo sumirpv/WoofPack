@@ -3,21 +3,20 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API.js";
 import "./Nav.css";
 
-function Redirect(where){
+function Redirect(where) {
     window.location = where
 }
 
 class Nav extends Component {
-constructor (props) {
-    super (props)
-}
+    constructor(props) {
+        super(props)
+    }
 
-    clickLogout = () => { 
+    clickLogout = () => {
         API.logout()
-        .then(res => {
-            Redirect('/');
-        });
-
+            .then(res => {
+                Redirect('/');
+            });
     }
 
     render() {
@@ -37,7 +36,7 @@ constructor (props) {
                     <li>
                         <Link to="/profile">
                             Profile
-                        </Link>   
+                        </Link>
                     </li>
                     <li>
                         <Link to="/findpack">
@@ -50,20 +49,16 @@ constructor (props) {
                         </Link>
                     </li>
                     <li>
-                        {this.props.loggedIn === true ? <button id="logoutBtn" onClick={this.clickLogout} 
-                        style={{backgroundColor:"red"}}
-                        > Logout </button>  :  null }
-                        
+                        {this.props.loggedIn === true ? <button id="logoutBtn" onClick={this.clickLogout}
+                            style={{ backgroundColor: "red" }}
+                        > Logout </button> : null}
                     </li>
                 </ul>
                 <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
             </div>
         )
     }
-    
-} 
-
-
+}
 
 export default Nav;
 

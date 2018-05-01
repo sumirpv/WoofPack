@@ -4,7 +4,6 @@ var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 var ObjectId = require('mongodb').ObjectId;
 
-
 var multerConf = {
     storage: multer.diskStorage({
         destination: function (req, file, next) {
@@ -16,6 +15,7 @@ var multerConf = {
             next(null, file.fieldname + "-" + Date.now() + "." + ext)
         }
     }),
+
     fileFilter: function (req, file, next) {
         if (!file) {
             next();
@@ -32,7 +32,6 @@ var multerConf = {
 module.exports = function (app) {
     // create new user
     app.post("/api/newUser", multer(multerConf).single('avatar'), function (req, res) {
-        //console.log(req.body);
         db.Profile.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -57,7 +56,6 @@ module.exports = function (app) {
                     username: data.username,
                     myPack: data.myPack
                 };
-                //console.log("this is req.session.user on login", req.session.user)
                 res.json(data);
             }).catch(function (err) {
                 res.json(err);
@@ -75,14 +73,11 @@ module.exports = function (app) {
             aboutDog: req.body.aboutDog,
             picture: req.file.path.replace('client/public/', "")
         }).then(function (data) {
-            //console.log("dog id" + data._id);
-            //console.log("prof id" + req.session.user.id);
             db.Profile.findOneAndUpdate({
                 _id: req.session.user.id
             }, { $push: { dog: data._id } }, { new: true }).then(function (dogData) {
                 res.json(dogData);
             });
-            
         }).catch(function (err) {
             res.json(err);
         });
@@ -90,23 +85,18 @@ module.exports = function (app) {
 
     // check if session
     app.get("/api/session", function (req, res) {
-        //console.log("this is check session",req.session.user)
         if (req.session.user) {
-            //console.log("true")
             res.send(req.session.user);
         }
         if (!req.session.user) {
-            //console.log("false")
             res.send(false)
         }
-
     })
+
     // check login
     app.post("/api/login", function (req, res) {
         db.Profile.find({ username: req.body.username }).then(function (data) {
-            // console.log(data);
             if (data.length === 0) {
-                //console.log("yay");
                 res.send(false)
             }
             else if (data[0].password === req.body.password && data[0].username === req.body.username) {
@@ -119,7 +109,6 @@ module.exports = function (app) {
                     username: data[0].username,
                     myPack: data[0].myPack
                 }
-                //console.log("when login this is session", req.session.user)
                 res.send(true)
             }
             else {
@@ -127,14 +116,12 @@ module.exports = function (app) {
             }
         })
     });
+
     // get user data.
     app.get("/api/user", function (req, res) {
-        // console.log("this is hit")
-        //console.log(req.session.user);
         var id = req.session.user.id
         var o_id = new ObjectId(id);
         db.Profile.findOne({ _id: o_id }).populate("dog").then(function (result) {
-            //console.log(result); 
             res.send(result);
         })
     })
@@ -145,37 +132,30 @@ module.exports = function (app) {
         mypack = req.session.user.myPack;
         mypackarray = [];
         for (let i=0; i<mypack.length; i++) {
-            // console.log('for loop has started')
             var o_id = new ObjectId(mypack[i]);
             mypackarray.push(o_id);
         };
         db.Profile.find( { _id: { $nin : mypackarray } } ).populate("dog").then(function (data) {
-            // console.log(data);
             res.send(data);
         }).catch(err => res.status(422).json(err));
     });
 
-
     //Add Pack Member   
     app.put("/api/addpack/", function (req, res) {
-        // console.log('this is body for adding a pack member', req.body.username);
         db.Profile.findOneAndUpdate({
             _id: req.session.user.id
         }, { $push: { myPack: req.body.username } }, { new: true })
             .then(data => {
                 res.json(data);
             })
-
     });
 
     //Get User's Pack from DB
     app.get('/api/mypack', function (req, res) {
         var id = req.session.user.id
         var o_id = new ObjectId(id);
-
         db.Profile.find({ _id: o_id }).populate({path: "myPack", populate: {path:"dog"}})
             .then(function (data) {
-                // console.log(data);
                 res.send(data);
             }).catch(err => res.status(422).json(err));
     });
@@ -197,6 +177,7 @@ module.exports = function (app) {
             };
         });
     })
+
     app.post("/api/sendcoin", function(req, res){
         console.log("api/sendcoin", req.body)
         console.log("this is the sender", req.session.user.id)
@@ -216,7 +197,6 @@ module.exports = function (app) {
     app.post('/api/rating', function (req, res){
         console.log("req.body.id ", req.body.id);
         var o_id= new Object(req.body.id);
-        
         db.Profile.update({_id:o_id}, {$push:{rating : req.body.rating}}).
         then(function(data){
             console.log("this is rating res.data", data);

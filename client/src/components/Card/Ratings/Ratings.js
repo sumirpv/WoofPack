@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Ratings.css";
 import API from "../../../utils/API.js";
 var Rating = require('react-rating');
-// var FontAwesome = require('react-fontawesome');
 
 class Ratings extends Component {
 
@@ -38,13 +37,11 @@ class Ratings extends Component {
         });
     
         const avg = sum / rating.length; 
-        console.log(" rating cardtype",this.props.readonly )
 
         return (
-
             <div><b>
-                    {this.props.readonly === true ?  
-                    <Rating 
+                {this.props.readonly === true ?  
+                <Rating 
                     id ="rating" 
                     emptySymbol="fa fa-star-o fa-2x"
                     fullSymbol="fa fa-star fa-2x"
@@ -66,7 +63,6 @@ class Ratings extends Component {
                     this.updateRating(rate)}
                 />}
             </b></div>
-
         )
     }
 }
