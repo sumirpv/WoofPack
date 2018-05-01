@@ -125,10 +125,13 @@ img {
 img {
   width: 93.5%;
   height: auto;
+  opacity: .65;
 }
 
 img.circle {
   width: 35%;
+  height: 35%;
+  opacity: .9;
 }
 
 #sidenav_0 {

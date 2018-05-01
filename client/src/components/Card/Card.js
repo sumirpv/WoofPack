@@ -178,17 +178,30 @@ class Card extends Component {
                                 </div>))
                                 // )}
                                 )}
-
-                                <h2>Rating:</h2>
-                                <Ratings userRating={this.props.rating} id={this.props._id} />
-
-                                {this.props.cardtype === "findpack" ? < Button onClick={this.addPack} />
-                                    : null}
-                                {this.props.cardtype === "mypack" ? <SendCoin id={this.props._id} />
-                                    : null}
-                                {this.props.cardtype === "mypack" ? <button onClick={this.clickChatModal} > Send a Chat </button>
-                                    : null}
-
+                            </Col>
+                        </Roww>
+                        <Row style={{marginBottom:"-3%"}}>
+                            <Col size="md-2">
+                                <div className="rating-area">
+                                    <span id="rating-header">Rating:</span>
+                                    <Ratings userRating={this.props.rating} id={this.props._id} />
+                                </div>
+                            </Col>
+                            <Col size="md-2"> 
+                                <div className="coin-area">
+                                    {this.props.cardtype === "findpack" ? < Button onClick={this.addPack} />
+                                        : null}
+                                    {this.props.cardtype === "mypack" ? <SendCoin id={this.props._id} />
+                                        : null}
+                                </div>
+                            </Col>
+                        </Row>
+                        <Roww>
+                            <Col size="md-12">
+                                <div className="chat-btn-area">
+                                    {this.props.cardtype === "mypack" ? <button onClick={this.clickChatModal} > Send a Chat </button>
+                                        : null}
+                                </div>
 
                             </Col>
                         </Roww>
