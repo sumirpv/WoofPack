@@ -10,3 +10,25 @@ h5 {
 #signup2{
     margin-right: 8px; 
 }
+
+.form-group {
+    border-bottom: 1;
+}
+
+input#first-name,
+input#last-name, 
+input#address, 
+input#phone, 
+input#about, 
+input#email {
+    border-bottom: 1px solid;
+}
+
+input#address,
+input#phone {
+    font-size: 16px;
+}
+
+#avatar {
+    margin-top: 6%;
+}

@@ -91,7 +91,7 @@ class Modal extends Component {
                                                 </input>
                                             </div>
                                             <div className="form-group">
-                                                <input value={this.state.about} name={"about"} onChange={this.handleInputChange} placeholder="about" id="about" type="text" className="validate">
+                                                <input value={this.state.about} name={"about"} onChange={this.handleInputChange} placeholder="About" id="about" type="text" className="validate">
                                                 </input>
                                             </div>
                                         </div>

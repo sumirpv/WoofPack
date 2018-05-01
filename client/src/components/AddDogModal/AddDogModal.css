@@ -3,6 +3,15 @@
     z-index: 1000;
 }
 
-#addDog2{
+#addDog2 {
     margin-right: 8px; 
+}
+
+input#dog-name, 
+input#breed, 
+input#age, 
+input#temperment, 
+input#about-dog, 
+input#dog-size {
+    border-bottom: 1px solid;
 }
