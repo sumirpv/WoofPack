@@ -82,6 +82,7 @@ class Card extends Component {
 
 
     render() {
+
             return (
             <Roww>
                 <Col size="md-6">
@@ -184,7 +185,12 @@ class Card extends Component {
                             <Col size="md-2">
                                 <div className="rating-area">
                                     <span id="rating-header">Rating:</span>
-                                    <Ratings userRating={this.props.rating} id={this.props._id} />
+                                    {this.props.cardtype === "findpack" ? <Ratings  readonly={true}
+                                    userRating={this.props.rating} id={this.props._id} />
+                                        : null}
+                                    {this.props.cardtype === "mypack" ?  <Ratings readonly={false} userRating={this.props.rating} id={this.props._id} />
+                                        : null}
+                                    
                                 </div>
                             </Col>
                             <Col size="md-2"> 

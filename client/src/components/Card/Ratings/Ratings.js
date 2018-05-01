@@ -38,11 +38,24 @@ class Ratings extends Component {
         });
     
         const avg = sum / rating.length; 
+        console.log(" rating cardtype",this.props.readonly )
 
         return (
 
             <div><b>
-                <Rating 
+                    {this.props.readonly === true ?  
+                    <Rating 
+                    id ="rating" 
+                    emptySymbol="fa fa-star-o fa-2x"
+                    fullSymbol="fa fa-star fa-2x"
+                    stop ={5} 
+                    fractions={2} 
+                    readonly
+                    initialRating={avg} 
+                    onChange = {(rate) => 
+                    this.updateRating(rate)}
+                />
+                : <Rating 
                     id ="rating" 
                     emptySymbol="fa fa-star-o fa-2x"
                     fullSymbol="fa fa-star fa-2x"
@@ -51,7 +64,7 @@ class Ratings extends Component {
                     initialRating={avg} 
                     onChange = {(rate) => 
                     this.updateRating(rate)}
-                />
+                />}
             </b></div>
 
         )
