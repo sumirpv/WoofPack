@@ -11,7 +11,7 @@ A full stack app React app for nearby dogs and their humans to connect for playi
 * MongoDb
 * CSS
 * Materialize
-* Socket.IO
+* Socket.io
 * Express
 * Multer
 
@@ -30,3 +30,30 @@ Chat with your pack to set up meet and greets.
 
 Let the fun begin!:-
 Have fun earning free dog sitting while meeting new friends and pups
+
+## Images
+
+![image](https://user-images.githubusercontent.com/26572619/39463777-9c61cc58-4cce-11e8-93f4-1768830a24a9.png)
+
+<br>
+
+![image](https://user-images.githubusercontent.com/26572619/39463801-cee7367c-4cce-11e8-9169-93e1033425e0.png)
+
+<br>
+
+![image](https://user-images.githubusercontent.com/26572619/39463726-5719347e-4cce-11e8-9b10-a16400e86a26.png)
+
+<br>
+
+![image](https://user-images.githubusercontent.com/26572619/39463826-f2c29cee-4cce-11e8-8799-bad6d545cfea.png)
+
+<br>
+
+![image](https://user-images.githubusercontent.com/26572619/39463832-fda6ca9a-4cce-11e8-8be6-1000c4008752.png)
+
+## Authors:-
+
+Bianca Torres,
+Fredrik Gustafson,
+Ryan Noble,
+Sumitha Viswanathan
