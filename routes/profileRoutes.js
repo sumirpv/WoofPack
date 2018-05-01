@@ -44,7 +44,8 @@ module.exports = function (app) {
             email: req.body.email,
             password: req.body.password,
             picture: req.file.path.replace('client/public/', ""),
-            myPack: req.body.myPack
+            myPack: req.body.myPack, 
+            dogCoin: 0
         })
             .then(function (data) {
                 req.session.user = {

@@ -156,7 +156,7 @@ class Card extends Component {
                                     </div>
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">{this.state.dogs[0].dogName}<i className="material-icons right"></i></span>
-                                        <p><a alt="unknown" href="/">Link to user profile?</a></p>
+                                     
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">Dog Info<i className="small material-icons right">cancel</i></span>
