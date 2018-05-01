@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import { SideNav, Button, SideNavItem, Icon } from 'react-materialize';
+import API from "../../utils/API.js";
+
+function Redirect(where){
+    window.location = where
+}
 
 class Sidebar extends Component {
     constructor (props) {
         super (props)
     }
+
+    clickLogout = () => { 
+        API.logout()
+        .then(res => {
+            Redirect('/');
+        });
+
+    }
+
     render() {
         return (
             <SideNav
@@ -44,7 +58,9 @@ class Sidebar extends Component {
                 </SideNavItem>
 
                 <SideNavItem>
-                    <Button onClick={this.clickLogout}> Logout </Button>
+                    {/* <Button onClick={this.clickLogout}> Logout </Button> */}
+                    {this.props.loggedIn === true ? <Button id="logoutBtn" onClick={this.clickLogout}
+                        > Logout </Button>  :  null }
                 </SideNavItem>
 
             </SideNav>

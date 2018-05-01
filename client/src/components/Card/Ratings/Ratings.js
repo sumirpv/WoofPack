@@ -32,11 +32,13 @@ class Ratings extends Component {
         console.log("rating",this.props);
         const rating = this.props.userRating || ["0"];
         let sum = 0;
+        let num = 3;
          rating.map( rate => {
              sum += parseInt(rate);
         });
     
         const avg = sum / rating.length; 
+
         return (
 
             <div><b>

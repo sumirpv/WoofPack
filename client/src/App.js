@@ -38,7 +38,7 @@ class App extends Component {
         firstname: res.data.firstname, 
         email: res.data.email, 
         picture: res.data.picture,
-      username: res.data.username})
+        username: res.data.username})
       }
     })
   };
@@ -60,9 +60,11 @@ class App extends Component {
           picture= {this.state.picture}
           loggedIn = {this.state.session}/>
           /> */}
-          <Sidebar userName={this.state.username}
-          email={this.state.email}
-          picture= {this.state.picture}
+          <Sidebar 
+            userName={this.state.username}
+            email={this.state.email}
+            picture= {this.state.picture}
+            loggedIn = {this.state.session}
           />
           <Wrapper >
             <Switch>

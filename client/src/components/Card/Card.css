@@ -10,6 +10,7 @@
     /* background-color:transparent; */
     /* opacity: 0.85; */
     background-color: rgba(245, 245, 245, .50);
+    
 }
 
 #dog-card {
@@ -29,7 +30,8 @@
 }
 
 .card-panel {
-   
+    /* background-color: rgb(7, 177, 245); */
+    /* opacity: .6; */
     padding: 20px;
     padding-bottom: 1px;
     /* background-image: url("darkdog.jpg");
@@ -59,6 +61,26 @@
     border: 1px solid gray;
     box-shadow: 3px 0px 10px 0px black;
     left: 25px;
+}
+
+#rating-header {
+    margin-top: auto;
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.rating-area {
+    /* margin-left: 35%; */
+    float: left;
+    display: flex;
+}
+
+.coin-area {
+    float: right;
+}
+
+.rating-coin-chat {
+    margin-bottom: -3% !important;
 }
 
 /* .click-item {
