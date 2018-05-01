@@ -41,15 +41,20 @@
 }
 .slider-home {
     margin: 0 auto!important;
-    width: 100%!important
+    width: 100%!important;
+    color: white;
+    text-shadow: 1.5px 1.5px 1px rgb(7, 177, 245);
 }
 
 .slider-home img {
-    opacity: .4;
+    opacity: .7;
+    
 }
 
 .slider-text {
-    color: white
+    color: white;
+    text-shadow: 1.5px 1.5px 1px rgb(7, 177, 245);
+    
 }
 
 hr { 
