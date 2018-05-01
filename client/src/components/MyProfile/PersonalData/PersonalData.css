@@ -32,3 +32,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     float:left;
 }
 
+.about-row {
+    margin-bottom: 0px;
+}
+.profile-header{
+    margin: 2%;
+    color: rgb(7, 177, 245);
+    text-align: center;
+}

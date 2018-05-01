@@ -5,8 +5,9 @@ import "./DogData.css";
 const DogData = (props) => {
 
     return (
-        <div className="card-panel grey lighten-5 z-depth-1">
+        <div className="profile-card card-panel grey lighten-5 z-depth-1">
             <div className="row">
+            <h3 className="profile-header"> About Your Doggo </h3>
                     <div className="col s2">
                         <img src={props.picture} alt="" class="circle responsive-img" />
                     </div>

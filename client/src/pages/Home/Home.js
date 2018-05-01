@@ -99,9 +99,9 @@ class Home extends Component {
                             </Slide>
                             <Slide
                                 src="https://www.puppyleaks.com/wp-content/uploads/2017/08/walkie.png"
-                                title="Never worry about your dog being lonely again"
+                                title="The strength of the pack is the wolf, and the strength of the wolf is the pack"
                                 placement="right">
-                                <span className='slider-text'> Enjoy peace of mind knowing the whole pack has your back </span>
+                                <span className='slider-text'> Rest easy knowing the whole pack has your back </span>
 
                             </Slide>
                         </Slider>
@@ -111,11 +111,11 @@ class Home extends Component {
                         <Col s={12} className="about">
                             <h3 className="more-info">  Why Join a Woofpack?   </h3>
                             <p>
-                                We know that it can be stressful when you have to leave town, or stay late for work because your pup is counting on you! But day care is so expensive.
+                                We know that it can be stressful when you have to leave town, or stay late for work because your pup is counting on you! 
                         </p>
 
                             <p>
-                                Joining a Woofpack allows you to still ensure your dog always gets the care they need, while getting to know and help your neighborhood dogs and humans. Sign up today and start enjoying the strength of the pack!  </p>
+                                Joining a Woofpack allows you to ensure your dog always gets the care they need, while getting to know and help your neighborhood dogs and humans. Sign up today and start enjoying the strength of the pack!  </p>
 
                         </Col>
                     </Row>
@@ -140,7 +140,7 @@ class Home extends Component {
                             <div className="section">
                                 <i class="material-icons">favorite</i>
                                 <h5 className="steps">Let the fun begin!</h5>
-                                <p className="p-steps">Have fun earning free dog sitting while meeting new friend and pups </p>
+                                <p className="p-steps">Have fun earning free dog sitting while meeting new friends and pups </p>
                             </div>
 
                         </Col>
