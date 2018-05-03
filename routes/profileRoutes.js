@@ -42,7 +42,7 @@ module.exports = function (app) {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            picture: req.file.path.replace('client/public/', ""),
+            picture: req.file.path,
             myPack: req.body.myPack, 
             dogCoin: 0
         })
